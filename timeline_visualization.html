@@ -388,9 +388,18 @@
         let labelRenderer;
         let tunnel, events, cameraPath;
         let currentYear = 0;
+        let lastHashYear = null; // Track last year we updated in hash
         let eventsData = [];
         let periodsData = { europe: [], china: [] };
         let isLoading = true;
+
+        // Dragging state
+        let isDragging = false;
+        let draggedObject = null;
+        let dragPlane = null;
+        let dragOffset = null;
+        let mouseDownPosition = null; // Track mouse position to distinguish click vs drag
+        let isClick = false; // Flag to distinguish click from drag
 
         // Configuration
         const CONFIG = {
@@ -399,8 +408,34 @@
             eventsPerPage: 100,
             yearRange: { min: -1500, max: 2526 }, // Extended by 500 years both ends
             cameraSpeed: 2,
-            bloomStrength: 1.5
+            bloomStrength: 1.5,
+            hashUpdateStep: 20, // Update URL hash only when year changes by this amount
+            visibleDistance: 500 // Distance from camera to displayed year
         };
+
+        // Parse URL hash and jump to target year
+        function parseHashAndJump() {
+            const hash = window.location.hash.substring(1); // Remove '#'
+            console.log(`Parsing hash: "${hash}"`);
+            if (hash && !isNaN(parseInt(hash))) {
+                const targetYear = parseInt(hash);
+                console.log(`Target year: ${targetYear}, Year range: ${CONFIG.yearRange.min} to ${CONFIG.yearRange.max}`);
+                // Validate year is within range
+                if (targetYear >= CONFIG.yearRange.min && targetYear <= CONFIG.yearRange.max) {
+                    const yearPosition = mapYearToPosition(targetYear);
+                    console.log(`Year position: ${yearPosition}`);
+                    // Adjust for visible distance offset: we want target year to be 500 units ahead of camera
+                    targetCameraZ = Math.max(-CONFIG.tunnelLength, Math.min(0, yearPosition + CONFIG.visibleDistance));
+                    currentCameraZ = targetCameraZ;  // Set current position immediately to avoid lerping
+                    lastHashYear = targetYear;  // Update last hash year to avoid immediate update
+                    console.log(`Jumping to year ${targetYear} from hash (camera Z: ${targetCameraZ})`);
+                } else {
+                    console.log(`Year ${targetYear} is out of range`);
+                }
+            } else {
+                console.log(`Invalid hash: "${hash}"`);
+            }
+        }
 
         // Initialize the application
         async function init() {
@@ -449,6 +484,9 @@
 
                 console.log('Hiding loading...');
                 hideLoading();
+
+                console.log('Parsing URL hash...');
+                parseHashAndJump();
 
                 console.log('Timeline initialization complete!');
             } catch (error) {
@@ -505,6 +543,7 @@
                 labelRenderer.setSize(window.innerWidth, window.innerHeight);
                 labelRenderer.domElement.style.position = 'absolute';
                 labelRenderer.domElement.style.top = '0px';
+                labelRenderer.domElement.style.pointerEvents = 'none'; // Let clicks pass through to canvas
                 document.getElementById('container').appendChild(labelRenderer.domElement);
 
                 // Test render
@@ -541,6 +580,12 @@
             // Window resize
             window.addEventListener('resize', onWindowResize);
 
+            // Hash change (when user manually changes URL hash)
+            window.addEventListener('hashchange', () => {
+                console.log('Hash changed, jumping to new position');
+                parseHashAndJump();
+            });
+
             // Modal close
             document.getElementById('close-modal').addEventListener('click', () => {
                 document.getElementById('event-modal').style.display = 'none';
@@ -555,6 +600,11 @@
 
             // Canvas click for event selection
             document.getElementById('threejs-canvas').addEventListener('click', onCanvasClick);
+
+            // Mouse events for dragging
+            document.getElementById('threejs-canvas').addEventListener('mousedown', onMouseDown);
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
 
             // Touch events for mobile
             let touchStartY = 0;
@@ -911,6 +961,9 @@
 
                 sphere.position.set(x, y, yearPosition);
 
+                // Store original position for drag reset
+                sphere.userData.originalPosition = new THREE.Vector3(x, y, yearPosition);
+
                 // Create text label using CSS2DObject
                 const labelDiv = document.createElement('div');
                 labelDiv.className = 'event-label';
@@ -1055,11 +1108,20 @@
 
         // Update current year based on camera position
         function updateCurrentYear() {
-            const progress = Math.abs(camera.position.z) / CONFIG.tunnelLength;
+            // Calculate Z position of year we want to display (500 units ahead of camera)
+            const yearPosition = camera.position.z - CONFIG.visibleDistance;
+
+            const progress = Math.min(1, Math.max(0, Math.abs(yearPosition) / CONFIG.tunnelLength));
             currentYear = Math.round(CONFIG.yearRange.min + progress * (CONFIG.yearRange.max - CONFIG.yearRange.min));
 
             const yearDisplay = currentYear < 0 ? `${Math.abs(currentYear)} BC` : `${currentYear} AD`;
             document.getElementById('current-year').textContent = yearDisplay;
+
+            // Update URL hash with throttling to avoid excessive updates
+            if (lastHashYear === null || Math.abs(currentYear - lastHashYear) >= CONFIG.hashUpdateStep) {
+                lastHashYear = currentYear;
+                history.replaceState(null, null, `#${currentYear}`);
+            }
 
             // Debug info
             if (window.debugMode) {
@@ -1084,8 +1146,113 @@
                 chinaPeriod ? chinaPeriod.name : 'Unknown Period';
         }
 
+        // Mouse down handler for dragging
+        function onMouseDown(event) {
+            // Record mouse down position for click/drag distinction
+            mouseDownPosition = { x: event.clientX, y: event.clientY };
+            isClick = true; // Assume it's a click until we drag
+
+            const mouse = new THREE.Vector2();
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            const raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera(mouse, camera);
+
+            const intersects = raycaster.intersectObjects(events.children);
+            if (intersects.length > 0) {
+                event.preventDefault();
+                isDragging = true;
+                draggedObject = intersects[0].object;
+
+                // Create a plane at object's position facing camera
+                const normal = new THREE.Vector3(0, 0, 1).applyQuaternion(camera.quaternion);
+                dragPlane = new THREE.Plane().setFromNormalAndCoplanarPoint(normal, draggedObject.position);
+
+                // Calculate offset
+                const ray = new THREE.Ray(camera.position, raycaster.ray.direction);
+                const intersection = new THREE.Vector3();
+                ray.intersectPlane(dragPlane, intersection);
+                dragOffset = intersection.clone().sub(draggedObject.position);
+
+                // Change cursor
+                document.body.style.cursor = 'grabbing';
+            }
+        }
+
+        // Mouse move handler for dragging
+        function onMouseMove(event) {
+            if (!isDragging || !draggedObject) {
+                // Update cursor on hover
+                const mouse = new THREE.Vector2();
+                mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+                mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+                const raycaster = new THREE.Raycaster();
+                raycaster.setFromCamera(mouse, camera);
+
+                const intersects = raycaster.intersectObjects(events.children);
+                document.body.style.cursor = intersects.length > 0 ? 'grab' : 'default';
+                return;
+            }
+
+            event.preventDefault();
+
+            // Check if mouse has moved enough to consider it a drag (not a click)
+            if (mouseDownPosition) {
+                const deltaX = Math.abs(event.clientX - mouseDownPosition.x);
+                const deltaY = Math.abs(event.clientY - mouseDownPosition.y);
+                const moveDistance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+
+                // If moved more than 3 pixels, it's a drag, not a click
+                if (moveDistance > 3) {
+                    isClick = false;
+                }
+            }
+
+            const mouse = new THREE.Vector2();
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            const raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera(mouse, camera);
+
+            const ray = new THREE.Ray(camera.position, raycaster.ray.direction);
+            const intersection = new THREE.Vector3();
+            ray.intersectPlane(dragPlane, intersection);
+
+            // Only allow dragging in Y axis (up/down) to see behind
+            if (draggedObject.userData.originalPosition) {
+                const originalX = draggedObject.userData.originalPosition.x;
+                const originalZ = draggedObject.userData.originalPosition.z;
+                draggedObject.position.set(originalX, intersection.y - dragOffset.y, originalZ);
+            }
+        }
+
+        // Mouse up handler for dragging
+        function onMouseUp(event) {
+            if (isDragging) {
+                isDragging = false;
+                draggedObject = null;
+                dragPlane = null;
+                dragOffset = null;
+                mouseDownPosition = null;
+                // Note: Don't reset isClick here, let the click handler check it
+                setTimeout(() => {
+                    isClick = true;
+                }, 0);
+                document.body.style.cursor = 'default';
+            }
+        }
+
         // Canvas click handler
         function onCanvasClick(event) {
+            // If it was a drag (not a click), don't open modal
+            if (!isClick) {
+                isClick = true; // Reset for next interaction
+                return;
+            }
+
             const mouse = new THREE.Vector2();
             mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
             mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
