@@ -1,25 +1,15 @@
 {
-  "version": 2,
-  "builds": {
-    "api": {
-      "src": "server.js",
-      "use": "@vercel/node"
-    }
-  },
-  "routes": [
+  version: 2,
+  builds: [
     {
-      "src": "server.js",
-      "dest": "/api",
-      "headers": {
-        "Access-Control-Allow-Origin": "*"
-      }
-    },
-    {
-      "src": "server.js",
-      "dest": "/*"
+      src: main.py,
+      use: @vercel/python
     }
   ],
-  "env": {
-    "PORT": "8000"
-  }
+  routes: [
+    {
+      src: /(.*),
+      dest: main.py
+    }
+  ]
 }
