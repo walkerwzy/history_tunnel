@@ -45,11 +45,18 @@
             font-size: 11px;
             font-weight: bold;
             text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
-            pointer-events: none;
+            pointer-events: auto;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
             white-space: nowrap;
             max-width: 200px;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+
+        .event-label:hover {
+            background: rgba(0, 0, 0, 0.95);
+            border-color: rgba(255, 255, 255, 0.5);
         }
 
         .event-label.hidden {
@@ -91,7 +98,7 @@
         /* Current year display */
         #current-year {
             position: absolute;
-            bottom: 20px;
+            bottom: 80px;
             left: 50%;
             transform: translateX(-50%);
             background: rgba(0, 0, 0, 0.8);
@@ -498,7 +505,6 @@
                 labelRenderer.setSize(window.innerWidth, window.innerHeight);
                 labelRenderer.domElement.style.position = 'absolute';
                 labelRenderer.domElement.style.top = '0px';
-                labelRenderer.domElement.style.pointerEvents = 'none'; // Let clicks pass through to canvas
                 document.getElementById('container').appendChild(labelRenderer.domElement);
 
                 // Test render
@@ -910,6 +916,12 @@
                 labelDiv.className = 'event-label';
                 labelDiv.textContent = event.event_name;
                 labelDiv.style.borderColor = '#' + color.toString(16).padStart(6, '0');
+
+                // Add click event to label
+                labelDiv.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    showEventModal(event);
+                });
 
                 const label = new THREE.CSS2DObject(labelDiv);
                 // Position label based on region: Europe on left, China on right
