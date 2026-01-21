@@ -1,0 +1,163 @@
+{
+  "region": "Chinese",
+  "year": "三国",
+  "events": [
+    {
+      "event_name": "蜀汉建立",
+      "start_year": 221,
+      "end_year": 221,
+      "key_figures": "刘备",
+      "description": "刘备在成都称帝，延续汉室国号，建立蜀汉政权。",
+      "impact": "蜀汉的建立使刘备延续了汉朝正统，与曹魏、孙吴形成三足鼎立之势。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/三国"
+    },
+    {
+      "event_name": "孙吴建立",
+      "start_year": 222,
+      "end_year": 222,
+      "key_figures": "孙权",
+      "description": "孙权在建业称帝，建立吴国，正式与蜀汉、曹魏形成鼎立局面。",
+      "impact": "孙吴的建立完成了三国鼎立的格局，标志着三国时期正式开始。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/三国"
+    },
+    {
+      "event_name": "夷陵之战",
+      "start_year": 222,
+      "end_year": 222,
+      "key_figures": "刘备、陆逊",
+      "description": "刘备为夺回荆州发起夷陵之战，被陆逊击败，蜀汉势力受损。",
+      "impact": "夷陵之战削弱了蜀汉的军事力量，使蜀汉在战略上处于守势。",
+      "category": "军事",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/三国"
+    },
+    {
+      "event_name": "诸葛亮北伐",
+      "start_year": 228,
+      "end_year": 234,
+      "key_figures": "诸葛亮",
+      "description": "诸葛亮多次率军北伐曹魏，试图恢复汉室，但未成功。",
+      "impact": "诸葛亮北伐虽未成功，但展示了蜀汉的战略意图，对曹魏造成持续压力。",
+      "category": "军事",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/三国"
+    },
+    {
+      "event_name": "秦统一六国",
+      "start_year": 230,
+      "end_year": 221,
+      "key_figures": "秦王政, 嬴政",
+      "description": "从公元前230年至前221年，秦国陆续攻灭韩、赵、魏、楚、燕、齐六国，统一中原。",
+      "impact": "结束了战国割据局面，建立了中国历史上第一个大一统帝国。",
+      "category": "军事",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/秦朝"
+    },
+    {
+      "event_name": "晋灭燕之战",
+      "start_year": 238,
+      "end_year": 238,
+      "key_figures": "司马懿、公孙渊",
+      "description": "公孙渊在辽东自立为帝，司马懿率军征讨，最终灭亡燕国。",
+      "impact": "公孙渊割据的灭亡巩固了曹魏在东北的统治，也为司马氏的崛起提供了机会。",
+      "category": "军事",
+      "importance_level": 6,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/三国"
+    },
+    {
+      "event_name": "司马氏夺权",
+      "start_year": 249,
+      "end_year": 265,
+      "key_figures": "司马懿、曹爽",
+      "description": "司马懿发动高平陵之变，夺取曹魏大权，开启司马氏代魏进程。",
+      "impact": "司马氏夺权是三国时期政治格局的重大转折，为西晋建立奠定了基础。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/三国"
+    },
+    {
+      "event_name": "高平陵之变",
+      "start_year": 249,
+      "end_year": null,
+      "key_figures": "司马懿",
+      "description": "司马懿在曹魏权臣斗争中夺取大权，奠定司马氏统治基础。",
+      "impact": "开启曹魏政权被司马氏操控的历程，为晋朝建立铺路。",
+      "category": "政治",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "event_name": "蜀汉灭亡",
+      "start_year": 263,
+      "end_year": 263,
+      "key_figures": "邓艾、姜维",
+      "description": "司马昭发动灭蜀之战，邓艾奇袭阴平，姜维无力回援，蜀汉灭亡。",
+      "impact": "蜀汉的灭亡标志着三国中最后一个汉人政权的覆灭，为西晋统一铺平道路。",
+      "category": "军事",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/三国"
+    },
+    {
+      "event_name": "司马炎篡魏建晋",
+      "start_year": 265,
+      "end_year": null,
+      "key_figures": "司马炎",
+      "description": "司马炎胁迫魏元帝曹奂禅让帝位，建立晋朝。",
+      "impact": "结束三国分裂局面，开启西晋统一时代。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "event_name": "晋灭吴之战",
+      "start_year": 279,
+      "end_year": 280,
+      "key_figures": "司马炎、孙皓",
+      "description": "西晋大军分六路攻吴，吴主孙皓投降，三国时期结束。",
+      "impact": "西晋灭吴统一全国，结束了长达60年的分裂局面，开启晋朝时代。",
+      "category": "军事",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/三国"
+    },
+    {
+      "event_name": "三国志成书",
+      "start_year": 280,
+      "end_year": 280,
+      "key_figures": "陈寿",
+      "description": "陈寿完成《三国志》的撰写，成为研究三国历史的重要史书。",
+      "impact": "《三国志》是中国正史中的经典，为后世研究三国提供了权威史料。",
+      "category": "文化",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/三国"
+    },
+    {
+      "event_name": "西晋统一全国",
+      "start_year": 280,
+      "end_year": null,
+      "key_figures": "晋武帝司马炎",
+      "description": "西晋灭掉孙吴政权，结束三国鼎立，实现短暂统一。",
+      "impact": "结束分裂，但统一仅维持十余年，为后续动荡埋下伏笔。",
+      "category": "军事",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    }
+  ],
+  "timestamp": "2026-01-20T18:07:42.433506Z"
+}

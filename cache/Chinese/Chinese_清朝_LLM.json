@@ -1,0 +1,139 @@
+{
+  "region": "Chinese",
+  "year": "清朝",
+  "events": [
+    {
+      "event_name": "清军入关",
+      "start_year": 1644,
+      "end_year": null,
+      "key_figures": "吴三桂, 多尔衮",
+      "description": "吴三桂引清军入关，清军击败李自成，迁都北京，建立全国统治。",
+      "impact": "清朝正式取代明朝，成为中国新的统治王朝。",
+      "category": "军事",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/清朝"
+    },
+    {
+      "event_name": "康熙盛世",
+      "start_year": 1661,
+      "end_year": 1722,
+      "key_figures": "康熙帝",
+      "description": "康熙帝在位期间，平定三藩之乱，收复台湾，击败俄罗斯，实行开明统治。",
+      "impact": "清朝国力达到顶峰，经济文化繁荣，史称康熙盛世。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/清朝"
+    },
+    {
+      "event_name": "雍正改革",
+      "start_year": 1722,
+      "end_year": 1735,
+      "key_figures": "雍正帝",
+      "description": "雍正帝实行摊丁入亩、火耗归公等改革，加强中央集权。",
+      "impact": "完善了清朝的财政和行政制度，为乾隆盛世奠定基础。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/清朝"
+    },
+    {
+      "event_name": "乾隆盛世",
+      "start_year": 1735,
+      "end_year": 1796,
+      "key_figures": "乾隆帝",
+      "description": "乾隆在位期间，国力强盛，疆域辽阔，文化繁荣。",
+      "impact": "清朝达到历史巅峰，但也为后来的衰落埋下隐患。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/清朝"
+    },
+    {
+      "event_name": "鸦片战争",
+      "start_year": 1839,
+      "end_year": 1842,
+      "key_figures": "林则徐, 道光帝",
+      "description": "英国发动鸦片战争，清朝战败，被迫签订南京条约。",
+      "impact": "中国开始沦为半殖民地半封建社会，开辟近代史。",
+      "category": "军事",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/清朝"
+    },
+    {
+      "event_name": "太平天国运动",
+      "start_year": 1850,
+      "end_year": 1864,
+      "key_figures": "洪秀全",
+      "description": "洪秀全领导的太平天国起义，席卷半壁江山。",
+      "impact": "沉重打击清朝统治，是中国近代史上规模最大的农民起义。",
+      "category": "军事",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/清朝"
+    },
+    {
+      "event_name": "洋务运动",
+      "start_year": 1861,
+      "end_year": 1894,
+      "key_figures": "曾国藩, 李鸿章",
+      "description": "清政府兴办近代工业，学习西方科技。",
+      "impact": "促进了中国早期现代化，但未能从根本上改变落后面貌。",
+      "category": "经济",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/清朝"
+    },
+    {
+      "event_name": "甲午战争",
+      "start_year": 1894,
+      "end_year": 1895,
+      "key_figures": "李鸿章",
+      "description": "中日甲午战争，清朝战败，签订马关条约。",
+      "impact": "清朝国际地位急剧下降，民族危机加深。",
+      "category": "军事",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/清朝"
+    },
+    {
+      "event_name": "戊戌变法",
+      "start_year": 1898,
+      "end_year": null,
+      "key_figures": "康有为, 梁启超, 光绪帝",
+      "description": "光绪帝推行维新变法，试图改革政治制度。",
+      "impact": "虽然失败，但开启了中国近代民主思想。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/清朝"
+    },
+    {
+      "event_name": "义和团运动",
+      "start_year": 1899,
+      "end_year": 1901,
+      "key_figures": "慈禧太后",
+      "description": "义和团反帝爱国运动，清政府最终镇压。",
+      "impact": "加速清朝灭亡，八国联军侵华。",
+      "category": "军事",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/清朝"
+    },
+    {
+      "event_name": "辛亥革命",
+      "start_year": 1911,
+      "end_year": null,
+      "key_figures": "孙中山, 黄兴",
+      "description": "辛亥革命推翻清朝帝制，建立中华民国。",
+      "impact": "结束中国两千多年的封建帝制，开辟民主共和新纪元。",
+      "category": "政治",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/清朝"
+    }
+  ],
+  "timestamp": "2026-01-21T05:00:00.000000Z"
+}

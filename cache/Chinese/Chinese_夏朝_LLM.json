@@ -1,0 +1,91 @@
+{
+  "region": "Chinese",
+  "year": "夏朝",
+  "events": [
+    {
+      "event_name": "夏朝灭亡",
+      "start_year": -1600,
+      "end_year": null,
+      "key_figures": "夏桀, 商汤",
+      "description": "约公元前1600年，夏朝被商朝所灭，结束了夏朝的统治，标志着中国早期王朝的更迭。",
+      "impact": "夏朝的灭亡开启了商朝的统治，体现了中国历史上的权力转移模式，对理解王朝兴衰有重要意义。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/夏朝"
+    },
+    {
+      "event_name": "甲骨文的出现",
+      "start_year": -1600,
+      "end_year": -1046,
+      "key_figures": "巫咸、巫贤",
+      "description": "商朝时期出现的甲骨文和金文是中国已知最早的成熟文字系统。",
+      "impact": "甲骨文的发现为研究商朝历史和文化提供了直接证据，标志着中国信史时期的开始。",
+      "category": "文化",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/商朝"
+    },
+    {
+      "event_name": "青铜冶炼技术的高峰",
+      "start_year": -1600,
+      "end_year": -1046,
+      "key_figures": "商王武丁",
+      "description": "商朝时期青铜冶铸技术达到高峰，铸造出如后母戊鼎等大型青铜器。",
+      "impact": "展示了商朝在冶金技术上的领先地位，对后世中国青铜文化产生深远影响。",
+      "category": "技术",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/商朝"
+    },
+    {
+      "event_name": "商朝经济繁荣",
+      "start_year": -1600,
+      "end_year": -1046,
+      "key_figures": "商王",
+      "description": "商朝手工业、农业和商业发展，出现青铜器、丝绸、瓷器等产品，并使用贝币作为货币。",
+      "impact": "商朝经济成就奠定了其作为早期文明高峰的地位，促进了技术、文化和经济的全面发展。",
+      "category": "经济",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/商朝"
+    },
+    {
+      "event_name": "商朝法律制度建立",
+      "start_year": -1600,
+      "end_year": -1046,
+      "key_figures": "商王、三公",
+      "description": "商朝建立了较完备的法律体系和官僚统治机构，形成常备军队和内外服制度。",
+      "impact": "商朝法律制度为后世中国法制发展奠定了基础，体现了早期国家治理模式。",
+      "category": "政治",
+      "importance_level": 6,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/商朝"
+    },
+    {
+      "event_name": "商朝宗教与天文学发展",
+      "start_year": -1600,
+      "end_year": -1046,
+      "key_figures": "巫咸、巫贤",
+      "description": "商朝天文学家巫咸及其子巫贤复兴和发展了商朝的天文学和宗教体系。",
+      "impact": "商朝的天文学成就对后世历法和占卜文化产生深远影响，体现了古代中国对天文现象的系统研究。",
+      "category": "科学",
+      "importance_level": 6,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/商朝"
+    },
+    {
+      "event_name": "商朝文化与数学发展",
+      "start_year": -1600,
+      "end_year": -1046,
+      "key_figures": "商王",
+      "description": "商朝形成完整的十进制系统，并发展出丰富的宗教、数学和天文历法知识。",
+      "impact": "商朝的文化和数学成就为后世中国文明提供了重要基础，展示了早期文明的综合技术水平。",
+      "category": "文化",
+      "importance_level": 6,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/商朝"
+    }
+  ],
+  "timestamp": "2026-01-20T18:07:42.427569Z"
+}

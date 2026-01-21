@@ -1,0 +1,127 @@
+{
+  "region": "Chinese",
+  "year": "中華民國",
+  "events": [
+    {
+      "event_name": "中華民國建立",
+      "start_year": 1912,
+      "end_year": null,
+      "key_figures": "孫中山",
+      "description": "辛亥革命推翻清朝，建立中華民國，結束中國兩千多年的帝制。",
+      "impact": "開啟中國民主共和新紀元，影響亞洲近代史。",
+      "category": "政治",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中華民國"
+    },
+    {
+      "event_name": "北伐戰爭",
+      "start_year": 1926,
+      "end_year": 1928,
+      "key_figures": "蔣中正, 馮玉祥, 閻錫山",
+      "description": "國民黨北伐統一中國，結束軍閥割據時期。",
+      "impact": "實現中國形式上的統一，為後續發展奠定基礎。",
+      "category": "軍事",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中華民國"
+    },
+    {
+      "event_name": "國民政府訓政",
+      "start_year": 1928,
+      "end_year": 1947,
+      "key_figures": "蔣中正",
+      "description": "國民政府實施訓政，以三民主義為治國原則，推動國家現代化。",
+      "impact": "奠定中華民國政治體制基礎，但也埋下黨國體制的隱患。",
+      "category": "政治",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中華民國"
+    },
+    {
+      "event_name": "抗日戰爭",
+      "start_year": 1937,
+      "end_year": 1945,
+      "key_figures": "蔣中正, 毛澤東",
+      "description": "中國抗日戰爭全面爆發，中華民國成為二戰同盟國東亞主要抵抗力量。",
+      "impact": "中華民國國際地位大幅提升，戰後接管臺灣。",
+      "category": "軍事",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中華民國"
+    },
+    {
+      "event_name": "中華民國憲法施行",
+      "start_year": 1947,
+      "end_year": null,
+      "key_figures": "蔣中正",
+      "description": "中華民國憲法正式施行，國民政府改組為行憲政府。",
+      "impact": "確立中華民國民主憲政體制，為後續民主化奠定基礎。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中華民國"
+    },
+    {
+      "event_name": "國共內戰",
+      "start_year": 1945,
+      "end_year": 1949,
+      "key_figures": "蔣中正, 毛澤東",
+      "description": "第二次國共內戰爆發，最終共產黨獲勝。",
+      "impact": "中華民國政府遷往臺灣，中國大陸成立中華人民共和國。",
+      "category": "軍事",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中華民國"
+    },
+    {
+      "event_name": "中華民國政府遷臺",
+      "start_year": 1949,
+      "end_year": null,
+      "key_figures": "蔣中正",
+      "description": "中華民國中央政府撤退至臺灣，繼續代表中國。",
+      "impact": "開啟臺灣經濟奇蹟，並維持臺海兩岸分治格局至今。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中華民國"
+    },
+    {
+      "event_name": "臺灣戒嚴時期",
+      "start_year": 1949,
+      "end_year": 1987,
+      "key_figures": "蔣中正, 蔣經國",
+      "description": "中華民國政府在臺灣實施戒嚴，維持威權統治。",
+      "impact": "延長黨國體制，但也帶來社會穩定和經濟發展。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中華民國"
+    },
+    {
+      "event_name": "中華民國民主化",
+      "start_year": 1991,
+      "end_year": null,
+      "key_figures": "李登輝",
+      "description": "中華民國終止動員戡亂時期，進行政治改革，實現民主化。",
+      "impact": "中華民國轉型為多黨自由競爭的自由民主國家。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中華民國"
+    },
+    {
+      "event_name": "中華民國首次政黨輪替",
+      "start_year": 2000,
+      "end_year": null,
+      "key_figures": "陳水扁",
+      "description": "民主進步黨在總統選舉中獲勝，實現中華民國首次和平政黨輪替。",
+      "impact": "確立中華民國憲政秩序運作常態，鞏固民主體制。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中華民國"
+    }
+  ],
+  "timestamp": "2026-01-20T18:12:26.101343Z"
+}

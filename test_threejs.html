@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Timeline</title>
+    <style>
+        body { margin: 0; background: black; color: white; }
+        #test { padding: 20px; }
+    </style>
+</head>
+<body>
+    <div id="test">
+        <h1>Timeline Test</h1>
+        <p>Loading...</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        console.log('Three.js loaded:', typeof THREE);
+
+        try {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer();
+
+            document.getElementById('test').innerHTML = '<h1>Success!</h1><p>Three.js is working</p>';
+            console.log('WebGL initialized successfully');
+        } catch (error) {
+            document.getElementById('test').innerHTML = '<h1>Error</h1><p>' + error.message + '</p>';
+            console.error('Error:', error);
+        }
+    </script>
+</body>
+</html>

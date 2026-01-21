@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Historical Timeline: Time Travel Through History</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        #container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #threejs-canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Event label styles */
+        .event-label {
+            background: rgba(0, 0, 0, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            padding: 5px 9px;
+            color: #fff;
+            font-size: 11px;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+            pointer-events: none;
+            white-space: nowrap;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .event-label.hidden {
+            display: none;
+        }
+
+        /* Period display panels */
+        .period-panel {
+            position: absolute;
+            top: 20px;
+            width: 180px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .period-panel.left {
+            left: 20px;
+        }
+
+        .period-panel.right {
+            right: 20px;
+        }
+
+        .period-panel h3 {
+            font-size: 12px;
+            margin-bottom: 8px;
+            color: #4a9eff;
+        }
+
+        .period-panel .period {
+            font-size: 14px;
+            color: #ffa500;
+            font-weight: 500;
+        }
+
+        /* Current year display */
+        #current-year {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Event detail modal */
+        #event-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: rgba(20, 20, 30, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-content h2 {
+            color: #4a9eff;
+            margin-bottom: 15px;
+        }
+
+        .modal-content .meta {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .modal-content .description {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .modal-content .impact {
+            color: #ffa500;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .modal-content .figures {
+            color: #4a9eff;
+            margin-bottom: 15px;
+        }
+
+        #close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Loading indicator */
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 18px;
+            z-index: 100;
+        }
+
+        /* Instructions */
+        #instructions {
+            position: absolute;
+            bottom: 70px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            max-width: 300px;
+            backdrop-filter: blur(10px);
+        }
+
+        #instructions h4 {
+            margin-bottom: 10px;
+            color: #4a9eff;
+        }
+
+        #instructions p {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        /* Search Box */
+        #search-container {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        #search-input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            width: 200px;
+            outline: none;
+        }
+
+        #search-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        #search-results {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(20, 20, 30, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            max-width: 400px;
+            max-height: 400px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1001;
+        }
+
+        #search-results.active {
+            display: block;
+        }
+
+        .search-result-item {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background 0.2s;
+        }
+
+        .search-result-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .search-result-item .event-name {
+            font-size: 14px;
+            color: #4a9eff;
+            margin-bottom: 5px;
+        }
+
+        .search-result-item .event-info {
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Legend */
+        #legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <canvas id="threejs-canvas"></canvas>
+
+        <!-- Period display panels -->
+        <div class="period-panel left">
+            <h3>Europe</h3>
+            <div class="period" id="europe-period">Loading...</div>
+        </div>
+
+        <div class="period-panel right">
+            <h3>China</h3>
+            <div class="period" id="china-period">Loading...</div>
+        </div>
+
+        <!-- Current year display -->
+        <div id="current-year">0 AD</div>
+
+        <!-- Instructions -->
+        <div id="instructions">
+            <h4>Time Travel Controls</h4>
+            <p>🖱️ Scroll or drag to travel through time<br>
+            ⌨️ Arrow keys or WASD to navigate<br>
+            🏠 Home/End: Jump to present/ancient times<br>
+            👆 Click dots for event details<br>
+            📱 Touch/swipe on mobile devices</p>
+        </div>
+
+        <!-- Search Box -->
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="🔍 Search events...">
+        </div>
+
+        <!-- Search Results -->
+        <div id="search-results"></div>
+
+        <!-- Legend -->
+        <div id="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff6b6b;"></div>
+                <span>Military</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #4ecdc4;"></div>
+                <span>Political</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ffe66d;"></div>
+                <span>Cultural</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #a8e6cf;"></div>
+                <span>Economic</span>
+            </div>
+        </div>
+
+        <!-- Event detail modal -->
+        <div id="event-modal">
+            <div class="modal-content">
+                <button id="close-modal">&times;</button>
+                <h2 id="event-title">Event Title</h2>
+                <div class="meta" id="event-meta">Year • Category • Region</div>
+                <div class="description" id="event-description">Event description...</div>
+                <div class="impact" id="event-impact">Historical impact...</div>
+                <div class="figures" id="event-figures">Key figures...</div>
+            </div>
+        </div>
+
+        <!-- Loading indicator -->
+        <div id="loading">Loading historical timeline...</div>
+    </div>
+
+    <!-- Three.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- CSS2DRenderer for text labels -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/renderers/CSS2DRenderer.js"></script>
+
+    <script>
+        // Global variables
+        let scene, camera, renderer, composer;
+        let labelRenderer;
+        let tunnel, events, cameraPath;
+        let currentYear = 0;
+        let eventsData = [];
+        let periodsData = { europe: [], china: [] };
+        let isLoading = true;
+
+        // Configuration
+        const CONFIG = {
+            tunnelRadius: 50,
+            tunnelLength: 10000,
+            eventsPerPage: 100,
+            yearRange: { min: -1500, max: 2526 }, // Extended by 500 years both ends
+            cameraSpeed: 2,
+            bloomStrength: 1.5
+        };
+
+        // Initialize the application
+        async function init() {
+            console.log('Starting timeline initialization...');
+
+            try {
+                // Clear any existing scene elements
+                if (scene) {
+                    while(scene.children.length > 0) {
+                        scene.remove(scene.children[0]);
+                    }
+                }
+
+                // Initialize global variables
+                scene = null;
+                camera = null;
+                renderer = null;
+                composer = null;
+                tunnel = null;
+                events = null;
+                cameraPath = null;
+
+                console.log('Setting up Three.js...');
+                setupThreeJS();
+                console.log('Three.js setup complete');
+
+                console.log('Setting up event listeners...');
+                setupEventListeners();
+
+                console.log('Loading data...');
+                await loadInitialData();
+                console.log(`Loaded ${eventsData.length} events`);
+
+                console.log('Creating tunnel...');
+                createTunnel();
+
+                console.log('Creating events...');
+                createEvents();
+                console.log(`Created ${eventsData.length} event markers`);
+
+                console.log('Setting up post-processing...');
+                setupPostProcessing();
+
+                console.log('Starting animation...');
+                animate();
+
+                console.log('Hiding loading...');
+                hideLoading();
+
+                console.log('Timeline initialization complete!');
+            } catch (error) {
+                console.error('Initialization error:', error);
+                const loadingEl = document.getElementById('loading');
+                if (loadingEl) {
+                    loadingEl.innerHTML = `
+                        <div style="color: #ff6b6b; text-align: center;">
+                            <h3>Timeline Loading Failed</h3>
+                            <p>Error: ${error.message}</p>
+                            <p>Check browser console for details</p>
+                            <p>Make sure WebGL is enabled in your browser</p>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // Setup Three.js scene
+        function setupThreeJS() {
+            // Check WebGL support
+            if (!window.WebGLRenderingContext) {
+                throw new Error('WebGL not supported');
+            }
+
+            const canvas = document.getElementById('threejs-canvas');
+            if (!canvas) {
+                throw new Error('Canvas element not found');
+            }
+
+            // Scene - clean black background
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x000000); // Pure black background
+            scene.fog = new THREE.Fog(0x000000, 500, 3000); // Extended fog range for visibility
+
+            // Camera
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
+            camera.position.set(0, 0, 0);
+
+            // Renderer
+            try {
+                renderer = new THREE.WebGLRenderer({
+                    canvas: canvas,
+                    antialias: false, // Disable antialiasing for better performance
+                    alpha: false
+                });
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio
+                renderer.setClearColor(0x000000);
+                renderer.shadowMap.enabled = false; // Disable shadows for performance
+
+                // Setup CSS2DRenderer for text labels
+                labelRenderer = new THREE.CSS2DRenderer();
+                labelRenderer.setSize(window.innerWidth, window.innerHeight);
+                labelRenderer.domElement.style.position = 'absolute';
+                labelRenderer.domElement.style.top = '0px';
+                labelRenderer.domElement.style.pointerEvents = 'none'; // Let clicks pass through to canvas
+                document.getElementById('container').appendChild(labelRenderer.domElement);
+
+                // Test render
+                renderer.render(scene, camera);
+
+            } catch (error) {
+                console.error('WebGL setup failed:', error);
+                // Fallback: show basic HTML timeline
+                showFallbackTimeline();
+                throw new Error('WebGL renderer initialization failed: ' + error.message);
+            }
+
+            // Lighting
+            const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
+            scene.add(ambientLight);
+
+            const pointLight = new THREE.PointLight(0xffffff, 1, 1000);
+            pointLight.position.set(0, 0, 50);
+            scene.add(pointLight);
+
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(1, 1, 1);
+            scene.add(directionalLight);
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Mouse wheel for time travel
+            window.addEventListener('wheel', onWheel, { passive: false });
+
+            // Keyboard controls
+            window.addEventListener('keydown', onKeyDown);
+
+            // Window resize
+            window.addEventListener('resize', onWindowResize);
+
+            // Modal close
+            document.getElementById('close-modal').addEventListener('click', () => {
+                document.getElementById('event-modal').style.display = 'none';
+            });
+
+            // Click outside modal to close
+            document.getElementById('event-modal').addEventListener('click', (e) => {
+                if (e.target === document.getElementById('event-modal')) {
+                    document.getElementById('event-modal').style.display = 'none';
+                }
+            });
+
+            // Canvas click for event selection
+            document.getElementById('threejs-canvas').addEventListener('click', onCanvasClick);
+
+            // Touch events for mobile
+            let touchStartY = 0;
+            document.getElementById('threejs-canvas').addEventListener('touchstart', (e) => {
+                touchStartY = e.touches[0].clientY;
+            });
+            document.getElementById('threejs-canvas').addEventListener('touchmove', (e) => {
+                const deltaY = e.touches[0].clientY - touchStartY;
+                const delta = deltaY > 0 ? -CONFIG.cameraSpeed * 2 : CONFIG.cameraSpeed * 2;
+                targetCameraZ = Math.max(-CONFIG.tunnelLength, Math.min(0, targetCameraZ + delta));
+                touchStartY = e.touches[0].clientY;
+            });
+
+            // Search functionality
+            const searchInput = document.getElementById('search-input');
+            const searchResults = document.getElementById('search-results');
+            let searchTimeout = null;
+
+            // Search input handler with debounce
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value.trim();
+
+                clearTimeout(searchTimeout);
+
+                if (query.length < 2) {
+                    searchResults.classList.remove('active');
+                    searchResults.innerHTML = '';
+                    return;
+                }
+
+                searchTimeout = setTimeout(() => {
+                    searchEvents(query);
+                }, 300); // 300ms debounce
+            });
+
+            // Close search results when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('#search-container') && !e.target.closest('#search-results')) {
+                    searchResults.classList.remove('active');
+                }
+            });
+        }
+
+        // Load initial data
+        async function loadInitialData() {
+            try {
+                // Load all events from database API
+                console.log('Loading events from database...');
+
+                const response = await fetch('/api/events');
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const allEvents = await response.json();
+
+                console.log(`Loaded ${allEvents.length} events from database`);
+
+                eventsData = allEvents;
+
+            } catch (error) {
+                console.error('Failed to load events from database:', error);
+
+                // Fallback: Use empty array - will show tunnel without events
+                eventsData = [];
+
+                // Show error message to user
+                alert('Failed to load historical events. Please check if the backend API is running.');
+            }
+
+            // Set up periods data - extended to match yearRange
+            periodsData.europe = [
+                { name: 'Ancient Period', start: -1500, end: 476 },
+                { name: 'Medieval Period', start: 476, end: 1492 },
+                { name: 'Early Modern Period', start: 1492, end: 1789 },
+                { name: 'Modern Period', start: 1789, end: 1914 },
+                { name: 'Contemporary Period', start: 1914, end: 2526 }
+            ];
+
+            periodsData.china = [
+                { name: '夏朝', start: -2070, end: -1600 },
+                { name: '商朝', start: -1600, end: -1046 },
+                { name: '周朝', start: -1046, end: -256 },
+                { name: '秦朝', start: -221, end: -207 },
+                { name: '汉朝', start: -202, end: 220 },
+                { name: '三国', start: 220, end: 280 },
+                { name: '晋朝', start: 266, end: 420 },
+                { name: '南北朝', start: 420, end: 589 },
+                { name: '隋朝', start: 581, end: 618 },
+                { name: '唐朝', start: 618, end: 907 },
+                { name: '五代十国', start: 907, end: 960 },
+                { name: '宋朝', start: 960, end: 1279 },
+                { name: '元朝', start: 1271, end: 1368 },
+                { name: '明朝', start: 1368, end: 1644 },
+                { name: '清朝', start: 1644, end: 1912 },
+                { name: '中华民国', start: 1912, end: 1949 },
+                { name: '中华人民共和国', start: 1949, end: 2526 }
+            ];
+        }
+
+        // Search events by keyword
+        function searchEvents(query) {
+            const searchResults = document.getElementById('search-results');
+
+            // Filter events by event name or description
+            const matches = eventsData.filter(event =>
+                event.event_name.toLowerCase().includes(query.toLowerCase()) ||
+                event.description.toLowerCase().includes(query.toLowerCase()) ||
+                event.key_figures.toLowerCase().includes(query.toLowerCase())
+            );
+
+            // Limit results to top 10
+            const limitedMatches = matches.slice(0, 10);
+
+            if (limitedMatches.length === 0) {
+                searchResults.innerHTML = '<div class="search-result-item" style="cursor: default; color: #888;">No events found</div>';
+            } else {
+                searchResults.innerHTML = limitedMatches.map(event => `
+                    <div class="search-result-item" data-event-year="${event.start_year}">
+                        <div class="event-name">${event.event_name}</div>
+                        <div class="event-info">${event.start_year} • ${event.category} • ${event.region}</div>
+                    </div>
+                `).join('');
+
+                // Add click handler to jump to event year
+                searchResults.querySelectorAll('.search-result-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        const year = parseInt(item.dataset.eventYear);
+                        const yearPosition = mapYearToPosition(year);
+
+                        targetCameraZ = yearPosition;
+
+                        // Close search results
+                        searchResults.classList.remove('active');
+                        document.getElementById('search-input').value = '';
+                    });
+                });
+            }
+
+            searchResults.classList.add('active');
+        }
+
+        // Generate comprehensive mock events matching database structure
+        // TODO: Replace with real database loading
+        function generateComprehensiveMockEvents() {
+            /*
+            return [
+                // European events
+                { event_name: 'Fall of Rome', start_year: 476, end_year: 476, description: 'End of Western Roman Empire', impact: 'Marked end of ancient world', key_figures: 'Odoacer', category: '政治', region: 'European', importance_level: 10 },
+                { event_name: 'Renaissance Begins', start_year: 1300, end_year: 1300, description: 'Cultural movement in Italy', impact: 'Rebirth of art and science', key_figures: 'Dante, Petrarch', category: '文化', region: 'European', importance_level: 9 },
+                { event_name: 'Columbus Discovers America', start_year: 1492, end_year: 1492, description: 'Voyage across Atlantic', impact: 'Opened New World to Europe', key_figures: 'Christopher Columbus', category: '经济', region: 'European', importance_level: 9 },
+                { event_name: 'French Revolution', start_year: 1789, end_year: 1789, description: 'Overthrow of monarchy', impact: 'Spread of democratic ideals', key_figures: 'Louis XVI, Robespierre', category: '政治', region: 'European', importance_level: 10 },
+                { event_name: 'World War I', start_year: 1914, end_year: 1918, description: 'Global conflict', impact: 'Redrew world map', key_figures: 'Wilson, Lenin', category: '军事', region: 'European', importance_level: 10 },
+                { event_name: 'World War II', start_year: 1939, end_year: 1945, description: 'Second global war', impact: 'Nuclear age begins', key_figures: 'Hitler, Churchill', category: '军事', region: 'European', importance_level: 10 },
+                { event_name: 'Fall of Berlin Wall', start_year: 1989, end_year: 1989, description: 'End of Cold War', impact: 'Unified Germany and Europe', key_figures: 'Gorbachev', category: '政治', region: 'European', importance_level: 8 },
+
+                // Chinese events
+                { event_name: 'Unification of China', start_year: 221, end_year: 221, description: 'Qin Shi Huang unifies warring states', impact: 'First unified Chinese empire', key_figures: 'Qin Shi Huang', category: '政治', region: 'Chinese', importance_level: 10 },
+                { event_name: 'Tang Dynasty Golden Age', start_year: 618, end_year: 907, description: 'Height of Chinese civilization', impact: 'Cultural and technological peak', key_figures: 'Emperor Taizong', category: '文化', region: 'Chinese', importance_level: 9 },
+                { event_name: 'Mongol Invasion', start_year: 1279, end_year: 1279, description: 'Yuan Dynasty established', impact: 'Largest contiguous empire', key_figures: 'Kublai Khan', category: '军事', region: 'Chinese', importance_level: 9 },
+                { event_name: 'Ming Dynasty', start_year: 1368, end_year: 1644, description: 'Overthrow of Mongol rule', impact: 'Maritime exploration era', key_figures: 'Zhu Yuanzhang', category: '政治', region: 'Chinese', importance_level: 8 },
+                { event_name: 'Opium Wars', start_year: 1839, end_year: 1842, description: 'Conflict with Britain', impact: 'Opening of China to West', key_figures: 'Lin Zexu', category: '军事', region: 'Chinese', importance_level: 8 },
+                { event_name: 'Chinese Revolution', start_year: 1911, end_year: 1911, description: 'End of imperial rule', impact: 'Birth of Republic of China', key_figures: 'Sun Yat-sen', category: '政治', region: 'Chinese', importance_level: 9 },
+                { event_name: 'Cultural Revolution', start_year: 1966, end_year: 1976, description: 'Political campaign', impact: 'Major social upheaval', key_figures: 'Mao Zedong', category: '政治', region: 'Chinese', importance_level: 9 },
+                { event_name: 'Reform and Opening', start_year: 1978, end_year: 1978, description: 'Economic liberalization', impact: 'China\'s rise as economic power', key_figures: 'Deng Xiaoping', category: '经济', region: 'Chinese', importance_level: 9 },
+
+                // Additional events for timeline coverage
+                { event_name: 'Ancient Greek Philosophy', start_year: -500, end_year: -300, description: 'Birth of Western philosophy', impact: 'Foundation of Western thought', key_figures: 'Socrates, Plato, Aristotle', category: '文化', region: 'European', importance_level: 8 },
+                { event_name: 'Roman Empire Peak', start_year: 100, end_year: 200, description: 'Height of Roman power', impact: 'Pax Romana period', key_figures: 'Trajan, Hadrian', category: '政治', region: 'European', importance_level: 8 },
+                { event_name: 'Silk Road Established', start_year: -130, end_year: -130, description: 'Trade route between East and West', impact: 'Connected civilizations', key_figures: 'Zhang Qian', category: '经济', region: 'Chinese', importance_level: 7 },
+                { event_name: 'Industrial Revolution', start_year: 1760, end_year: 1840, description: 'Mechanization of production', impact: 'Modern economic system', key_figures: 'James Watt, Richard Arkwright', category: '经济', region: 'European', importance_level: 9 },
+                { event_name: 'Scientific Revolution', start_year: 1543, end_year: 1687, description: 'New scientific methods', impact: 'Foundation of modern science', key_figures: 'Copernicus, Galileo, Newton', category: '文化', region: 'European', importance_level: 9 },
+                { event_name: 'Song Dynasty Innovations', start_year: 960, end_year: 1279, description: 'Technological advancements', impact: 'Chinese technological peak', key_figures: 'Various inventors', category: '文化', region: 'Chinese', importance_level: 7 }
+            ];
+            */
+            return []; // Return empty array - will be populated from database
+        }
+
+        // Create the wormhole tunnel with visual effects
+        function createTunnel() {
+            tunnel = new THREE.Group();
+
+            // Create latitude rings (纬线) - evenly spaced along the tunnel
+            const numRings = 150;
+            const ringSpacing = CONFIG.tunnelLength / numRings;
+
+            for (let i = 0; i < numRings; i++) {
+                const z = -i * ringSpacing;
+
+                // Minimal tunnel contraction: almost no narrowing (几乎不收缩)
+                const progress = i / numRings; // 0 (near) to 1 (far)
+                const contraction = 1 - progress * 0.02; // 1.0 → 0.98 (almost no narrowing)
+
+                const baseRadius = CONFIG.tunnelRadius * contraction;
+                const distortion = Math.sin(z * 0.005) * 2;
+                const radius = Math.max(10, baseRadius + distortion);
+
+                // Create ring as thick tube
+                const curve = new THREE.EllipseCurve(
+                    0, 0,            // ax, aY
+                    radius, radius,   // xRadius, yRadius
+                    0, 2 * Math.PI,  // aStartAngle, aEndAngle
+                    false,             // aClockwise
+                    0                  // aRotation
+                );
+
+                const points = curve.getPoints(128);
+                const geometry = new THREE.TubeGeometry(
+                    new THREE.CatmullRomCurve3(points.map(p => new THREE.Vector3(p.x, p.y, z))),
+                    128,             // tubularSegments
+                    0.08,             // radius (tube thickness - slightly thicker)
+                    8,                // radialSegments
+                    false              // closed
+                );
+
+                const material = new THREE.MeshBasicMaterial({
+                    color: 0xffffff,
+                    transparent: true,
+                    opacity: 0.7  // Higher opacity for better visibility
+                });
+
+                const ring = new THREE.Mesh(geometry, material);
+
+                ring.userData = { originalZ: z, index: i };
+                tunnel.add(ring);
+            }
+
+            scene.add(tunnel);
+
+            // Create longitude lines (经线) - curved lines passing through rings
+            createLongitudeLines();
+        }
+
+
+
+        // Create longitude lines (经线) - wormhole funnel/vortex effect
+        function createLongitudeLines() {
+            const meridianGroup = new THREE.Group();
+
+            const numMeridians = 36; // Number of longitude lines
+            const segmentsPerLine = 100; // Points per line for smoothness
+
+            for (let i = 0; i < numMeridians; i++) {
+                const baseAngle = (i / numMeridians) * Math.PI * 2;
+                const points = [];
+
+                // Create curved line following latitude rings (no perspective)
+                for (let j = 0; j <= segmentsPerLine; j++) {
+                    const z = -j * (CONFIG.tunnelLength / segmentsPerLine);
+
+                // Use same radius calculation as latitude rings (follow pipe shape)
+                const progress = j / segmentsPerLine;
+                const contraction = 1 - progress * 0.02; // 1.0 → 0.98 (same as rings)
+
+                const baseRadius = CONFIG.tunnelRadius * contraction;
+                const distortion = Math.sin(z * 0.005) * 2;
+                const radius = Math.max(10, baseRadius + distortion);
+
+                // Space-time curvature twist only (no perspective contraction)
+                const spiralTwist = progress * Math.PI * 3; // 0 to 1.5 rotations
+                const twistAngle = baseAngle + spiralTwist;
+
+                points.push(new THREE.Vector3(
+                    Math.cos(twistAngle) * radius,
+                    Math.sin(twistAngle) * radius,
+                    z
+                ));
+            }
+
+            // Create thick tube for longitude line
+            const curve = new THREE.CatmullRomCurve3(points);
+            const geometry = new THREE.TubeGeometry(
+                curve,
+                segmentsPerLine,  // tubularSegments
+                0.08,             // radius (tube thickness - slightly thicker)
+                8,                // radialSegments
+                false              // closed
+            );
+
+                const material = new THREE.MeshBasicMaterial({
+                    color: 0xffffff,
+                    transparent: true,
+                    opacity: 0.7  // Higher opacity same as rings
+                });
+
+                const line = new THREE.Mesh(geometry, material);
+                line.userData = { index: i };
+                meridianGroup.add(line);
+            }
+
+            scene.add(meridianGroup);
+            tunnel.meridians = meridianGroup;
+
+            console.log(`Created ${numMeridians} longitude lines with wormhole funnel effect`);
+        }
+
+
+
+        // Create event dots
+        function createEvents() {
+            events = new THREE.Group();
+
+            eventsData.forEach((event, index) => {
+                const sphereGeometry = new THREE.SphereGeometry(
+                    Math.max(0.5, event.importance_level / 2),
+                    32, 16
+                );
+
+                // Color based on category
+                let color = 0xffffff;
+                switch (event.category) {
+                    case '军事': color = 0xff6b6b; break;
+                    case '政治': color = 0x4ecdc4; break;
+                    case '文化': color = 0xffe66d; break;
+                    case '经济': color = 0xa8e6cf; break;
+                }
+
+                const sphereMaterial = new THREE.MeshPhongMaterial({
+                    color: color,
+                    transparent: true,
+                    opacity: 0.9,
+                    shininess: 30
+                });
+
+                const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+
+                sphere.userData = event;
+
+                // Position based on year and region
+                const yearPosition = mapYearToPosition(event.start_year);
+
+                // Calculate tunnel radius at this Z position (same as rings)
+                const progress = Math.abs(yearPosition) / CONFIG.tunnelLength;
+                const contraction = 1 - progress * 0.02;
+                const baseRadius = CONFIG.tunnelRadius * contraction;
+                const distortion = Math.sin(yearPosition * 0.005) * 2;
+                const radius = Math.max(10, baseRadius + distortion);
+
+                // Random angle on the appropriate half of the pipe
+                // European: left side (90° to 270°), China: right side (-90° to 90°)
+                let angle;
+                if (event.region === 'European') {
+                    // Left half of the pipe (90° to 270°)
+                    angle = Math.PI / 2 + Math.random() * Math.PI;
+                } else {
+                    // Right half of the pipe (-90° to 90°)
+                    angle = -Math.PI / 2 + Math.random() * Math.PI;
+                }
+
+                // Convert polar to cartesian coordinates
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+
+                sphere.position.set(x, y, yearPosition);
+
+                // Create text label using CSS2DObject
+                const labelDiv = document.createElement('div');
+                labelDiv.className = 'event-label';
+                labelDiv.textContent = event.event_name;
+                labelDiv.style.borderColor = '#' + color.toString(16).padStart(6, '0');
+
+                const label = new THREE.CSS2DObject(labelDiv);
+                // Position label based on region: Europe on left, China on right
+                // Offset based on event importance to avoid overlapping sphere
+                const sphereRadius = Math.max(0.5, event.importance_level / 2);
+                const labelOffset = event.region === 'European' ? -(sphereRadius + 3) : (sphereRadius + 3);
+                label.position.set(labelOffset, 0, 0);
+                sphere.add(label);
+                sphere.userData.label = label;
+
+                events.add(sphere);
+            });
+
+            scene.add(events);
+        }
+
+        // Map year to Z position
+        function mapYearToPosition(year) {
+            const yearRange = CONFIG.yearRange.max - CONFIG.yearRange.min;
+            const normalizedYear = (year - CONFIG.yearRange.min) / yearRange;
+            return -normalizedYear * CONFIG.tunnelLength;
+        }
+
+        // Setup post-processing effects (simplified)
+        function setupPostProcessing() {
+            // For now, just use basic renderer without post-processing
+            composer = { render: () => renderer.render(scene, camera) };
+        }
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+
+            const time = Date.now() * 0.001; // Time in seconds
+
+            // Smooth camera movement
+            updateCamera();
+
+            // Animate tunnel - only rotation, no opacity changes
+            if (tunnel) {
+                // Subtle rotation of entire tunnel
+                tunnel.rotation.z += 0.0001;
+            }
+
+            // Update events pulsing and visibility based on distance
+            if (events) {
+                events.children.forEach((event, index) => {
+                    const distance = Math.abs(event.position.z - camera.position.z);
+
+                    // Visibility based on distance (increased range to 3000 to match fog)
+                    const visibility = Math.max(0, Math.min(1, 1 - distance / 3000));
+
+                    // Pulse effect
+                    const pulse = 1 + Math.sin(time * 2 + index) * 0.2;
+                    event.scale.setScalar(pulse);
+
+                    // Opacity based on distance
+                    if (event.material) {
+                        event.material.opacity = visibility * 0.9 + 0.1; // Ensure minimum visibility
+                    }
+
+                    // Show label only for nearby events (distance < 500)
+                    if (event.userData.label) {
+                        const labelElement = event.userData.label.element;
+                        if (distance < 500) {
+                            labelElement.classList.remove('hidden');
+                            // Fade in based on distance
+                            const labelOpacity = 1 - (distance / 500);
+                            labelElement.style.opacity = labelOpacity;
+                        } else {
+                            labelElement.classList.add('hidden');
+                        }
+                    }
+                });
+            }
+
+            composer.render();
+            labelRenderer.render(scene, camera);
+        }
+
+        // Mouse wheel handler for time travel
+        let targetCameraZ = 0;
+        let currentCameraZ = 0;
+
+        function onWheel(event) {
+            event.preventDefault();
+            const delta = event.deltaY > 0 ? CONFIG.cameraSpeed * 5 : -CONFIG.cameraSpeed * 5;
+            targetCameraZ = Math.max(-CONFIG.tunnelLength, Math.min(0, targetCameraZ + delta));
+        }
+
+        // Keyboard controls
+        function onKeyDown(event) {
+            switch(event.key) {
+                case 'ArrowUp':
+                case 'w':
+                case 'W':
+                    event.preventDefault();
+                    targetCameraZ = Math.max(-CONFIG.tunnelLength, targetCameraZ - CONFIG.cameraSpeed * 10);
+                    break;
+                case 'ArrowDown':
+                case 's':
+                case 'S':
+                    event.preventDefault();
+                    targetCameraZ = Math.min(0, targetCameraZ + CONFIG.cameraSpeed * 10);
+                    break;
+                case 'Home':
+                    event.preventDefault();
+                    targetCameraZ = 0; // Go to present
+                    break;
+                case 'End':
+                    event.preventDefault();
+                    targetCameraZ = -CONFIG.tunnelLength; // Go to ancient times
+                    break;
+                case ' ':
+                    event.preventDefault();
+                    targetCameraZ = 0; // Spacebar to return to present
+                    break;
+            }
+        }
+
+        // Smooth camera movement
+        function updateCamera() {
+            const lerpFactor = 0.05;
+            currentCameraZ += (targetCameraZ - currentCameraZ) * lerpFactor;
+            camera.position.z = currentCameraZ;
+
+            // Update displays
+            updateCurrentYear();
+            updatePeriods();
+        }
+
+        // Update current year based on camera position
+        function updateCurrentYear() {
+            const progress = Math.abs(camera.position.z) / CONFIG.tunnelLength;
+            currentYear = Math.round(CONFIG.yearRange.min + progress * (CONFIG.yearRange.max - CONFIG.yearRange.min));
+
+            const yearDisplay = currentYear < 0 ? `${Math.abs(currentYear)} BC` : `${currentYear} AD`;
+            document.getElementById('current-year').textContent = yearDisplay;
+
+            // Debug info
+            if (window.debugMode) {
+                console.log(`Camera Z: ${camera.position.z.toFixed(1)}, Progress: ${progress.toFixed(3)}, Year: ${currentYear}`);
+            }
+        }
+
+        // Update period displays
+        function updatePeriods() {
+            // Europe period
+            const europePeriod = periodsData.europe.find(p =>
+                currentYear >= p.start && currentYear <= p.end
+            );
+            document.getElementById('europe-period').textContent =
+                europePeriod ? europePeriod.name : 'Unknown Period';
+
+            // China period
+            const chinaPeriod = periodsData.china.find(p =>
+                currentYear >= p.start && currentYear <= p.end
+            );
+            document.getElementById('china-period').textContent =
+                chinaPeriod ? chinaPeriod.name : 'Unknown Period';
+        }
+
+        // Canvas click handler
+        function onCanvasClick(event) {
+            const mouse = new THREE.Vector2();
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            const raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera(mouse, camera);
+
+            const intersects = raycaster.intersectObjects(events.children);
+            if (intersects.length > 0) {
+                const clickedEvent = intersects[0].object.userData;
+                showEventModal(clickedEvent);
+            }
+        }
+
+        // Show event modal
+        function showEventModal(event) {
+            document.getElementById('event-title').textContent = event.event_name;
+            document.getElementById('event-meta').textContent =
+                `${event.start_year} • ${event.category} • ${event.region}`;
+            document.getElementById('event-description').textContent = event.description;
+            document.getElementById('event-impact').textContent = event.impact;
+            document.getElementById('event-figures').textContent = event.key_figures;
+
+            document.getElementById('event-modal').style.display = 'flex';
+        }
+
+        // Window resize handler
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            labelRenderer.setSize(window.innerWidth, window.innerHeight);
+            // composer is a simple object, no need to resize it
+        }
+
+        // Hide loading indicator
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+            isLoading = false;
+        }
+
+        // Fallback timeline for when WebGL fails
+        function showFallbackTimeline() {
+            const container = document.getElementById('container');
+            container.innerHTML = `
+                <div style="padding: 20px; color: white; background: linear-gradient(180deg, #000011 0%, #000000 100%); min-height: 100vh;">
+                    <h1 style="color: #4a9eff; text-align: center; margin-bottom: 30px;">Historical Timeline</h1>
+                    <p style="text-align: center; color: #888; margin-bottom: 40px;">WebGL not available - showing simplified timeline</p>
+
+                    <div style="max-width: 800px; margin: 0 auto;">
+                        <div id="fallback-timeline">
+                            <!-- Timeline will be populated here -->
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 40px; color: #666;">
+                        <p>To experience the full 3D wormhole timeline, please ensure:</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>• WebGL is enabled in your browser</li>
+                            <li>• Graphics drivers are up to date</li>
+                            <li>• Try a different browser (Chrome, Firefox, Safari)</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+
+            // Create simple timeline
+            const timelineEl = document.getElementById('fallback-timeline');
+            const events = generateComprehensiveMockEvents();
+
+            events.forEach(event => {
+                const eventDiv = document.createElement('div');
+                eventDiv.style.cssText = `
+                    background: rgba(255, 255, 255, 0.1);
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    border-radius: 10px;
+                    padding: 15px;
+                    margin: 10px 0;
+                    cursor: pointer;
+                    transition: background 0.3s;
+                `;
+                eventDiv.innerHTML = `
+                    <h3 style="margin: 0 0 5px 0; color: #4a9eff;">${event.event_name}</h3>
+                    <p style="margin: 0; color: #888; font-size: 14px;">
+                        ${event.start_year} • ${event.category} • ${event.region}
+                    </p>
+                    <p style="margin: 5px 0 0 0; color: #ccc;">${event.description}</p>
+                `;
+                eventDiv.addEventListener('mouseover', () => {
+                    eventDiv.style.background = 'rgba(255, 255, 255, 0.2)';
+                });
+                eventDiv.addEventListener('mouseout', () => {
+                    eventDiv.style.background = 'rgba(255, 255, 255, 0.1)';
+                });
+                timelineEl.appendChild(eventDiv);
+            });
+        }
+
+        // Start the application when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+{
+  "region": "Chinese",
+  "year": "唐朝",
+  "events": [
+    {
+      "event_name": "贞观之治",
+      "start_year": 627,
+      "end_year": 649,
+      "key_figures": "唐太宗李世民",
+      "description": "唐太宗在位期间，推行一系列改革，使政治清明、经济繁荣、国力强盛，史称贞观之治。",
+      "impact": "贞观之治奠定了唐朝的强盛基础，促进了社会的稳定和繁荣，影响深远。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/唐朝"
+    },
+    {
+      "event_name": "安史之乱",
+      "start_year": 755,
+      "end_year": 763,
+      "key_figures": "安禄山、史思明",
+      "description": "唐朝天宝年间，安禄山与史思明发动叛乱，史称安史之乱，叛军一度攻占长安。",
+      "impact": "安史之乱是唐朝由盛转衰的转折点，导致藩镇割据、宦官专权等问题加剧。",
+      "category": "军事",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/唐朝"
+    },
+    {
+      "event_name": "唐朝灭亡",
+      "start_year": 907,
+      "end_year": null,
+      "key_figures": "朱温",
+      "description": "唐朝末年，政治腐败，黄巢起义动摇国本，最终朱温篡位，建立后梁，唐朝灭亡。",
+      "impact": "唐朝灭亡标志着中国进入五代十国时期，结束了唐朝289年的统治。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/唐朝"
+    },
+    {
+      "event_name": "唐朝灭亡，五代十国开始",
+      "start_year": 907,
+      "end_year": null,
+      "key_figures": "朱温",
+      "description": "907年，后梁建立，标志着唐朝灭亡和五代十国时期的开始。",
+      "impact": "唐朝灭亡，中央政权崩溃，藩镇割据局面延续。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/五代十国"
+    },
+    {
+      "event_name": "后梁建立",
+      "start_year": 907,
+      "end_year": null,
+      "key_figures": "朱温",
+      "description": "907年，朱温篡唐建立后梁，定都开封，五代十国时期的第一个朝代。",
+      "impact": "标志着五代十国时期的正式开始，中原地区进入频繁政权更迭的阶段。",
+      "category": "政治",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/五代十国"
+    },
+    {
+      "event_name": "词的发展",
+      "start_year": 907,
+      "end_year": 960,
+      "key_figures": "冯延巳、李煜等词人",
+      "description": "五代十国时期是词发展的关键时期，涌现出许多著名词人。",
+      "impact": "为宋词的繁荣奠定了基础。",
+      "category": "文化",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/五代十国"
+    },
+    {
+      "event_name": "吴越国发展经济",
+      "start_year": 907,
+      "end_year": 975,
+      "key_figures": "钱镠",
+      "description": "吴越国重视经济发展，发展贸易、茶叶、纺织业。",
+      "impact": "吴越国成为十国中经济最繁荣的政权之一，为宋朝经济政策提供了借鉴。",
+      "category": "经济",
+      "importance_level": 6,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/五代十国"
+    }
+  ],
+  "timestamp": "2026-01-20T18:07:42.436066Z"
+}

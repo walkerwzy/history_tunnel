@@ -1,0 +1,151 @@
+{
+  "region": "Chinese",
+  "year": "周朝",
+  "events": [
+    {
+      "event_name": "成康之治",
+      "start_year": -1020,
+      "end_year": -990,
+      "key_figures": "周成王, 周康王",
+      "description": "周成王和康王统治时期，国家繁荣，社会稳定，文化经济全面发展。",
+      "impact": "促进了中华文明的全盛，为后世提供了治理范例。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/周朝"
+    },
+    {
+      "event_name": "诗经的形成",
+      "start_year": -1000,
+      "end_year": -400,
+      "key_figures": "孔子, 诗经编纂者",
+      "description": "诗经在西周至春秋时期形成，收录民间诗歌和宫廷乐歌，成为中国最早的诗歌总集。",
+      "impact": "对后世文学、哲学和文化产生了深远影响，奠定了中国文学的基础。",
+      "category": "文化",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/周朝"
+    },
+    {
+      "event_name": "秦国建立",
+      "start_year": -905,
+      "end_year": null,
+      "key_figures": "秦非子",
+      "description": "公元前905年，秦非子因善于养马，得到周孝王赏识，受封秦地，建立秦国。",
+      "impact": "奠定了秦国的基础，为后来的统一中国创造了条件。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/秦朝"
+    },
+    {
+      "event_name": "国人暴动与共和行政",
+      "start_year": -841,
+      "end_year": -841,
+      "key_figures": "共伯",
+      "description": "周朝发生国人暴动，政权由共伯行政，标志着周王权衰落和政治动荡开始。",
+      "impact": "导致周朝中央权力下降，诸侯国势力增强，加速了东周时期的分裂。",
+      "category": "政治",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/周朝"
+    },
+    {
+      "event_name": "犬戎之祸",
+      "start_year": -771,
+      "end_year": -771,
+      "key_figures": "周幽王, 犬戎",
+      "description": "周幽王被犬戎所杀，西周灭亡，东周开始。",
+      "impact": "结束了西周时期，标志着中国从分封制向郡县制转变的开始。",
+      "category": "军事",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/周朝"
+    },
+    {
+      "event_name": "平王东迁",
+      "start_year": -770,
+      "end_year": -770,
+      "key_figures": "周平王",
+      "description": "周平王迁都到雒邑（今河南洛阳），东周时期开始。",
+      "impact": "周王权进一步衰落，诸侯国崛起，'礼乐征伐自天子出'的局面结束。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/周朝"
+    },
+    {
+      "event_name": "秦襄公受封",
+      "start_year": -770,
+      "end_year": null,
+      "key_figures": "秦襄公",
+      "description": "公元前770年，秦襄公因护送周平王东迁有功，受封于关中平原，成为一方诸侯。",
+      "impact": "加强了秦国在周朝的地位，奠定了其发展基础。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/秦朝"
+    },
+    {
+      "event_name": "齐桓公尊王攘夷",
+      "start_year": -707,
+      "end_year": null,
+      "key_figures": "齐桓公",
+      "description": "齐桓公领导尊王攘夷运动，成为春秋五霸之一，维护周王名义权威。",
+      "impact": "促进了诸侯国间的合作，但实际削弱了周王权，加速了东周的混乱。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/周朝"
+    },
+    {
+      "event_name": "青铜器工艺高峰",
+      "start_year": -700,
+      "end_year": -700,
+      "key_figures": "周朝工匠",
+      "description": "周朝青铜器制造达到高峰，代表作品如毛公鼎、大盂鼎等，工艺精湛。",
+      "impact": "推动了古代冶金技术的发展，体现了周朝物质文明的成就。",
+      "category": "技术",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/周朝"
+    },
+    {
+      "event_name": "战国七雄合纵连横",
+      "start_year": -475,
+      "end_year": -221,
+      "key_figures": "苏秦, 张仪",
+      "description": "战国时期各国进行合纵（南北联合）和连横（东西联合）外交策略，争夺霸权。",
+      "impact": "加速了战国时期的兼并战争，为秦统一中国创造了条件。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/周朝"
+    },
+    {
+      "event_name": "商鞅变法",
+      "start_year": -359,
+      "end_year": null,
+      "key_figures": "商鞅",
+      "description": "战国时期，商鞅在秦国推行变法，包括统一车辆、文字、伦理，以及政治、军事、经济改革，使秦国成为强国。",
+      "impact": "使秦国迅速崛起，为统一六国奠定了基础。",
+      "category": "政治",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/秦朝"
+    },
+    {
+      "event_name": "秦灭周",
+      "start_year": -256,
+      "end_year": -256,
+      "key_figures": "秦昭襄王, 周赧王",
+      "description": "秦昭襄王废黜周赧王，东周灭亡，秦朝建立。",
+      "impact": "结束了周朝长达800多年的统治，开启了中国统一的新时代。",
+      "category": "军事",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/周朝"
+    }
+  ],
+  "timestamp": "2026-01-20T18:07:42.430621Z"
+}

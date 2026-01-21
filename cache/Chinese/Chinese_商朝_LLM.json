@@ -1,0 +1,67 @@
+{
+  "region": "Chinese",
+  "year": "商朝",
+  "events": [
+    {
+      "event_name": "盘庚迁殷",
+      "start_year": -1401,
+      "end_year": null,
+      "key_figures": "盘庚",
+      "description": "商王盘庚将都城迁至殷（今河南安阳），稳定了政治中心，促进了商朝的繁荣。",
+      "impact": "迁都殷墟使商朝进入稳定发展时期，奠定了后世都城制度的基础。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/商朝"
+    },
+    {
+      "event_name": "牧野之战",
+      "start_year": -1046,
+      "end_year": null,
+      "key_figures": "帝辛、周武王",
+      "description": "周武王联合诸侯在牧野击败商朝末代君主帝辛，导致商朝灭亡。",
+      "impact": "标志着中国历史上从商朝到周朝的政权更迭，影响了后世分封制和礼乐制度的形成。",
+      "category": "军事",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/商朝"
+    },
+    {
+      "event_name": "周武王灭商建周",
+      "start_year": -1046,
+      "end_year": null,
+      "key_figures": "周武王, 商纣王",
+      "description": "周武王领导军队灭商朝，建立西周王朝，定都镐京。",
+      "impact": "标志着中国历史的新时代，奠定了周朝的统治基础和封建制度。",
+      "category": "政治",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/周朝"
+    },
+    {
+      "event_name": "三监之乱",
+      "start_year": -1046,
+      "end_year": -1043,
+      "key_figures": "周公",
+      "description": "商朝遗民叛乱，周公东征平定叛乱，稳定了周朝统治。",
+      "impact": "加强了周朝的中央集权，推广了分封制，但未完全解决王权衰落问题。",
+      "category": "军事",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/周朝"
+    },
+    {
+      "event_name": "礼乐制度的建立",
+      "start_year": -1046,
+      "end_year": -771,
+      "key_figures": "周公",
+      "description": "周公制定礼乐制度，规范社会行为、礼仪和音乐，强化宗法和封建制度。",
+      "impact": "深刻影响后世中国文化和社会结构，奠定了儒家思想的基础。",
+      "category": "文化",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/周朝"
+    }
+  ],
+  "timestamp": "2026-01-20T18:07:42.429882Z"
+}

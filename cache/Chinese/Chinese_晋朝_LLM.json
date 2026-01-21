@@ -1,0 +1,163 @@
+{
+  "region": "Chinese",
+  "year": "晋朝",
+  "events": [
+    {
+      "event_name": "八王之乱",
+      "start_year": 299,
+      "end_year": 306,
+      "key_figures": "司马炎、司马衷、司马颖、司马亮等",
+      "description": "西晋皇族为争夺中央权力爆发的长期内乱，导致国家元气大伤。",
+      "impact": "削弱西晋统治基础，为五胡乱华创造条件。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "event_name": "五胡乱华",
+      "start_year": 304,
+      "end_year": 316,
+      "key_figures": "匈奴、鲜卑、羯、羌、氐等各族",
+      "description": "北方游牧民族趁西晋内乱进入中原，建立多个政权，史称五胡乱华。",
+      "impact": "导致西晋灭亡，中国进入分裂的十六国时期。",
+      "category": "军事",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "event_name": "玄学兴起",
+      "start_year": 316,
+      "end_year": 420,
+      "key_figures": "嵇康、阮籍、向秀、郭象",
+      "description": "魏晋时期玄学思想兴起，成为士人精神寄托。",
+      "impact": "推动哲学思想发展，促进儒释道思想融合。",
+      "category": "文化",
+      "importance_level": 6,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "event_name": "清谈之风盛行",
+      "start_year": 316,
+      "end_year": 420,
+      "key_figures": "王衍、乐广、张华等",
+      "description": "士人阶层崇尚清谈玄理，形成独特文化现象。",
+      "impact": "反映乱世中知识分子的精神追求，但被批评脱离现实。",
+      "category": "文化",
+      "importance_level": 5,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "event_name": "佛教与道教发展",
+      "start_year": 316,
+      "end_year": 420,
+      "key_figures": "道家、佛家僧人",
+      "description": "东晋时期佛教继续传播，道教理论体系进一步完善。",
+      "impact": "促进宗教文化融合，丰富中华传统文化内涵。",
+      "category": "宗教",
+      "importance_level": 5,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "event_name": "侨民与土著融合",
+      "start_year": 316,
+      "end_year": 420,
+      "key_figures": "南迁士族、北方流民",
+      "description": "北方移民与南方土著在东晋社会中逐渐融合。",
+      "impact": "形成新的社会结构，促进南北文化交流。",
+      "category": "社会",
+      "importance_level": 6,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "event_name": "晋室南迁建东晋",
+      "start_year": 317,
+      "end_year": null,
+      "key_figures": "司马睿、王导、王敦",
+      "description": "晋元帝司马睿在建康（南京）重建晋朝政权，史称东晋。",
+      "impact": "开启南方政权延续近百年，形成南北对峙格局。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "event_name": "江南经济开发",
+      "start_year": 317,
+      "end_year": 420,
+      "key_figures": "侨姓世族、吴姓世族",
+      "description": "东晋时期江南地区得到大规模开发，庄园经济兴起。",
+      "impact": "促进中国经济重心南移，为后世南方繁荣奠定基础。",
+      "category": "经济",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "event_name": "王敦之乱",
+      "start_year": 322,
+      "end_year": 324,
+      "key_figures": "王敦",
+      "description": "东晋宗室将领王敦叛乱，攻入建康，打击朝廷权威。",
+      "impact": "暴露东晋“侨姓世族”与“吴姓世族”矛盾，削弱皇权。",
+      "category": "军事",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "event_name": "苏峻之乱",
+      "start_year": 323,
+      "end_year": 324,
+      "key_figures": "苏峻、祖逖",
+      "description": "东晋将领苏峻联合其盟友叛乱，攻占建康，后被平定。",
+      "impact": "进一步动摇东晋统治，促使朝廷依赖北伐将领。",
+      "category": "军事",
+      "importance_level": 6,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "event_name": "桓温专政",
+      "start_year": 342,
+      "end_year": 354,
+      "key_figures": "桓温",
+      "description": "东晋大将桓温独揽朝政，多次北伐意图恢复中原。",
+      "impact": "桓氏权势达到顶峰，但北伐受挫，加深朝廷猜忌。",
+      "category": "政治",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "event_name": "淝水之战",
+      "start_year": 383,
+      "end_year": 383,
+      "key_figures": "谢玄、谢安、刘牢之、苻坚、谢石",
+      "description": "东晋在淝水之战中以少胜多，大败前秦主力，保全国家。",
+      "impact": "奠定东晋对北方的短暂控制，改变南北力量对比。",
+      "category": "军事",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "event_name": "刘裕崛起与代晋建宋",
+      "start_year": 404,
+      "end_year": 420,
+      "key_figures": "刘裕",
+      "description": "东晋将领刘裕平定内乱，掌握大权，最终篡位建立宋朝。",
+      "impact": "结束东晋统治，开启南北朝对峙时期。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/晋朝"
+    }
+  ],
+  "timestamp": "2026-01-20T18:07:42.433996Z"
+}

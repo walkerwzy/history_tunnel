@@ -1,0 +1,79 @@
+{
+  "region": "Chinese",
+  "year": "秦朝",
+  "events": [
+    {
+      "event_name": "秦朝建立",
+      "start_year": -221,
+      "end_year": null,
+      "key_figures": "秦王政, 秦始皇",
+      "description": "公元前221年，秦王政自称为始皇帝，建立秦朝，定都咸阳。",
+      "impact": "标志着中国进入大一统中央集权帝国时代，统一了文字、货币和度量衡。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/秦朝"
+    },
+    {
+      "event_name": "秦始皇称帝与改革",
+      "start_year": -221,
+      "end_year": null,
+      "key_figures": "秦始皇",
+      "description": "秦始皇推行一系列改革，包括皇帝制度、三公九卿制、郡县制，以及经济、交通和防务政策，巩固中央集权统治。",
+      "impact": "加强了国家统一，但过度集权导致民怨沸腾，埋下灭亡隐患。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/秦朝"
+    },
+    {
+      "event_name": "统一货币和度量衡",
+      "start_year": -221,
+      "end_year": null,
+      "key_figures": "秦始皇",
+      "description": "秦始皇推行统一货币（秦半两）和度量衡，促进全国经济统一和贸易便利。",
+      "impact": "促进了经济发展和行政管理，奠定了中国统一经济基础。",
+      "category": "经济",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/秦朝"
+    },
+    {
+      "event_name": "修长城",
+      "start_year": -215,
+      "end_year": null,
+      "key_figures": "秦始皇",
+      "description": "秦始皇下令修建长城，以防御北方匈奴的侵扰，连接和加固原有防御工事。",
+      "impact": "加强了北方边境安全，是中国历史上重要的防御工程，影响后世。",
+      "category": "军事",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/秦朝"
+    },
+    {
+      "event_name": "修灵渠",
+      "start_year": -214,
+      "end_year": null,
+      "key_figures": "秦始皇",
+      "description": "秦始皇下令修建灵渠，连接长江和珠江水系，便利南北交通和物资运输。",
+      "impact": "加强了南方开发和全国交通网络，促进了经济文化交流。",
+      "category": "经济、交通",
+      "importance_level": 6,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/秦朝"
+    },
+    {
+      "event_name": "焚书坑儒",
+      "start_year": -213,
+      "end_year": null,
+      "key_figures": "秦始皇, 李斯",
+      "description": "秦始皇为统一思想，下令焚烧儒家书籍，并坑杀儒生，以钳制人民思想。",
+      "impact": "导致文化损失，强化了中央集权，但激化了社会矛盾，加速了秦朝的灭亡。",
+      "category": "文化",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/秦朝"
+    }
+  ],
+  "timestamp": "2026-01-20T18:07:42.431944Z"
+}

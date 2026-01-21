@@ -1,0 +1,127 @@
+{
+  "region": "Chinese",
+  "year": "中华人民共和国",
+  "events": [
+    {
+      "event_name": "中華人民共和國成立",
+      "start_year": 1949,
+      "end_year": null,
+      "key_figures": "毛澤東",
+      "description": "中國共產黨在北京宣告成立中華人民共和國，結束國共內戰。",
+      "impact": "中國大陸建立社會主義制度，開啟新中國歷史。",
+      "category": "政治",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中华人民共和国"
+    },
+    {
+      "event_name": "土地改革運動",
+      "start_year": 1949,
+      "end_year": 1953,
+      "key_figures": "毛澤東",
+      "description": "中華人民共和國開展土地改革，沒收地主土地分配給農民。",
+      "impact": "摧毀封建土地制度，為社會主義改造奠定基礎。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中华人民共和国"
+    },
+    {
+      "event_name": "抗美援朝戰爭",
+      "start_year": 1950,
+      "end_year": 1953,
+      "key_figures": "毛澤東, 彭德懷",
+      "description": "中國人民志願軍入朝作戰，抗擊美國為首的聯合國軍隊。",
+      "impact": "維護中國安全，增強民族自信，提升國際地位。",
+      "category": "軍事",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中华人民共和国"
+    },
+    {
+      "event_name": "社會主義改造",
+      "start_year": 1953,
+      "end_year": 1956,
+      "key_figures": "毛澤東",
+      "description": "中華人民共和國完成農業、手工業和資本主義工商業的社會主義改造。",
+      "impact": "建立社會主義經濟制度，但也帶來後續問題。",
+      "category": "經濟",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中华人民共和国"
+    },
+    {
+      "event_name": "大躍進運動",
+      "start_year": 1958,
+      "end_year": 1962,
+      "key_figures": "毛澤東",
+      "description": "中華人民共和國發動大躍進，追求經濟快速發展。",
+      "impact": "造成嚴重經濟損失和饑荒，影響深遠。",
+      "category": "經濟",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中华人民共和国"
+    },
+    {
+      "event_name": "文化大革命",
+      "start_year": 1966,
+      "end_year": 1976,
+      "key_figures": "毛澤東",
+      "description": "中華人民共和國發動文化大革命，開展政治運動。",
+      "impact": "造成社會動盪和經濟損失，但也為後續改革創造條件。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中华人民共和国"
+    },
+    {
+      "event_name": "改革開放",
+      "start_year": 1978,
+      "end_year": null,
+      "key_figures": "鄧小平",
+      "description": "中華人民共和國實施改革開放，轉向市場經濟。",
+      "impact": "帶來經濟高速增長，國力大幅提升。",
+      "category": "經濟",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中华人民共和国"
+    },
+    {
+      "event_name": "香港回歸",
+      "start_year": 1997,
+      "end_year": null,
+      "key_figures": "鄧小平, 江澤民",
+      "description": "中華人民共和國收回香港，實施一國兩制。",
+      "impact": "結束中國最後殖民地歷史，實現國家統一。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中华人民共和国"
+    },
+    {
+      "event_name": "澳門回歸",
+      "start_year": 1999,
+      "end_year": null,
+      "key_figures": "江澤民",
+      "description": "中華人民共和國收回澳門，實施一國兩制。",
+      "impact": "完成中國大陸統一進程，實現祖國完全統一。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中华人民共和国"
+    },
+    {
+      "event_name": "中國加入世界貿易組織",
+      "start_year": 2001,
+      "end_year": null,
+      "key_figures": "江澤民",
+      "description": "中華人民共和國加入世界貿易組織，深化改革開放。",
+      "impact": "加速中國經濟全球化，提升國際影響力。",
+      "category": "經濟",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/中华人民共和国"
+    }
+  ],
+  "timestamp": "2026-01-20T18:12:26.102763Z"
+}

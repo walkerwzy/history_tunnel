@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": {
+    "api": {
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  },
+  "routes": [
+    {
+      "src": "server.js",
+      "dest": "/api",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    {
+      "src": "server.js",
+      "dest": "/*"
+    }
+  ],
+  "env": {
+    "PORT": "8000"
+  }
+}

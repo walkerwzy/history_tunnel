@@ -1,0 +1,1 @@
+Whenever you execute a shell command, always wrap it with `conda run -n pyth312 --no-capture-output`. For example, instead of `python main.py`, run `conda run -n pyth312 --no-capture-output python main.py`.

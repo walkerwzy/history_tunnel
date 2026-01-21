@@ -1,0 +1,67 @@
+{
+  "region": "Chinese",
+  "year": "南北朝",
+  "events": [
+    {
+      "event_name": "隋朝建立",
+      "start_year": 581,
+      "end_year": null,
+      "key_figures": "杨坚",
+      "description": "581年，杨坚受禅建立隋朝，取代北周，开启隋唐盛世。",
+      "impact": "结束南北朝分裂局面，奠定大一统国家的基础。",
+      "category": "政治",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/隋朝"
+    },
+    {
+      "event_name": "确立三省六部制和科举制度",
+      "start_year": 581,
+      "end_year": null,
+      "key_figures": "杨坚",
+      "description": "隋文帝时期确立三省六部制和科举制度，改革政治体制。",
+      "impact": "影响后世唐朝和宋朝的政治制度，促进人才选拔和社会流动。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/隋朝"
+    },
+    {
+      "event_name": "废除后梁",
+      "start_year": 587,
+      "end_year": null,
+      "key_figures": "隋文帝杨坚",
+      "description": "587年，隋文帝废除后梁，进一步统一中国。",
+      "impact": "加强中央集权，促进全国统一进程。",
+      "category": "政治",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/隋朝"
+    },
+    {
+      "event_name": "隋灭陈之战",
+      "start_year": 589,
+      "end_year": null,
+      "key_figures": "杨坚, 陈后主",
+      "description": "589年，隋军攻灭陈朝，俘虏陈后主，统一全国。",
+      "impact": "结束自魏晋南北朝以来的长期分裂，实现大一统。",
+      "category": "军事",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/隋朝"
+    },
+    {
+      "event_name": "冼夫人归附",
+      "start_year": 589,
+      "end_year": null,
+      "key_figures": "冼夫人",
+      "description": "589年，岭南地区首领冼夫人归附隋朝，巩固隋朝对南方的控制。",
+      "impact": "加强隋朝对边远地区的统治，促进民族融合。",
+      "category": "政治",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/隋朝"
+    }
+  ],
+  "timestamp": "2026-01-20T18:07:42.434763Z"
+}

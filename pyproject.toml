@@ -1,0 +1,28 @@
+[project]
+name = "timeline-api"
+version = "1.0.0"
+description = "Historical Timeline API Server"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "sqlalchemy>=2.0.0",
+    "python-multipart>=0.0.6",
+]
+
+[project.scripts]
+timeline-server = "api_server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.hatch.build]
+include = [
+    "/api_server.py",
+    "/enhanced_database_manager.py",
+    "/database_manager.py",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

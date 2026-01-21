@@ -1,0 +1,79 @@
+{
+  "region": "Chinese",
+  "year": "元朝",
+  "events": [
+    {
+      "event_name": "元日战争失败",
+      "start_year": 1281,
+      "end_year": 1281,
+      "key_figures": "忽必烈",
+      "description": "1281年，元朝舰队在侵略日本时遭遇台风（神风）而失败，元日战争以失败告终。",
+      "impact": "这次失败暴露了元朝军事行动的局限性，削弱了其在东亚的影响力，并被视为一个转折点。",
+      "category": "军事",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/元朝"
+    },
+    {
+      "event_name": "元朝领土达到全盛",
+      "start_year": 1309,
+      "end_year": null,
+      "key_figures": "元武宗",
+      "description": "1309年，元朝在元武宗时期领土达到全盛，西到吐鲁番，东到日本海，北至俄罗斯南部。",
+      "impact": "这标志着元朝的鼎盛时期，领土范围远超前代，体现了蒙古帝国的扩张成就，但未能持久。",
+      "category": "政治",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/元朝"
+    },
+    {
+      "event_name": "红巾军起义",
+      "start_year": 1351,
+      "end_year": null,
+      "key_figures": "韩山童, 赵普胜",
+      "description": "1351年，红巾军起义爆发，由元朝内部不满者领导，引发大规模农民叛乱。",
+      "impact": "红巾军起义最终导致元朝灭亡和明朝建立，是中国历史上重要的农民起义事件，推动了社会变革。",
+      "category": "政治/军事",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/元朝"
+    },
+    {
+      "event_name": "三国演义成书",
+      "start_year": 1360,
+      "end_year": 1360,
+      "key_figures": "罗贯中",
+      "description": "罗贯中创作《三国演义》，成为中国古典小说四大名著之一。",
+      "impact": "《三国演义》将三国历史文学化，对后世文学、戏曲、影视等产生了深远影响。",
+      "category": "文化",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/三国"
+    },
+    {
+      "event_name": "元朝灭亡",
+      "start_year": 1368,
+      "end_year": null,
+      "key_figures": "朱元璋, 徐达",
+      "description": "1368年，朱元璋建立明朝后，派军攻陷元朝大都，元朝在中原的统治结束，退居漠北。",
+      "impact": "元朝的灭亡标志着中国历史进入明朝时期，结束了元朝98年的统治，并影响了后世蒙古势力的延续。",
+      "category": "军事/政治",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/元朝"
+    },
+    {
+      "event_name": "明朝建立",
+      "start_year": 1368,
+      "end_year": null,
+      "key_figures": "朱元璋",
+      "description": "朱元璋在应天府称帝，建立明朝，元朝灭亡。",
+      "impact": "结束了元朝统治，开启了汉族统一王朝的新时代。",
+      "category": "政治",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/明朝"
+    }
+  ],
+  "timestamp": "2026-01-20T18:07:42.438964Z"
+}

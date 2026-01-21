@@ -1,0 +1,127 @@
+{
+  "region": "Chinese",
+  "year": "隋朝",
+  "events": [
+    {
+      "event_name": "隋文帝晚年苛政",
+      "start_year": 600,
+      "end_year": null,
+      "key_figures": "杨坚",
+      "description": "隋文帝晚年杀戮功臣，推行严苛刑罚，导致国力衰退。",
+      "impact": "引发内部矛盾，加速隋朝灭亡，为隋炀帝时期问题埋下伏笔。",
+      "category": "政治",
+      "importance_level": 6,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/隋朝"
+    },
+    {
+      "event_name": "隋朝对外关系",
+      "start_year": 600,
+      "end_year": null,
+      "key_figures": "遣隋使等",
+      "description": "隋朝与周边国家如日本、高句丽等有频繁外交交流，传播中国文化。",
+      "impact": "促进中外文化交流，提升隋朝国际影响力。",
+      "category": "文化",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/隋朝"
+    },
+    {
+      "event_name": "隋文帝去世和杨广继位",
+      "start_year": 604,
+      "end_year": null,
+      "key_figures": "杨坚, 杨广",
+      "description": "604年，隋文帝去世，杨广继位为隋炀帝，开启其统治时期。",
+      "impact": "标志着隋朝由盛转衰的转折点，隋炀帝的政策加剧了社会矛盾。",
+      "category": "政治",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/隋朝"
+    },
+    {
+      "event_name": "修建大运河",
+      "start_year": 605,
+      "end_year": null,
+      "key_figures": "杨广",
+      "description": "隋炀帝下令修建大运河，连接南北水道，促进经济文化交流。",
+      "impact": "提升隋朝对全国的掌控力，影响后世中国交通和经济发展。",
+      "category": "经济",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/隋朝"
+    },
+    {
+      "event_name": "科举制度的完善",
+      "start_year": 606,
+      "end_year": null,
+      "key_figures": "唐太宗、武则天",
+      "description": "唐朝推行科举制度，选拔人才，取代了隋朝的考试制度，促进了社会阶层的流动。",
+      "impact": "科举制度的完善使唐朝文化繁荣，文学艺术发展迅速，影响了后世中国一千多年的选官制度。",
+      "category": "政治",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/唐朝"
+    },
+    {
+      "event_name": "隋炀帝东征高句丽",
+      "start_year": 613,
+      "end_year": null,
+      "key_figures": "杨广",
+      "description": "隋炀帝多次东征高句丽，消耗国力并引发民变。",
+      "impact": "严重削弱隋朝国力，是隋末民变的重要导火索。",
+      "category": "军事",
+      "importance_level": 8,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/隋朝"
+    },
+    {
+      "event_name": "隋炀帝离开东都",
+      "start_year": 616,
+      "end_year": null,
+      "key_figures": "杨广",
+      "description": "616年，隋炀帝逃离东都洛阳，前往江都，中央权威开始崩溃。",
+      "impact": "暴露隋朝统治危机，加速了隋末民变和王朝灭亡。",
+      "category": "政治",
+      "importance_level": 7,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/隋朝"
+    },
+    {
+      "event_name": "李渊攻入长安",
+      "start_year": 617,
+      "end_year": null,
+      "key_figures": "李渊, 杨侑",
+      "description": "617年，李渊攻入长安，立杨侑为帝，遥尊隋炀帝为太上皇。",
+      "impact": "为唐朝建立铺路，标志着隋朝统治核心的瓦解。",
+      "category": "军事",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/隋朝"
+    },
+    {
+      "event_name": "隋朝灭亡和唐朝建立",
+      "start_year": 618,
+      "end_year": null,
+      "key_figures": "李渊, 宇文化及, 王世充",
+      "description": "618年，宇文化及发动兵变杀死隋炀帝，隋恭帝禅让李渊，唐朝建立。",
+      "impact": "隋朝结束，唐朝开始，奠定中国历史上最辉煌的盛世基础。",
+      "category": "政治",
+      "importance_level": 10,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/隋朝"
+    },
+    {
+      "event_name": "唐朝建立",
+      "start_year": 618,
+      "end_year": null,
+      "key_figures": "李渊、李世民",
+      "description": "隋末天下大乱，唐高祖李渊在晋阳起兵，于618年攻入长安，建立唐朝。",
+      "impact": "唐朝建立结束了隋朝的统治，开启了中国历史上一个辉煌的朝代。",
+      "category": "政治",
+      "importance_level": 9,
+      "region": "Chinese",
+      "source": "https://zh.wikipedia.org/wiki/唐朝"
+    }
+  ],
+  "timestamp": "2026-01-20T18:07:42.435380Z"
+}
