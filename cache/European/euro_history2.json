@@ -1,0 +1,599 @@
+{
+  "Minoan civilization": {
+    "period_name_cn": "米诺斯文明",
+    "region": "European",
+    "year": "-3000 to -1450",
+    "events": [
+      {
+        "event_name": "克诺索斯宫殿一期建设",
+        "start_year": -1900,
+        "end_year": -1900,
+        "key_figures": "米诺斯王",
+        "description": "克里特岛兴建大规模宫殿群，标志着欧洲最早文明进入繁荣期。",
+        "impact": "确立了地中海东部的航海贸易霸权。",
+        "category": "建筑/政治",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Minoan_civilization"
+      },
+      {
+        "event_name": "圣托里尼火山爆发",
+        "start_year": -1600,
+        "end_year": -1600,
+        "key_figures": "无",
+        "description": "锡拉岛火山喷发引发海啸，重创克里特岛沿岸。",
+        "impact": "导致米诺斯文明衰落，为迈锡尼人的入侵提供了机会。",
+        "category": "自然灾害/环境",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Minoan_eruption"
+      }
+    ]
+  },
+  "Mycenaean civilization": {
+    "period_name_cn": "迈锡尼文明",
+    "region": "European",
+    "year": "-1600 to -1100",
+    "events": [
+      {
+        "event_name": "线性文字B的使用",
+        "start_year": -1450,
+        "end_year": -1200,
+        "key_figures": "无",
+        "description": "迈锡尼人借用米诺斯符号创造了最早的希腊语书写系统。",
+        "impact": "证明了迈锡尼文明的希腊属性，是欧洲文字史的重要篇章。",
+        "category": "文化",
+        "importance_level": 8,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Linear_B"
+      },
+      {
+        "event_name": "特洛伊战争",
+        "start_year": -1250,
+        "end_year": -1240,
+        "key_figures": "阿伽门农",
+        "description": "迈锡尼联军远征小亚细亚的特洛伊城。",
+        "impact": "虽带有神话色彩，但反映了青铜时代晚期爱琴海权力的扩张与崩溃。",
+        "category": "军事/传说",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Trojan_War"
+      }
+    ]
+  },
+  "Hittites": {
+    "period_name_cn": "赫梯帝国（对欧影响）",
+    "region": "European",
+    "year": "-1600 to -1178",
+    "events": [
+      {
+        "event_name": "冶铁技术的扩散",
+        "start_year": -1200,
+        "end_year": -1000,
+        "key_figures": "无",
+        "description": "赫梯帝国崩溃后，原本垄断的冶铁技术经小亚细亚传向欧洲。",
+        "impact": "使欧洲从青铜时代过渡到铁器时代，极大提升了农业和战争效率。",
+        "category": "科技/生产力",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Iron_Age"
+      }
+    ]
+  },
+  "Phoenicians": {
+    "period_name_cn": "腓尼基文明（对欧影响）",
+    "region": "European",
+    "year": "-1500 to -300",
+    "events": [
+      {
+        "event_name": "腓尼基字母西传",
+        "start_year": -1050,
+        "end_year": -800,
+        "key_figures": "腓尼基商人",
+        "description": "腓尼基人将拼音字母带到希腊城邦。",
+        "impact": "直接催生了希腊字母及后来的拉丁字母，是现代西方文字之源。",
+        "category": "文化",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Phoenician_alphabet"
+      }
+    ]
+  },
+  "Ancient Greece (Early/Homeric)": {
+    "period_name_cn": "古希腊（早期/荷马时代）",
+    "region": "European",
+    "year": "-1100 to -500",
+    "events": [
+      {
+        "event_name": "第一届奥林匹克运动会",
+        "start_year": -776,
+        "end_year": -776,
+        "key_figures": "伊菲托斯",
+        "description": "在奥林匹亚举行的泛希腊体育竞赛。",
+        "impact": "形成了希腊人的共同认同感，成为西方体育精神的源头。",
+        "category": "文化",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Ancient_Olympic_Games"
+      },
+      {
+        "event_name": "库普塞罗建立僭主统治",
+        "start_year": -657,
+        "end_year": -657,
+        "key_figures": "库普塞罗",
+        "description": "科林斯的平民领袖推翻贵族统治。",
+        "impact": "开启了希腊城邦从贵族制向更广泛社会结构转型的过渡期。",
+        "category": "政治",
+        "importance_level": 7,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Cypselus"
+      }
+    ]
+  },
+  "Classical Greece": {
+    "period_name_cn": "古典希腊时期",
+    "region": "European",
+    "year": "-500 to -323",
+    "events": [
+      {
+        "event_name": "马拉松战役",
+        "start_year": -490,
+        "end_year": -490,
+        "key_figures": "米太亚德",
+        "description": "雅典军队击败第一波波斯入侵。",
+        "impact": "保卫了新兴的民主制，增强了希腊城邦的自信心。",
+        "category": "军事",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Battle_of_Marathon"
+      },
+      {
+        "event_name": "伯罗奔尼撒战争爆发",
+        "start_year": -431,
+        "end_year": -404,
+        "key_figures": "伯里克利",
+        "description": "以雅典为首的提洛同盟与以斯巴达为首的伯罗奔尼撒同盟之间的内战。",
+        "impact": "终结了雅典的黄金时代，导致希腊城邦整体实力的衰落。",
+        "category": "军事/政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Peloponnesian_War"
+      }
+    ]
+  },
+  "Hellenistic period": {
+    "period_name_cn": "希腊化时代",
+    "region": "European",
+    "year": "-323 to -31",
+    "events": [
+      {
+        "event_name": "亚历山大大帝去世",
+        "start_year": -323,
+        "end_year": -323,
+        "key_figures": "亚历山大",
+        "description": "在征服庞大领土后，亚历山大突然去世。",
+        "impact": "帝国分裂，但希腊文化在整个地中海和近东完成大融合。",
+        "category": "政治/文化",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Hellenistic_period"
+      }
+    ]
+  },
+  "Roman Republic": {
+    "period_name_cn": "罗马共和国时期",
+    "region": "European",
+    "year": "-509 to -27",
+    "events": [
+      {
+        "event_name": "第二次布匿战争",
+        "start_year": -218,
+        "end_year": -201,
+        "key_figures": "汉尼拔",
+        "description": "罗马与迦太基争夺西地中海霸权的生死之战。",
+        "impact": "罗马最终获胜，确立了地中海唯一的霸主地位。",
+        "category": "军事",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Second_Punic_War"
+      },
+      {
+        "event_name": "格拉古兄弟改革",
+        "start_year": -133,
+        "end_year": -121,
+        "key_figures": "提比略·格拉古",
+        "description": "试图通过土地改革解决罗马贫富差距与征兵难题。",
+        "impact": "引发政治暴力，标志着共和国体制进入动荡的末期。",
+        "category": "政治",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Gracchi"
+      }
+    ]
+  },
+  "Roman Empire": {
+    "period_name_cn": "罗马帝国时期",
+    "region": "European",
+    "year": "-27 to 476",
+    "events": [
+      {
+        "event_name": "屋大维受封奥古斯都",
+        "start_year": -27,
+        "end_year": -27,
+        "key_figures": "奥古斯都",
+        "description": "屋大维终结内战，正式建立元首制。",
+        "impact": "开启“罗马和平”时期，罗马进入帝国繁荣鼎盛期。",
+        "category": "政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Augustus"
+      },
+      {
+        "event_name": "君士坦丁一世承认基督教",
+        "start_year": 313,
+        "end_year": 313,
+        "key_figures": "君士坦丁大帝",
+        "description": "发布《米兰敕令》，赋予基督教合法地位。",
+        "impact": "基督教开始从受迫害的小教派向帝国官方宗教转变，重塑了欧洲精神图景。",
+        "category": "宗教",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Edict_of_Milan"
+      }
+    ]
+  },
+  "Migration Period": {
+    "period_name_cn": "民族大迁徙时代",
+    "region": "European",
+    "year": "375 to 568",
+    "events": [
+      {
+        "event_name": "阿提拉入侵高卢",
+        "start_year": 451,
+        "end_year": 451,
+        "key_figures": "阿提拉",
+        "description": "匈人王阿提拉率军侵入高卢，在沙隆战役中被罗马与西哥特联军阻击。",
+        "impact": "加速了西罗马帝国的防线崩溃，重塑了日耳曼各族的领土分布。",
+        "category": "军事/人口迁徙",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Attila"
+      }
+    ]
+  },
+  "Byzantine Empire": {
+    "period_name_cn": "拜占庭帝国",
+    "region": "European",
+    "year": "330 to 1453",
+    "events": [
+      {
+        "event_name": "查士丁尼法典颁布",
+        "start_year": 529,
+        "end_year": 534,
+        "key_figures": "查士丁尼",
+        "description": "系统化编撰罗马法律。",
+        "impact": "保存了古典法学遗产，对后世欧洲大陆法系产生决定性影响。",
+        "category": "法律",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Corpus_Juris_Civilis"
+      }
+    ]
+  },
+  "Islamic Golden Age": {
+    "period_name_cn": "伊斯兰黄金时代（对欧影响）",
+    "region": "European",
+    "year": "750 to 1258",
+    "events": [
+      {
+        "event_name": "翻译运动达到巅峰",
+        "start_year": 830,
+        "end_year": 900,
+        "key_figures": "马蒙",
+        "description": "巴格达智慧宫将古希腊科学哲学著作系统译为阿拉伯语。",
+        "impact": "这些文献后来通过西班牙传回欧洲，成为12世纪欧洲学术复兴的种子。",
+        "category": "文化/科学",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/House_of_Wisdom"
+      }
+    ]
+  },
+  "Viking Age": {
+    "period_name_cn": "维京时代",
+    "region": "European",
+    "year": "793 to 1066",
+    "events": [
+      {
+        "event_name": "林迪斯法恩修道院遇袭",
+        "start_year": 793,
+        "end_year": 793,
+        "key_figures": "无",
+        "description": "维京人首次对英格兰进行大规模血腥突袭。",
+        "impact": "标志着维京时代的开启，引发全欧防守体系的升级。",
+        "category": "军事/社会",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Attack_on_Lindisfarne"
+      }
+    ]
+  },
+  "Holy Roman Empire": {
+    "period_name_cn": "神圣罗马帝国",
+    "region": "European",
+    "year": "962 to 1806",
+    "events": [
+      {
+        "event_name": "奥托一世加冕",
+        "start_year": 962,
+        "end_year": 962,
+        "key_figures": "奥托大帝",
+        "description": "在罗马被教皇加冕为皇帝，复兴帝国传统。",
+        "impact": "形成了中世纪欧洲皇帝与教皇权力制衡的二元格局。",
+        "category": "政治/宗教",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Otto_I,_Holy_Roman_Emperor"
+      }
+    ]
+  },
+  "Crusades": {
+    "period_name_cn": "十字军东征",
+    "region": "European",
+    "year": "1095 to 1291",
+    "events": [
+      {
+        "event_name": "第一次十字军占领耶路撒冷",
+        "start_year": 1099,
+        "end_year": 1099,
+        "key_figures": "戈弗雷",
+        "description": "西欧贵族联军攻克圣城并建立十字军国家。",
+        "impact": "极大地促进了东西方贸易与知识交流，但导致宗教矛盾激化。",
+        "category": "宗教/军事",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/First_Crusade"
+      }
+    ]
+  },
+  "Mongol Empire": {
+    "period_name_cn": "蒙古帝国（对欧影响）",
+    "region": "European",
+    "year": "1206 to 1368",
+    "events": [
+      {
+        "event_name": "赛约河战役",
+        "start_year": 1241,
+        "end_year": 1241,
+        "key_figures": "速不台",
+        "description": "蒙古大军在匈牙利重创欧陆联军。",
+        "impact": "引发了欧洲对外部威胁的深刻恐惧，间接促成了“蒙古治世”下的陆路贸易繁荣。",
+        "category": "军事",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Battle_of_Mohi"
+      }
+    ]
+  },
+  "Song Dynasty (Influence)": {
+    "period_name_cn": "宋朝（对欧技术输出）",
+    "region": "European",
+    "year": "960 to 1279",
+    "events": [
+      {
+        "event_name": "指南针技术传至地中海",
+        "start_year": 1180,
+        "end_year": 1200,
+        "key_figures": "无",
+        "description": "中国的磁针航海技术经阿拉伯商人传至南欧。",
+        "impact": "是后来大航海时代跨洋航行的技术前提。",
+        "category": "科技",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Compass"
+      }
+    ]
+  },
+  "Black Death": {
+    "period_name_cn": "黑死病",
+    "region": "European",
+    "year": "1347 to 1351",
+    "events": [
+      {
+        "event_name": "鼠疫登陆热那亚",
+        "start_year": 1347,
+        "end_year": 1347,
+        "key_figures": "无",
+        "description": "黑死病经克里米亚商船传至意大利半岛。",
+        "impact": "造成欧洲人口大灭绝，动摇了庄园制和教廷权威，成为文艺复兴的催化剂。",
+        "category": "医疗/社会",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Black_Death"
+      }
+    ]
+  },
+  "Hundred Years' War": {
+    "period_name_cn": "百年战争",
+    "region": "European",
+    "year": "1337 to 1453",
+    "events": [
+      {
+        "event_name": "阿金库尔战役",
+        "start_year": 1415,
+        "end_year": 1415,
+        "key_figures": "亨利五世",
+        "description": "英格兰长弓兵击溃法军精锐骑士。",
+        "impact": "预示了重装骑士时代的终结，加速了军事技术变革。",
+        "category": "军事",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Battle_of_Agincourt"
+      }
+    ]
+  },
+  "Italian Renaissance": {
+    "period_name_cn": "意大利文艺复兴",
+    "region": "European",
+    "year": "1350 to 1550",
+    "events": [
+      {
+        "event_name": "古登堡印刷术发明",
+        "start_year": 1450,
+        "end_year": 1450,
+        "key_figures": "约翰内斯·古登堡",
+        "description": "金属活字印刷技术在美因茨成熟。",
+        "impact": "使知识大范围廉价传播成为可能，直接服务于人文主义和宗教改革。",
+        "category": "文化/科技",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Printing_press"
+      },
+      {
+        "event_name": "美第奇家族资助艺术",
+        "start_year": 1434,
+        "end_year": 1492,
+        "key_figures": "洛伦佐·德·美第奇",
+        "description": "佛罗伦萨望族对达芬奇、米开朗基罗等天才的全面赞助。",
+        "impact": "确立了西方近现代艺术赞助体系，创造了古典文明复兴的物质基础。",
+        "category": "文化/艺术",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/House_of_Medici"
+      }
+    ]
+  },
+  "Age of Discovery": {
+    "period_name_cn": "大航海时代",
+    "region": "European",
+    "year": "1415 to 1650",
+    "events": [
+      {
+        "event_name": "托尔德西里亚斯条约",
+        "start_year": 1494,
+        "end_year": 1494,
+        "key_figures": "亚历山大六世",
+        "description": "西、葡两国在教皇调解下瓜分新世界势力范围。",
+        "impact": "确立了早期全球扩张的权力格局。",
+        "category": "外交/政治",
+        "importance_level": 8,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Treaty_of_Tordesillas"
+      }
+    ]
+  },
+  "Reformation": {
+    "period_name_cn": "宗教改革",
+    "region": "European",
+    "year": "1517 to 1648",
+    "events": [
+      {
+        "event_name": "沃尔姆斯宗教会议",
+        "start_year": 1521,
+        "end_year": 1521,
+        "key_figures": "查理五世, 马丁·路德",
+        "description": "路德在神圣罗马帝国议会面前拒绝撤回学说。",
+        "impact": "正式确立了新教作为一种政治力量的存在，导致德意志长期分裂。",
+        "category": "宗教/政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Diet_of_Worms"
+      }
+    ]
+  },
+  "Scientific Revolution": {
+    "period_name_cn": "科学革命",
+    "region": "European",
+    "year": "1543 to 1687",
+    "events": [
+      {
+        "event_name": "《关于两大世界体系的对话》出版",
+        "start_year": 1632,
+        "end_year": 1632,
+        "key_figures": "伽利略",
+        "description": "公开支持哥白尼日心说，反驳托勒密地心体系。",
+        "impact": "标志着近代实验科学方法的胜利，导致其与教廷的著名司法博弈。",
+        "category": "科学",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Dialogue_Concerning_the_Two_Chief_World_Systems"
+      }
+    ]
+  },
+  "Age of Enlightenment": {
+    "period_name_cn": "启蒙运动",
+    "region": "European",
+    "year": "1715 to 1789",
+    "events": [
+      {
+        "event_name": "《论法的精神》出版",
+        "start_year": 1748,
+        "end_year": 1748,
+        "key_figures": "孟德斯鸠",
+        "description": "阐述分权学说，主张行政、立法、司法三权分立。",
+        "impact": "成为后世民主国家宪法设计的逻辑灵魂。",
+        "category": "哲学/政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/The_Spirit_of_Law"
+      }
+    ]
+  },
+  "Industrial Revolution": {
+    "period_name_cn": "工业革命（早期）",
+    "region": "European",
+    "year": "1760 to 1840",
+    "events": [
+      {
+        "event_name": "瓦特蒸汽机改良成功",
+        "start_year": 1769,
+        "end_year": 1775,
+        "key_figures": "詹姆斯·瓦特",
+        "description": "大幅提高热效率，使动力工厂能脱离河流设立。",
+        "impact": "彻底改变了人类生产方式，开启机械化时代，确立英国“世界工厂”地位。",
+        "category": "科技/经济",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Steam_engine"
+      }
+    ]
+  },
+  "World War I": {
+    "period_name_cn": "第一次世界大战",
+    "region": "European",
+    "year": "1914 to 1918",
+    "events": [
+      {
+        "event_name": "萨拉热窝事件",
+        "start_year": 1914,
+        "end_year": 1914,
+        "key_figures": "普林西普",
+        "description": "奥匈帝国皇储斐迪南大公遇刺。",
+        "impact": "直接引爆一战，终结了长达一个世纪的“欧洲协调”和平。",
+        "category": "政治/军事",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Assassination_of_Archduke_Franz_Ferdinand"
+      }
+    ]
+  },
+  "Contemporary Era": {
+    "period_name_cn": "当代时期",
+    "region": "European",
+    "year": "1991 to 2026",
+    "events": [
+      {
+        "event_name": "欧元正式流通",
+        "start_year": 2002,
+        "end_year": 2002,
+        "key_figures": "无",
+        "description": "多数欧盟国家启用单一货币替代本国货币。",
+        "impact": "欧洲经济一体化的终极体现，抗衡美元霸权。",
+        "category": "经济",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Euro"
+      }
+    ]
+  }
+}
