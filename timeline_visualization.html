@@ -486,7 +486,7 @@
             tunnelRadius: 50,
             tunnelLength: 10000,
             eventsPerPage: 100,
-            yearRange: { min: -1500, max: 2526 }, // Extended by 500 years both ends
+            yearRange: { min: -2000, max: 2526 }, // Extended to allow scrolling to -2000 BC
             cameraSpeed: 2,
             bloomStrength: 1.5,
             hashUpdateStep: 20, // Update URL hash only when year changes by this amount
@@ -824,11 +824,26 @@
 
             // Set up periods data - extended to match yearRange
             periodsData.europe = [
-                { name: 'Ancient Period', start: -1500, end: 476 },
+                { name: 'Ancient Period', start: -2000, end: 476 },
                 { name: 'Medieval Period', start: 476, end: 1492 },
                 { name: 'Early Modern Period', start: 1492, end: 1789 },
                 { name: 'Modern Period', start: 1789, end: 1914 },
                 { name: 'Contemporary Period', start: 1914, end: 2526 }
+            ];
+
+            // Flatten europeDetail into single layer for performance
+            periodsData.europeDetailFlat = [
+                { name: 'Pre-Classical Era', start: -3000, end: -800 },
+                { name: 'Classical Antiquity', start: -800, end: 476 },
+                { name: 'Early Middle Ages', start: 476, end: 1000 },
+                { name: 'High Middle Ages', start: 1000, end: 1300 },
+                { name: 'Late Middle Ages', start: 1300, end: 1492 },
+                { name: 'Age of Transition', start: 1492, end: 1648 },
+                { name: 'Age of Absolutism & Enlightenment', start: 1648, end: 1789 },
+                { name: 'The Long 19th Century', start: 1789, end: 1914 },
+                { name: 'World Wars Era', start: 1914, end: 1945 },
+                { name: 'Cold War Era', start: 1945, end: 1991 },
+                { name: 'Post-Cold War & Integration', start: 1991, end: 2026 }
             ];
 
             periodsData.china = [
@@ -1283,8 +1298,8 @@
 
         // Update period displays
         function updatePeriods() {
-            // Europe period
-            const europePeriod = periodsData.europe.find(p =>
+            // Europe period - use flattened detail periods
+            const europePeriod = periodsData.europeDetailFlat.find(p =>
                 currentYear >= p.start && currentYear <= p.end
             );
             document.getElementById('europe-period').textContent =

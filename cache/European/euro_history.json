@@ -1,0 +1,683 @@
+{
+    "Ancient Greece":
+    {
+        "period_name_cn": "古希腊（早期/荷马时代）",
+        "region": "European",
+        "year": "3000 BC - 500 BC",
+        "events":
+        [
+            {
+                "event_name": "第一届古代奥林匹克运动会",
+                "start_year": -776,
+                "end_year": -776,
+                "key_figures": "伊菲托斯",
+                "description": "为祭祀宙斯而举行的全希腊体育盛会。",
+                "impact": "确立了希腊城邦间的文化认同感，是现代奥林匹克之源。",
+                "category": "文化",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Ancient_Olympic_Games"
+            },
+            {
+                "event_name": "梭伦改革",
+                "start_year": -594,
+                "end_year": -594,
+                "key_figures": "梭伦",
+                "description": "通过《解负令》废除债务奴隶制，确立财产等级制。",
+                "impact": "从根本上动摇了氏族贵族统治，为雅典民主政治奠基。",
+                "category": "政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Solonian_Constitution"
+            }
+        ]
+    },
+    "Ancient Rome":
+    {
+        "period_name_cn": "古罗马（王政时期）",
+        "region": "European",
+        "year": "753 BC - 509 BC",
+        "events":
+        [
+            {
+                "event_name": "罗马建城传说",
+                "start_year": -753,
+                "end_year": -753,
+                "key_figures": "罗穆卢斯",
+                "description": "传说中母狼哺育的兄弟建立了罗马城。",
+                "impact": "标志着罗马文明的开端，形成了早期的氏族组织。",
+                "category": "政治/文化",
+                "importance_level": 8,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Founding_of_Rome"
+            },
+            {
+                "event_name": "驱逐塔克文与共和建立",
+                "start_year": -509,
+                "end_year": -509,
+                "key_figures": "布鲁图斯",
+                "description": "罗马人废黜末代国王，终结王政时代。",
+                "impact": "开启了长达数百年的罗马共和国时期，确立了执政官和元老院制度。",
+                "category": "政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Overthrow_of_the_Roman_monarchy"
+            }
+        ]
+    },
+    "Minoan civilization":
+    {
+        "period_name_cn": "米诺斯文明",
+        "region": "European",
+        "year": "2700 BC - 1450 BC",
+        "events":
+        [
+            {
+                "event_name": "克诺索斯宫殿建设",
+                "start_year": -1900,
+                "end_year": -1400,
+                "key_figures": "米诺斯王",
+                "description": "克里特岛上宏伟的多层宫殿群，拥有先进的供排水系统。",
+                "impact": "欧洲最早的城市文明，其航海贸易和壁画艺术深刻影响了迈锡尼。",
+                "category": "文化/建筑",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Knossos"
+            }
+        ]
+    },
+    "Mycenaean civilization":
+    {
+        "period_name_cn": "迈锡尼文明",
+        "region": "European",
+        "year": "1600 BC - 1100 BC",
+        "events":
+        [
+            {
+                "event_name": "特洛伊战争（史诗记载时期）",
+                "start_year": -1250,
+                "end_year": -1240,
+                "key_figures": "阿伽门农, 阿喀琉斯",
+                "description": "希腊诸城邦联军远征小亚细亚的特洛伊城。",
+                "impact": "迈锡尼扩张的顶峰，后成为《荷马史诗》的核心主题，塑造了希腊英雄精神。",
+                "category": "军事/传说",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Trojan_War"
+            }
+        ]
+    },
+    "Phoenicians":
+    {
+        "period_name_cn": "腓尼基文明",
+        "region": "European",
+        "year": "1500 BC - 300 BC",
+        "events":
+        [
+            {
+                "event_name": "腓尼基字母的标准化",
+                "start_year": -1050,
+                "end_year": -1000,
+                "key_figures": "腓尼基商人",
+                "description": "发明并传播了22个辅音字母体系。",
+                "impact": "直接衍生了希腊字母，是所有西方拼音文字的共同祖先。",
+                "category": "文化",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Phoenician_alphabet"
+            }
+        ]
+    },
+    "Hittites":
+    {
+        "period_name_cn": "赫梯帝国",
+        "region": "European",
+        "year": "1600 BC - 1178 BC",
+        "events":
+        [
+            {
+                "event_name": "卡迭石战役与和约",
+                "start_year": -1274,
+                "end_year": -1274,
+                "key_figures": "穆瓦塔里二世, 拉美西斯二世",
+                "description": "赫梯与埃及争夺叙利亚霸权的决战，随后签署了史上首个书面国际和平条约。",
+                "impact": "确立了近东均势，影响了后期地中海地区的政治外交模式。",
+                "category": "军事/外交",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Battle_of_Kadesh"
+            }
+        ]
+    },
+    "Classical Greece":
+    {
+        "period_name_cn": "古典希腊时期",
+        "region": "European",
+        "year": "500 BC - 323 BC",
+        "events":
+        [
+            {
+                "event_name": "马拉松战役",
+                "start_year": -490,
+                "end_year": -490,
+                "key_figures": "米太亚德",
+                "description": "雅典军队在马拉松平原击败波斯入侵军。",
+                "impact": "打破了波斯不可战胜的教条，保卫了新生的希腊民主制度。",
+                "category": "军事",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Battle_of_Marathon"
+            },
+            {
+                "event_name": "帕特农神庙建成",
+                "start_year": -432,
+                "end_year": -432,
+                "key_figures": "伯里克利, 菲狄亚斯",
+                "description": "雅典卫城核心建筑竣工。",
+                "impact": "西方古典建筑艺术的最高典范，象征雅典帝国的文化顶峰。",
+                "category": "建筑/文化",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Parthenon"
+            },
+            {
+                "event_name": "苏格拉底之死",
+                "start_year": -399,
+                "end_year": -399,
+                "key_figures": "苏格拉底",
+                "description": "雅典法庭以不敬神和毒害青年罪名判处苏格拉底饮鸩自尽。",
+                "impact": "西方哲学史的转折点，激发了柏拉图与亚里士多德的哲学构建。",
+                "category": "哲学",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Trial_of_Socrates"
+            }
+        ]
+    },
+    "Hellenistic period":
+    {
+        "period_name_cn": "希腊化时代",
+        "region": "European",
+        "year": "323 BC - 31 BC",
+        "events":
+        [
+            {
+                "event_name": "亚历山大大帝去世",
+                "start_year": -323,
+                "end_year": -323,
+                "key_figures": "亚历山大大帝",
+                "description": "亚历山大在巴比伦暴毙，庞大帝国分崩离析。",
+                "impact": "开启了继业者战争，希腊文化随之扩散至整个近东，形成全球化雛形。",
+                "category": "政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Hellenistic_period"
+            },
+            {
+                "event_name": "亚历山大图书馆兴建",
+                "start_year": -285,
+                "end_year": -280,
+                "key_figures": "托勒密一世",
+                "description": "在埃及亚历山大港建立当时世界最大的知识中心。",
+                "impact": "集中了古代西方世界的科学与文学遗产，是学术研究的圣地。",
+                "category": "教育/文化",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Library_of_Alexandria"
+            }
+        ]
+    },
+    "Roman Republic":
+    {
+        "period_name_cn": "罗马共和国时期",
+        "region": "European",
+        "year": "509 BC - 27 BC",
+        "events":
+        [
+            {
+                "event_name": "第二次布匿战争",
+                "start_year": -218,
+                "end_year": -201,
+                "key_figures": "汉尼拔, 大西庇阿",
+                "description": "汉尼拔率军翻越阿尔卑斯山奇袭意大利。",
+                "impact": "罗马死里逃生并最终摧毁迦太基霸权，确立地中海主宰地位。",
+                "category": "军事",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Second_Punic_War"
+            },
+            {
+                "event_name": "凯撒跨越卢比孔河",
+                "start_year": -49,
+                "end_year": -49,
+                "key_figures": "尤利乌斯·凯撒",
+                "description": "凯撒违抗元老院命令，带兵进入意大利本土。",
+                "impact": "引发内战，实质上终结了共和体制，迈向帝制。",
+                "category": "政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Crossing_the_Rubicon"
+            }
+        ]
+    },
+    "Byzantine Empire":
+    {
+        "period_name_cn": "拜占庭帝国（东罗马）",
+        "region": "European",
+        "year": "330 - 1453",
+        "events":
+        [
+            {
+                "event_name": "尼西亚信经确立",
+                "start_year": 325,
+                "end_year": 325,
+                "key_figures": "君士坦丁大帝",
+                "description": "召开第一次尼西亚公会议，统一基督教教义。",
+                "impact": "基督教正式成为帝国统治基石，解决了教派分裂问题。",
+                "category": "宗教",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/First_Council_of_Nicaea"
+            },
+            {
+                "event_name": "圣索菲亚大教堂落成",
+                "start_year": 537,
+                "end_year": 537,
+                "key_figures": "查士丁尼一世",
+                "description": "建成当时世界上规模最大的圆顶建筑。",
+                "impact": "拜占庭建筑艺术的巅峰，后世奥斯曼清真寺的模仿原型。",
+                "category": "建筑/文化",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Hagia_Sophia"
+            }
+        ]
+    },
+    "Viking Age":
+    {
+        "period_name_cn": "维京时代",
+        "region": "European",
+        "year": "793 - 1066",
+        "events":
+        [
+            {
+                "event_name": "林迪斯法恩修道院遇袭",
+                "start_year": 793,
+                "end_year": 793,
+                "key_figures": "无",
+                "description": "维京海盗对英格兰沿海修道院进行惨绝人寰的掠夺。",
+                "impact": "标志着维京时代的开启，引发全欧对北欧海盗的防御浪潮。",
+                "category": "军事/社会",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Attack_on_Lindisfarne"
+            },
+            {
+                "event_name": "诺曼底公国建立",
+                "start_year": 911,
+                "end_year": 911,
+                "key_figures": "罗洛, 查理三世",
+                "description": "法王将诺曼底割让给维京首领罗洛，换取其停止劫掠。",
+                "impact": "维京人开始融入基督教文明，最终导致了1066年对英格兰的征服。",
+                "category": "政治",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Duchy_of_Normandy"
+            }
+        ]
+    },
+    "Islamic Golden Age":
+    {
+        "period_name_cn": "伊斯兰黄金时代",
+        "region": "European",
+        "year": "750 - 1258",
+        "events":
+        [
+            {
+                "event_name": "巴格达智慧宫建立",
+                "start_year": 830,
+                "end_year": 830,
+                "key_figures": "马蒙",
+                "description": "阿拔斯王朝建立大规模翻译机构，将古希腊文献译为阿拉伯语。",
+                "impact": "为欧洲保留了消失的古典知识，成为12世纪欧洲翻译运动和文艺复兴的源头。",
+                "category": "科学/文化",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/House_of_Wisdom"
+            }
+        ]
+    },
+    "Holy Roman Empire":
+    {
+        "period_name_cn": "神圣罗马帝国",
+        "region": "European",
+        "year": "962 - 1806",
+        "events":
+        [
+            {
+                "event_name": "奥托一世加冕",
+                "start_year": 962,
+                "end_year": 962,
+                "key_figures": "奥托大帝",
+                "description": "德意志国王奥托一世在罗马被教皇加冕为皇帝。",
+                "impact": "神圣罗马帝国正式诞生，深刻影响了中世纪欧洲的政教格局。",
+                "category": "政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Otto_I,_Holy_Roman_Emperor"
+            },
+            {
+                "event_name": "叙任权斗争与卡诺莎之行",
+                "start_year": 1077,
+                "end_year": 1077,
+                "key_figures": "亨利四世, 教皇格列高利七世",
+                "description": "皇帝为争取主教任免权，向教皇认错悔罪。",
+                "impact": "标志着教皇权力达到顶峰，确立了欧洲政教分离初期的张力关系。",
+                "category": "宗教/政治",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Road_to_Canossa"
+            }
+        ]
+    },
+    "Crusades":
+    {
+        "period_name_cn": "十字军东征",
+        "region": "European",
+        "year": "1095 - 1291",
+        "events":
+        [
+            {
+                "event_name": "第一次十字军占领耶路撒冷",
+                "start_year": 1099,
+                "end_year": 1099,
+                "key_figures": "布永的戈弗雷",
+                "description": "十字军攻克圣城并建立耶路撒冷王国。",
+                "impact": "加强了东西方贸易与文化接触，但也播下了宗教仇恨的种子。",
+                "category": "宗教/军事",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Siege_of_Jerusalem_(1099)"
+            }
+        ]
+    },
+    "Mongol Empire":
+    {
+        "period_name_cn": "蒙古帝国（对欧影响）",
+        "region": "European",
+        "year": "1206 - 1368",
+        "events":
+        [
+            {
+                "event_name": "列格尼卡战役/赛约河战役",
+                "start_year": 1241,
+                "end_year": 1241,
+                "key_figures": "拔都, 速不台",
+                "description": "蒙古军队横扫波兰与匈牙利联军，震惊全欧洲。",
+                "impact": "引发了欧洲对外部世界的极大恐惧与好奇，间接促成了丝绸之路的暂时繁荣（蒙古治世）。",
+                "category": "军事",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Mongol_invasion_of_Europe"
+            }
+        ]
+    },
+    "Song Dynasty (Chinese influence)":
+    {
+        "period_name_cn": "宋朝（技术向欧洲传播）",
+        "region": "European",
+        "year": "960 - 1279",
+        "events":
+        [
+            {
+                "event_name": "四大发明经由阿拉伯传入欧洲",
+                "start_year": 1100,
+                "end_year": 1300,
+                "key_figures": "无",
+                "description": "指南针、火药、印刷术等技术在宋元更替期通过丝路传至欧洲。",
+                "impact": "直接导致了欧洲战术的变革、地理大发现的可能以及文艺复兴的文化传播效率。",
+                "category": "科技/交流",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Four_Great_Inventions"
+            }
+        ]
+    },
+    "Black Death":
+    {
+        "period_name_cn": "黑死病",
+        "region": "European",
+        "year": "1347 - 1351",
+        "events":
+        [
+            {
+                "event_name": "鼠疫登陆西西里",
+                "start_year": 1347,
+                "end_year": 1347,
+                "key_figures": "无",
+                "description": "黑死病通过热那亚商船从克里米亚传至意大利。",
+                "impact": "引发了欧洲人口的大灭绝，导致劳动力结构崩溃，封建制开始土崩瓦解。",
+                "category": "社会/医疗",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Black_Death"
+            }
+        ]
+    },
+    "Hundred Years' War":
+    {
+        "period_name_cn": "百年战争",
+        "region": "European",
+        "year": "1337 - 1453",
+        "events":
+        [
+            {
+                "event_name": "阿金库尔战役",
+                "start_year": 1415,
+                "end_year": 1415,
+                "key_figures": "亨利五世",
+                "description": "英格兰长弓兵击败法国重装骑士。",
+                "impact": "标志着中世纪重骑兵时代的终结和步兵、远程武器的崛起。",
+                "category": "军事",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Battle_of_Agincourt"
+            },
+            {
+                "event_name": "圣女贞德解奥尔良之围",
+                "start_year": 1429,
+                "end_year": 1429,
+                "key_figures": "圣女贞德",
+                "description": "少女贞德率领法军反击英军，扭转战局。",
+                "impact": "激发了法国的民族意识，标志着现代民族国家观念的萌芽。",
+                "category": "军事/社会",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Joan_of_Arc"
+            }
+        ]
+    },
+    "Ottoman Empire":
+    {
+        "period_name_cn": "奥斯曼帝国（崛起期）",
+        "region": "European",
+        "year": "1299 - 1453",
+        "events":
+        [
+            {
+                "event_name": "征服君士坦丁堡",
+                "start_year": 1453,
+                "end_year": 1453,
+                "key_figures": "穆罕默德二世",
+                "description": "奥斯曼土耳其攻占东罗马最后据点。",
+                "impact": "彻底切断了欧洲与东方的陆路贸易，迫使欧洲人投向大西洋，开启大航海时代。",
+                "category": "军事/政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Fall_of_Constantinople"
+            }
+        ]
+    },
+    "Italian Renaissance":
+    {
+        "period_name_cn": "意大利文艺复兴",
+        "region": "European",
+        "year": "1350 - 1550",
+        "events":
+        [
+            {
+                "event_name": "《神曲》创作完成",
+                "start_year": 1308,
+                "end_year": 1320,
+                "key_figures": "但丁",
+                "description": "但丁用意大利俗语而非拉丁语创作长诗。",
+                "impact": "近代文学的开端，奠定了意大利语基础，展现了早期人文主义精神。",
+                "category": "文化",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Divine_Comedy"
+            },
+            {
+                "event_name": "美第奇家族资助艺术",
+                "start_year": 1434,
+                "end_year": 1494,
+                "key_figures": "科西莫·美第奇",
+                "description": "佛罗伦萨金融巨头大规模赞助多纳泰罗、波提切利等艺术家。",
+                "impact": "使佛罗伦萨成为文艺复兴的心脏，确立了艺术与金融结合的模式。",
+                "category": "文化/社会",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/House_of_Medici"
+            }
+        ]
+    },
+    "Age of Discovery":
+    {
+        "period_name_cn": "大航海时代",
+        "region": "European",
+        "year": "1415 - 1650",
+        "events":
+        [
+            {
+                "event_name": "达伽马到达印度",
+                "start_year": 1498,
+                "end_year": 1498,
+                "key_figures": "瓦斯科·达伽马",
+                "description": "葡萄牙船队绕过好望角开辟直通印度航路。",
+                "impact": "打破了阿拉伯商人的贸易垄断，里斯本取代威尼斯成为香料中心。",
+                "category": "探险/贸易",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Vasco_da_Gama"
+            },
+            {
+                "event_name": "麦哲伦环球航行",
+                "start_year": 1519,
+                "end_year": 1522,
+                "key_figures": "麦哲伦",
+                "description": "首次跨越大西洋和太平洋，证明地球是圆的。",
+                "impact": "全球化地理认知的终极拼图，开启了真正意义上的全球史。",
+                "category": "探险",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Magellan_expedition"
+            }
+        ]
+    },
+    "Thirty Years' War":
+    {
+        "period_name_cn": "三十年战争",
+        "region": "European",
+        "year": "1618 - 1648",
+        "events":
+        [
+            {
+                "event_name": "威斯特伐利亚和约签署",
+                "start_year": 1648,
+                "end_year": 1648,
+                "key_figures": "无",
+                "description": "终结了席卷德意志的宗教战争。",
+                "impact": "确立了国家主权平等的原则，标志着现代国际关系体系的诞生。",
+                "category": "政治/外交",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Peace_of_Westphalia"
+            }
+        ]
+    },
+    "Scientific Revolution":
+    {
+        "period_name_cn": "科学革命",
+        "region": "European",
+        "year": "1543 - 1687",
+        "events":
+        [
+            {
+                "event_name": "伽利略审判",
+                "start_year": 1633,
+                "end_year": 1633,
+                "key_figures": "伽利略",
+                "description": "罗马教廷因其支持日心说而对其进行宗教裁判。",
+                "impact": "象征着科学与宗教的决裂，推动了实验科学方法的普及。",
+                "category": "科学",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Galileo_affair"
+            },
+            {
+                "event_name": "《原理》出版",
+                "start_year": 1687,
+                "end_year": 1687,
+                "key_figures": "牛顿",
+                "description": "牛顿提出运动三大定律与万有引力定律。",
+                "impact": "标志着近代物理学的统一，为工业革命准备了理论工具。",
+                "category": "科学",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Philosophi%C3%A6_Naturalis_Principia_Mathematica"
+            }
+        ]
+    },
+    "Age of Enlightenment":
+    {
+        "period_name_cn": "启蒙运动",
+        "region": "European",
+        "year": "1715 - 1789",
+        "events":
+        [
+            {
+                "event_name": "《社会契约论》出版",
+                "start_year": 1762,
+                "end_year": 1762,
+                "key_figures": "卢梭",
+                "description": "提出了“天赋人权”与“人民主权”的思想。",
+                "impact": "为法国大革命和美国独立提供了核心政治逻辑。",
+                "category": "哲学",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/The_Social_Contract"
+            }
+        ]
+    },
+    "Mercantilism":
+    {
+        "period_name_cn": "重商主义时代",
+        "region": "European",
+        "year": "1500 - 1750",
+        "events":
+        [
+            {
+                "event_name": "东印度公司成立",
+                "start_year": 1600,
+                "end_year": 1602,
+                "key_figures": "伊丽莎白一世",
+                "description": "英、荷等国相继成立垄断性海外贸易公司。",
+                "impact": "开启了公司殖民主义时代，实现了欧洲早期的原始资本积累。",
+                "category": "经济",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/East_India_Company"
+            }
+        ]
+    }
+}
