@@ -81,6 +81,7 @@
 
         .period-panel.right {
             right: 20px;
+            text-align: right;
         }
 
         .period-panel h3 {
@@ -303,6 +304,82 @@
             border-radius: 50%;
             margin-right: 8px;
         }
+
+        /* Help button */
+        #help-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: background 0.2s, border-color 0.2s;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        #help-button:hover {
+            background: rgba(0, 0, 0, 0.95);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        #help-button::before {
+            content: '?';
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            /* Hide instructions and legend on small screens */
+            #instructions {
+                display: none;
+            }
+
+            #legend {
+                display: none;
+            }
+
+            /* Show help button on small screens */
+            #help-button {
+                display: flex;
+            }
+
+            /* Smaller period panels on mobile */
+            .period-panel {
+                width: 140px;
+                padding: 6px;
+                font-size: 12px;
+                top: 70px; /* Move down to avoid overlap with search box */
+            }
+
+            /* Hide region titles on mobile, only show period names */
+            .period-panel h3 {
+                display: none;
+            }
+
+            .period-panel .period {
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            /* Adjust search input width */
+            #search-input {
+                width: 150px;
+            }
+        }
+
+        /* Hide help button on desktop */
+        @media (min-width: 769px) {
+            #help-button {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -360,6 +437,9 @@
                 <span>Economic</span>
             </div>
         </div>
+
+        <!-- Help button for mobile -->
+        <div id="help-button"></div>
 
         <!-- Event detail modal -->
         <div id="event-modal">
@@ -646,6 +726,59 @@
                     searchResults.classList.remove('active');
                 }
             });
+
+            // Help button functionality and responsive handling
+            const helpButton = document.getElementById('help-button');
+            const instructions = document.getElementById('instructions');
+            const legend = document.getElementById('legend');
+
+            // Function to check if we're on mobile
+            function isMobile() {
+                return window.innerWidth <= 768 || window.innerHeight <= 600 ||
+                       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            }
+
+            // Debug info for mobile testing
+            console.log(`Initial responsive check: ${window.innerWidth}x${window.innerHeight}, mobile: ${isMobile()}`);
+
+            // Function to update UI based on screen size
+            function updateResponsiveUI() {
+                const mobile = isMobile();
+                console.log(`Responsive check: width=${window.innerWidth}, height=${window.innerHeight}, mobile=${mobile}`);
+
+                if (mobile) {
+                    // Mobile: hide instructions and legend, show help button
+                    instructions.style.display = 'none';
+                    legend.style.display = 'none';
+                    helpButton.style.display = 'flex';
+                    console.log('Applied mobile layout');
+                } else {
+                    // Desktop: show instructions and legend, hide help button
+                    instructions.style.display = 'block';
+                    legend.style.display = 'block';
+                    helpButton.style.display = 'none';
+                    console.log('Applied desktop layout');
+                }
+            }
+
+            // Initial check
+            updateResponsiveUI();
+
+            // Update on resize
+            window.addEventListener('resize', updateResponsiveUI);
+
+            helpButton.addEventListener('click', () => {
+                console.log('Help button clicked');
+                // Show instructions and legend
+                instructions.style.display = 'block';
+                legend.style.display = 'block';
+
+                // Hide after 15 seconds
+                setTimeout(() => {
+                    instructions.style.display = 'none';
+                    legend.style.display = 'none';
+                }, 15000);
+            });
         }
 
         // Load initial data
@@ -654,7 +787,18 @@
                 // Load all events from database API
                 console.log('Loading events from database...');
 
-                const response = await fetch('/api/events');
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+
+                const response = await fetch('/api/events', {
+                    signal: controller.signal,
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                clearTimeout(timeoutId);
 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -672,8 +816,10 @@
                 // Fallback: Use empty array - will show tunnel without events
                 eventsData = [];
 
-                // Show error message to user
-                alert('Failed to load historical events. Please check if the backend API is running.');
+                // Only show alert if it's not an abort error (timeout)
+                if (error.name !== 'AbortError') {
+                    console.warn('Backend API not available. Using empty event list.');
+                }
             }
 
             // Set up periods data - extended to match yearRange
@@ -714,7 +860,7 @@
             const matches = eventsData.filter(event =>
                 event.event_name.toLowerCase().includes(query.toLowerCase()) ||
                 event.description.toLowerCase().includes(query.toLowerCase()) ||
-                event.key_figures.toLowerCase().includes(query.toLowerCase())
+                (event.key_figures && event.key_figures.toLowerCase().includes(query.toLowerCase()))
             );
 
             // Limit results to top 10
@@ -736,7 +882,13 @@
                         const year = parseInt(item.dataset.eventYear);
                         const yearPosition = mapYearToPosition(year);
 
-                        targetCameraZ = yearPosition;
+                        // Position camera so target year appears closer to the front
+                        // This puts the target event more prominently in view
+                        targetCameraZ = Math.max(-CONFIG.tunnelLength, Math.min(0, yearPosition + CONFIG.visibleDistance * 0.4));
+
+                        // Update hash to reflect the new position
+                        lastHashYear = null; // Force hash update
+                        history.replaceState(null, null, `#${year}`);
 
                         // Close search results
                         searchResults.classList.remove('active');
@@ -1357,6 +1509,25 @@
         } else {
             init();
         }
+
+        // Handle unhandled promise rejections to prevent console errors
+        window.addEventListener('unhandledrejection', (event) => {
+            // Only log if it's not a known harmless error
+            if (event.reason && event.reason.message && !event.reason.message.includes('Extension context invalidated')) {
+                console.warn('Unhandled promise rejection:', event.reason);
+            }
+            // Prevent the error from appearing in console
+            event.preventDefault();
+        });
+
+        // Handle uncaught errors
+        window.addEventListener('error', (event) => {
+            // Filter out extension-related errors
+            if (event.message && !event.message.includes('Extension context invalidated') &&
+                !event.message.includes('message channel closed')) {
+                console.error('Uncaught error:', event.error);
+            }
+        });
     </script>
 </body>
 </html>
