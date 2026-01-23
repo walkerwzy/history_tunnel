@@ -224,12 +224,19 @@
             backdrop-filter: blur(10px);
         }
 
+        .search-icon {
+            width: 16px;
+            height: 16px;
+            color: rgba(255, 255, 255, 0.5);
+            flex-shrink: 0;
+        }
+
         #search-input {
             background: transparent;
             border: none;
             color: #fff;
             font-size: 16px;
-            width: 200px;
+            width: 180px;
             outline: none;
         }
 
@@ -370,8 +377,41 @@
 
             /* Adjust search input width */
             #search-input {
-                width: 150px;
+                width: 130px;
             }
+        }
+
+        /* Toggle labels button */
+        #toggle-labels {
+            position: absolute;
+            bottom: 170px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: background 0.2s, border-color 0.2s;
+            padding: 0;
+            z-index: 10;
+        }
+
+        #toggle-labels:hover {
+            background: rgba(0, 0, 0, 0.95);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .eye-icon {
+            width: 20px;
+            height: 20px;
+            stroke: #fff;
+            fill: none;
+            stroke-width: 2;
         }
 
         /* Hide help button on desktop */
@@ -385,6 +425,14 @@
 <body>
     <div id="container">
         <canvas id="threejs-canvas"></canvas>
+
+        <!-- Toggle labels button -->
+        <button id="toggle-labels" title="Toggle event labels">
+            <svg class="eye-icon" viewBox="0 0 24 24">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+        </button>
 
         <!-- Period display panels -->
         <div class="period-panel left">
@@ -412,7 +460,11 @@
 
         <!-- Search Box -->
         <div id="search-container">
-            <input type="text" id="search-input" placeholder="🔍 Search events...">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <input type="text" id="search-input" placeholder="Search events...">
         </div>
 
         <!-- Search Results -->
@@ -472,6 +524,7 @@
         let currentCameraZ = 0;
          let lastHashYear = null; // Track last year we updated in hash
          let isInitializing = true; // Prevent hash updates during init
+         let showLabels = true; // Toggle for event label visibility
         let eventsData = [];
         let periodsData = { europe: [], china: [] };
         let isLoading = true;
@@ -528,40 +581,40 @@
             }
         }
 
-         // Initialize the application
-         async function init() {
-             console.log('Starting timeline initialization...');
+        // Initialize the application
+        async function init() {
+            console.log('Starting timeline initialization...');
 
-             try {
-                 // Clear any existing scene elements
-                 if (scene) {
-                     while(scene.children.length > 0) {
-                         scene.remove(scene.children[0]);
-                     }
-                 }
+            try {
+                // Clear any existing scene elements
+                if (scene) {
+                    while(scene.children.length > 0) {
+                        scene.remove(scene.children[0]);
+                    }
+                }
 
-                 // Initialize global variables
-                 scene = null;
-                 camera = null;
-                 renderer = null;
-                 composer = null;
-                 tunnel = null;
-                 events = null;
-                 cameraPath = null;
+                // Initialize global variables
+                scene = null;
+                camera = null;
+                renderer = null;
+                composer = null;
+                tunnel = null;
+                events = null;
+                cameraPath = null;
 
-                 console.log('Setting up Three.js...');
-                 setupThreeJS();
-                 console.log('Three.js setup complete');
+                console.log('Setting up Three.js...');
+                setupThreeJS();
+                console.log('Three.js setup complete');
 
-                 // Initialize lastHashYear from current hash to prevent premature hash updates
-                 const initialHash = window.location.hash.substring(1);
-                 if (initialHash && !isNaN(parseInt(initialHash))) {
-                     lastHashYear = parseInt(initialHash);
-                     console.log('Initialized lastHashYear from hash:', lastHashYear);
-                 }
+                // Initialize lastHashYear from current hash to prevent premature hash updates
+                const initialHash = window.location.hash.substring(1);
+                if (initialHash && !isNaN(parseInt(initialHash))) {
+                    lastHashYear = parseInt(initialHash);
+                    console.log('Initialized lastHashYear from hash:', lastHashYear);
+                }
 
-                 console.log('Setting up event listeners...');
-                 setupEventListeners();
+                console.log('Setting up event listeners...');
+                setupEventListeners();
 
                 console.log('Loading data...');
                 await loadInitialData();
@@ -577,14 +630,14 @@
                 console.log('Setting up post-processing...');
                 setupPostProcessing();
 
-                 console.log('Starting animation...');
-                 animate();
+                console.log('Starting animation...');
+                animate();
 
-                 console.log('Hiding loading...');
-                 hideLoading();
+                console.log('Hiding loading...');
+                hideLoading();
 
-                 console.log('Parsing URL hash...');
-                 parseHashAndJump();
+                console.log('Parsing URL hash...');
+                parseHashAndJump();
 
                 console.log('Timeline initialization complete!');
             } catch (error) {
@@ -678,12 +731,12 @@
             // Window resize
             window.addEventListener('resize', onWindowResize);
 
-             // Hash change (when user manually changes URL hash)
-             window.addEventListener('hashchange', () => {
-                 console.log('Hash changed event triggered');
-                 console.log('Hash changed, jumping to new position');
-                 parseHashAndJump();
-             });
+            // Hash change (when user manually changes URL hash)
+            window.addEventListener('hashchange', () => {
+                console.log('Hash changed event triggered');
+                console.log('Hash changed, jumping to new position');
+                parseHashAndJump();
+            });
 
             // Modal close
             document.getElementById('close-modal').addEventListener('click', () => {
@@ -754,7 +807,7 @@
             // Function to check if we're on mobile
             function isMobile() {
                 return window.innerWidth <= 768 || window.innerHeight <= 600 ||
-                       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             }
 
             // Debug info for mobile testing
@@ -785,6 +838,16 @@
 
             // Update on resize
             window.addEventListener('resize', updateResponsiveUI);
+
+             // Toggle labels button
+            const toggleBtn = document.getElementById('toggle-labels');
+            toggleBtn.addEventListener('click', () => {
+                showLabels = !showLabels;
+                toggleBtn.innerHTML = showLabels ?
+                    '<svg class="eye-icon" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>' :
+                    '<svg class="eye-icon" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><line x1="8" y1="8" x2="16" y2="16"></line></svg>';
+                toggleBtn.title = showLabels ? 'Hide event labels' : 'Show event labels';
+            });
 
             helpButton.addEventListener('click', () => {
                 console.log('Help button clicked');
@@ -911,7 +974,7 @@
                 `).join('');
 
                 // Add click handler to jump to event year
-                 searchResults.querySelectorAll('.search-result-item').forEach(item => {
+                searchResults.querySelectorAll('.search-result-item').forEach(item => {
                     item.addEventListener('click', () => {
                         const year = parseInt(item.dataset.eventYear);
                         const yearPosition = mapYearToPosition(year);
@@ -1227,10 +1290,10 @@
                         event.material.opacity = visibility * 0.9 + 0.1; // Ensure minimum visibility
                     }
 
-                    // Show label only for nearby events (distance < 500)
+                    // Show label only for nearby events (distance < 500) and if labels are enabled
                     if (event.userData.label) {
                         const labelElement = event.userData.label.element;
-                        if (distance < 500) {
+                        if (showLabels && distance < 500) {
                             labelElement.classList.remove('hidden');
                             // Fade in based on distance
                             const labelOpacity = 1 - (distance / 500);
