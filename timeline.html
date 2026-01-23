@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>历史时间线 - Timeline</title>
+    <link rel="stylesheet" href="timeline.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>历史时间线</h1>
+            <div class="current-year-display">
+                <span class="year-label">当前年份：</span>
+                <span id="currentYear" class="year-value">-3000</span>
+            </div>
+        </header>
+
+        <!-- Main Timeline Container -->
+        <main class="timeline-container">
+            <!-- Left Side - Chinese Timeline -->
+            <section class="timeline-side chinese-timeline">
+                <div class="timeline-header">
+                    <h2>中国历史</h2>
+                </div>
+                <div class="timeline-content" id="chineseTimeline">
+                    <!-- Chinese eras and events will be populated here -->
+                </div>
+            </section>
+
+            <!-- Right Side - European Timeline -->
+            <section class="timeline-side european-timeline">
+                <div class="timeline-header">
+                    <h2>欧洲历史</h2>
+                </div>
+                <div class="timeline-content" id="europeanTimeline">
+                    <!-- European eras and events will be populated here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Fixed Event Cards -->
+        <div class="event-cards">
+            <div class="event-card chinese-card">
+                <h3>中国历史事件</h3>
+                <div id="chineseEventCard" class="event-card-content">
+                    <p class="no-event">暂无事件</p>
+                </div>
+            </div>
+            <div class="event-card european-card">
+                <h3>欧洲历史事件</h3>
+                <div id="europeanEventCard" class="event-card-content">
+                    <p class="no-event">暂无事件</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="timeline.js"></script>
+</body>
+</html>
