@@ -468,7 +468,10 @@
         let labelRenderer;
         let tunnel, events, cameraPath;
         let currentYear = 0;
-        let lastHashYear = null; // Track last year we updated in hash
+        let targetCameraZ = 0;
+        let currentCameraZ = 0;
+         let lastHashYear = null; // Track last year we updated in hash
+         let isInitializing = true; // Prevent hash updates during init
         let eventsData = [];
         let periodsData = { europe: [], china: [] };
         let isLoading = true;
@@ -493,6 +496,8 @@
             visibleDistance: 500 // Distance from camera to displayed year
         };
 
+
+
         // Parse URL hash and jump to target year
         function parseHashAndJump() {
             const hash = window.location.hash.substring(1); // Remove '#'
@@ -507,7 +512,13 @@
                     // Adjust for visible distance offset: we want target year to be 500 units ahead of camera
                     targetCameraZ = Math.max(-CONFIG.tunnelLength, Math.min(0, yearPosition + CONFIG.visibleDistance));
                     currentCameraZ = targetCameraZ;  // Set current position immediately to avoid lerping
-                    lastHashYear = targetYear;  // Update last hash year to avoid immediate update
+                    camera.position.z = currentCameraZ;  // Update camera position immediately
+                    isInitializing = false;  // Allow hash updates now
+                    updateCurrentYear();  // Update display and hash immediately
+                    updatePeriods();  // Update period displays
+                    // Force render to show the jump immediately
+                    composer.render();
+                    labelRenderer.render(scene, camera);
                     console.log(`Jumping to year ${targetYear} from hash (camera Z: ${targetCameraZ})`);
                 } else {
                     console.log(`Year ${targetYear} is out of range`);
@@ -517,33 +528,40 @@
             }
         }
 
-        // Initialize the application
-        async function init() {
-            console.log('Starting timeline initialization...');
+         // Initialize the application
+         async function init() {
+             console.log('Starting timeline initialization...');
 
-            try {
-                // Clear any existing scene elements
-                if (scene) {
-                    while(scene.children.length > 0) {
-                        scene.remove(scene.children[0]);
-                    }
-                }
+             try {
+                 // Clear any existing scene elements
+                 if (scene) {
+                     while(scene.children.length > 0) {
+                         scene.remove(scene.children[0]);
+                     }
+                 }
 
-                // Initialize global variables
-                scene = null;
-                camera = null;
-                renderer = null;
-                composer = null;
-                tunnel = null;
-                events = null;
-                cameraPath = null;
+                 // Initialize global variables
+                 scene = null;
+                 camera = null;
+                 renderer = null;
+                 composer = null;
+                 tunnel = null;
+                 events = null;
+                 cameraPath = null;
 
-                console.log('Setting up Three.js...');
-                setupThreeJS();
-                console.log('Three.js setup complete');
+                 console.log('Setting up Three.js...');
+                 setupThreeJS();
+                 console.log('Three.js setup complete');
 
-                console.log('Setting up event listeners...');
-                setupEventListeners();
+                 // Initialize lastHashYear from current hash to prevent premature hash updates
+                 const initialHash = window.location.hash.substring(1);
+                 if (initialHash && !isNaN(parseInt(initialHash))) {
+                     lastHashYear = parseInt(initialHash);
+                     console.log('Initialized lastHashYear from hash:', lastHashYear);
+                 }
+
+                 console.log('Setting up event listeners...');
+                 setupEventListeners();
 
                 console.log('Loading data...');
                 await loadInitialData();
@@ -559,14 +577,14 @@
                 console.log('Setting up post-processing...');
                 setupPostProcessing();
 
-                console.log('Starting animation...');
-                animate();
+                 console.log('Starting animation...');
+                 animate();
 
-                console.log('Hiding loading...');
-                hideLoading();
+                 console.log('Hiding loading...');
+                 hideLoading();
 
-                console.log('Parsing URL hash...');
-                parseHashAndJump();
+                 console.log('Parsing URL hash...');
+                 parseHashAndJump();
 
                 console.log('Timeline initialization complete!');
             } catch (error) {
@@ -660,11 +678,12 @@
             // Window resize
             window.addEventListener('resize', onWindowResize);
 
-            // Hash change (when user manually changes URL hash)
-            window.addEventListener('hashchange', () => {
-                console.log('Hash changed, jumping to new position');
-                parseHashAndJump();
-            });
+             // Hash change (when user manually changes URL hash)
+             window.addEventListener('hashchange', () => {
+                 console.log('Hash changed event triggered');
+                 console.log('Hash changed, jumping to new position');
+                 parseHashAndJump();
+             });
 
             // Modal close
             document.getElementById('close-modal').addEventListener('click', () => {
@@ -892,18 +911,23 @@
                 `).join('');
 
                 // Add click handler to jump to event year
-                searchResults.querySelectorAll('.search-result-item').forEach(item => {
+                 searchResults.querySelectorAll('.search-result-item').forEach(item => {
                     item.addEventListener('click', () => {
                         const year = parseInt(item.dataset.eventYear);
                         const yearPosition = mapYearToPosition(year);
 
-                        // Position camera so target year appears closer to the front
+                         // Position camera so target year appears closer to the front
                         // This puts the target event more prominently in view
                         targetCameraZ = Math.max(-CONFIG.tunnelLength, Math.min(0, yearPosition + CONFIG.visibleDistance * 0.4));
 
-                        // Update hash to reflect the new position
-                        lastHashYear = null; // Force hash update
+                        // Immediately set current position to avoid lerp delay
+                        currentCameraZ = targetCameraZ;
+
+                        // Update hash and lastHashYear to prevent immediate re-update
                         history.replaceState(null, null, `#${year}`);
+                        lastHashYear = year;
+
+                        console.log(`Search jump to year ${year}, camera Z: ${targetCameraZ}`);
 
                         // Close search results
                         searchResults.classList.remove('active');
@@ -1222,10 +1246,6 @@
             labelRenderer.render(scene, camera);
         }
 
-        // Mouse wheel handler for time travel
-        let targetCameraZ = 0;
-        let currentCameraZ = 0;
-
         function onWheel(event) {
             event.preventDefault();
             const delta = event.deltaY > 0 ? CONFIG.cameraSpeed * 5 : -CONFIG.cameraSpeed * 5;
@@ -1284,11 +1304,15 @@
             const yearDisplay = currentYear < 0 ? `${Math.abs(currentYear)} BC` : `${currentYear} AD`;
             document.getElementById('current-year').textContent = yearDisplay;
 
-            // Update URL hash with throttling to avoid excessive updates
-            if (lastHashYear === null || Math.abs(currentYear - lastHashYear) >= CONFIG.hashUpdateStep) {
-                lastHashYear = currentYear;
-                history.replaceState(null, null, `#${currentYear}`);
-            }
+             // Update URL hash with throttling to avoid excessive updates (only after initialization)
+             if (!isInitializing && (lastHashYear === null || Math.abs(currentYear - lastHashYear) >= CONFIG.hashUpdateStep)) {
+                 lastHashYear = currentYear;
+                 const newHash = `#${currentYear}`;
+                 if (window.location.hash !== newHash) {
+                     console.log(`Updating hash: ${currentYear}`);
+                     history.replaceState(null, null, newHash);
+                 }
+             }
 
             // Debug info
             if (window.debugMode) {
