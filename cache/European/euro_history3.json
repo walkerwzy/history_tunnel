@@ -1,0 +1,1712 @@
+{
+    "Minoan civilization": {
+        "period_name_cn": "米诺斯文明",
+        "region": "European",
+        "year": "3000 BC - 1450 BC",
+        "events": [
+            {
+                "event_name": "米诺斯“新宫殿时期”的开端",
+                "start_year": -1700,
+                "end_year": -1700,
+                "key_figures": "未知（米诺斯祭司王）",
+                "description": "在经历了一次大地震后，克里特岛人不仅重建了克诺索斯，还兴建了菲斯托斯和马里亚等更宏伟的宫殿。这一时期的建筑采用了先进的排污系统、精美的湿壁画和多层结构，反映了当时极高的工程学水平。",
+                "impact": "标志着爱琴海地区进入了高度集权和资源整合的顶峰。这种宫殿经济模式（Palatial Economy）对后来迈锡尼文明的社会结构产生了决定性影响，也是欧洲最早的城市规划雏形。",
+                "category": "建筑/经济",
+                "importance_level": 8,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Minoan_civilization#New_Palace_period"
+            }
+        ]
+    },
+    "Mycenaean civilization": {
+        "period_name_cn": "迈锡尼文明",
+        "region": "European",
+        "year": "1600 BC - 1100 BC",
+        "events": [
+            {
+                "event_name": "迈锡尼狮子门的建成",
+                "start_year": -1250,
+                "end_year": -1250,
+                "key_figures": "未知（阿特柔斯家族成员）",
+                "description": "迈锡尼卫城的正门采用了重达20吨的巨石和精美的狮子浮雕。这是典型的“巨石建筑”（Cyclopean masonry），体现了迈锡尼作为尚武文明的防御需求。",
+                "impact": "它是欧洲现存最古老的纪念碑式雕塑。不仅展示了当时的冶金和石工技术，还确立了西方军事防御工事中“标志性门户”的政治象征传统。",
+                "category": "建筑/军事",
+                "importance_level": 7,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Lion_Gate"
+            }
+        ]
+    },
+    "Ancient Greece (Early/Homeric)": {
+        "period_name_cn": "古希腊（早期/荷马时代）",
+        "region": "European",
+        "year": "1100 BC - 500 BC",
+        "events": [
+            {
+                "event_name": "德拉古立法 (Draconian Constitution)",
+                "start_year": -621,
+                "end_year": -621,
+                "key_figures": "德拉古",
+                "description": "这是雅典历史上第一部成文法。在此之前，法律由贵族口头解释并带有极大的随意性。德拉古法典极其严酷，几乎对所有罪行都处以死刑。",
+                "impact": "尽管法典严酷，但它标志着雅典从习惯法向成文法的重大转变，限制了贵族法官的裁量权，是西方立法透明化和法治社会构建的极早期尝试。",
+                "category": "法律",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Draconian_constitution"
+            },
+            {
+                "event_name": "梭伦废除债务奴隶制 (Seisachtheia)",
+                "start_year": -594,
+                "end_year": -594,
+                "key_figures": "梭伦",
+                "description": "梭伦颁布“解负令”，取消了所有以人身为抵押的债务，禁止将雅典公民卖为奴隶，并将流亡国外的负债公民买回。他按财产而非门第将公民分为四个等级。",
+                "impact": "这是雅典民主政治的奠基时刻。它打破了血缘贵族的世袭垄断，确立了权力与社会责任挂钩的财产等级制，为后来克里斯提尼的全面民主改革扫清了障碍。",
+                "category": "政治/社会",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Seisachtheia"
+            }
+        ]
+    },
+    "Classical Greece": {
+        "period_name_cn": "古典希腊时期",
+        "region": "European",
+        "year": "500 BC - 323 BC",
+        "events": [
+            {
+                "event_name": "提洛同盟的建立",
+                "start_year": -478,
+                "end_year": -478,
+                "key_figures": "阿里斯提德",
+                "description": "在希波战争后，为继续对抗波斯，以雅典为首的希腊城邦在提洛岛集结，成立了军事同盟。成员国需上交贡金或出动军舰。",
+                "impact": "同盟最终演变为“雅典帝国”。雅典利用贡金扩建海军并修建了巴特农神庙，直接促成了雅典黄金时代的出现，但也因其霸权引发了与斯巴达的矛盾。",
+                "category": "外交/军事",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Delian_League"
+            },
+            {
+                "event_name": "安塔西达斯和约 (King's Peace)",
+                "start_year": -387,
+                "end_year": -387,
+                "key_figures": "阿塔薛西斯二世",
+                "description": "波斯帝国利用希腊城邦内斗，迫使雅典、斯巴达等国签署条约。条约规定小亚细亚的所有希腊城邦归波斯所有，其他希腊城邦必须保持独立。",
+                "impact": "这是希腊城邦政治的一次重大屈辱，标志着波斯通过外交干预成为了希腊事务的裁断者，同时也终结了斯巴达在陆地上的绝对霸权，开启了多强争霸的乱局。",
+                "category": "外交",
+                "importance_level": 8,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Peace_of_Antalcidas"
+            }
+        ]
+    },
+    "Hellenistic period": {
+        "period_name_cn": "希腊化时代",
+        "region": "European",
+        "year": "323 BC - 31 BC",
+        "events": [
+            {
+                "event_name": "伊普苏斯战役 (Battle of Ipsus)",
+                "start_year": -301,
+                "end_year": -301,
+                "key_figures": "塞琉古一世, 卡山德, 安提柯",
+                "description": "亚历山大帝国的继业者们爆发了决定性的大战。试图恢复统一帝国的安提柯战死，塞琉古和利西马科斯瓜分了其领土。",
+                "impact": "此战彻底终结了亚历山大帝国重新统一的可能性，确立了希腊化世界三大王国（塞琉古、托勒密、马其顿）并立的地缘政治版图。",
+                "category": "军事/政治",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Battle_of_Ipsus"
+            }
+        ]
+    },
+    "Ancient Rome (Monarchy)": {
+        "period_name_cn": "古罗马（王政时期）",
+        "region": "European",
+        "year": "753 BC - 509 BC",
+        "events": [
+            {
+                "event_name": "塞尔维乌斯改革 (Servian Reforms)",
+                "start_year": -550,
+                "end_year": -550,
+                "key_figures": "塞尔维乌斯·图利乌斯",
+                "description": "罗马第六任国王模仿希腊模式进行的人口普查和等级重组。他将公民按财产分为五个等级，并设立了森图里亚会议（百人队会议）。",
+                "impact": "这是罗马从原始氏族社会向国家转型的重要标志。它确立了以财产为基础的兵役和投票制度，为后来罗马共和国的政治框架打下了基础。",
+                "category": "政治/社会",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Servian_Reform"
+            }
+        ]
+    },
+    "Roman Republic": {
+        "period_name_cn": "罗马共和国时期",
+        "region": "European",
+        "year": "509 BC - 27 BC",
+        "events": [
+            {
+                "event_name": "《十二铜表法》颁布",
+                "start_year": -450,
+                "end_year": -450,
+                "key_figures": "十人立法委员会",
+                "description": "在平民阶层的长期斗争下，罗马元老院被迫同意将习惯法成文化。法典涵盖了民法、刑法和诉讼程序，刻在青铜板上公之于众。",
+                "impact": "这是罗马法学的起源，也是西方“法治”精神的重要源头。它限制了贵族法官随意解释法律的权力，通过法律条文保障了平民的基本民事权利。",
+                "category": "法律",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Twelve_Tables"
+            },
+            {
+                "event_name": "罗马被高卢人洗劫 (Sack of Rome)",
+                "start_year": -390,
+                "end_year": -390,
+                "key_figures": "布伦努斯",
+                "description": "塞农高卢人在阿利亚战役击败罗马军后，攻破了罗马城（除卡比托利欧山外）。罗马人被迫支付巨额黄金作为赎金，高卢首领留下名言“哀哉，败者”。",
+                "impact": "这一创伤性事件深刻影响了罗马的心理。它促使罗马人放弃了旧的方阵战术，转而开发灵活的操典阵（Maniple），并修筑了强大的塞尔维乌斯城墙，开启了对意大利半岛的防御性扩张。",
+                "category": "军事/社会",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Battle_of_the_Allia"
+            },
+            {
+                "event_name": "《霍腾西亚法》通过 (Lex Hortensia)",
+                "start_year": -287,
+                "end_year": -287,
+                "key_figures": "昆图斯·霍腾西亚",
+                "description": "法案规定平民会议（Concilium Plebis）通过的决议对全体罗马公民（包括贵族）都具有法律效力，且无需经过元老院批准。",
+                "impact": "标志着长达两百年的“阶级冲突”（Conflict of the Orders）在形式上的终结。虽然实际权力仍被新老权贵（Nobilitas）掌握，但在法理上确立了平民作为政治主体的法律地位。",
+                "category": "法律/政治",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Lex_Hortensia"
+            },
+            {
+                "event_name": "第一次布匿战争爆发",
+                "start_year": -264,
+                "end_year": -241,
+                "key_figures": "哈米尔卡·巴卡",
+                "description": "罗马与地中海霸主迦太基为了争夺西西里岛的控制权爆发了长达23年的战争。罗马通过仿制迦太基战船并加装“乌鸦吊桥”（Corvus），在海战中反败为胜。",
+                "impact": "罗马获得了西西里岛，这是其历史上第一个海外行省。此战迫使罗马从一个意大利陆权国家转型为地中海海权国家，彻底改变了其地缘战略布局。",
+                "category": "军事",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/First_Punic_War"
+            },
+            {
+                "event_name": "马略改革 (Marian Reforms)",
+                "start_year": -107,
+                "end_year": -107,
+                "key_figures": "盖乌斯·马略",
+                "description": "由于兵源匮乏，执政官马略取消了征兵的财产限制，招募无产者入伍，并由国家提供装备，建立职业化军队。",
+                "impact": "改革提升了罗马军队的战斗力，但使军队的忠诚对象从“国家”转向了“将领个人”。这直接导致了后来苏拉、凯撒等军事强人的崛起，成为共和国体制瓦解的根本原因。",
+                "category": "军事/政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Marian_reforms"
+            },
+            {
+                "event_name": "跨越卢比孔河 (Crossing the Rubicon)",
+                "start_year": -49,
+                "end_year": -49,
+                "key_figures": "尤利乌斯·凯撒",
+                "description": "面对元老院要求其解除武装的通牒，凯撒率领第十三军团跨越了作为行省边界的卢比孔河，此举在法律上等同于叛乱和内战的开始。",
+                "impact": "这一历史瞬间标志着罗马共和法律程序的终结。它引向了凯撒的终身独裁，并最终通过后来的亚克兴海战，完成了向帝制的必然转变。",
+                "category": "政治/军事",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Crossing_the_Rubicon"
+            }
+        ]
+    },
+    "Roman Empire": {
+        "period_name_cn": "罗马帝国时期",
+        "region": "European",
+        "year": "27 BC - 476 AD",
+        "events": [
+            {
+                "event_name": "维苏威火山爆发 (Eruption of Vesuvius)",
+                "start_year": 79,
+                "end_year": 79,
+                "key_figures": "提图斯, 小普林尼",
+                "description": "维苏威火山突然爆发，火山灰在极短时间内掩埋了繁华的庞贝古城和赫库兰尼姆，造成了巨大的生命和财产损失。",
+                "impact": "尽管是一场灾难，但它为后世保存了一个极其完整的、未受外界干扰的“时间胶囊”。通过庞贝考古，我们能详尽复原罗马帝国鼎盛时期的社会生活、商业、性文化和城市管理细节。",
+                "category": "环境/文化",
+                "importance_level": 8,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Eruption_of_Mount_Vesuvius_in_79_AD"
+            },
+            {
+                "event_name": "安东尼瘟疫 (Antonine Plague)",
+                "start_year": 165,
+                "end_year": 180,
+                "key_figures": "马可·奥勒留",
+                "description": "可能是一种天花病毒，由远征近东的士兵带回罗马。这场瘟疫夺走了全帝国约10%的人口，甚至皇帝马可·奥勒留也疑似死于此病。",
+                "impact": "瘟疫重创了罗马的税收和兵源，破坏了“罗马和平”时期的繁荣稳定。它是帝国从鼎盛转向衰落的一个关键生物学转折点。",
+                "category": "医疗/经济",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Antonine_Plague"
+            },
+            {
+                "event_name": "卡拉卡拉敕令 (Constitutio Antoniniana)",
+                "start_year": 212,
+                "end_year": 212,
+                "key_figures": "卡拉卡拉",
+                "description": "皇帝卡拉卡拉颁布敕令，授予帝国境内所有自由民以罗马公民权。其主要目的是为了扩大征税基数。",
+                "impact": "敕令终结了“公民”与“行省民”的等级差别，在法律上实现了帝国的统一，但也稀释了罗马公民身份的荣誉感和凝聚力，加速了帝国行政重心的分散。",
+                "category": "法律/政治",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Constitutio_Antoniniana"
+            },
+            {
+                "event_name": "戴克里先“四帝共治” (Tetrarchy)",
+                "start_year": 293,
+                "end_year": 293,
+                "key_figures": "戴克里先",
+                "description": "为了应对“三世纪危机”下的管理难题，戴克里先将帝国分为东西两部，每部设一名“奥古斯都”（主皇帝）和一名“凯撒”（副皇帝）。",
+                "impact": "这一行政改革在短期内稳定了边境并恢复了秩序，但它在制度上预演了东西罗马的分裂。同时，它将罗马从“元首制”推向了更具东方专制色彩的“君主制”（Dominate）。",
+                "category": "政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Tetrarchy"
+            }
+        ]
+    },
+    "Migration Period": {
+        "period_name_cn": "民族大迁徙时代",
+        "region": "European",
+        "year": "375 AD - 568 AD",
+        "events": [
+            {
+                "event_name": "阿德里安堡战役 (Battle of Adrianople)",
+                "start_year": 378,
+                "end_year": 378,
+                "key_figures": "瓦伦斯, 菲里蒂根",
+                "description": "由于罗马官员的压榨，进入帝国境内的哥特人爆发起义。罗马东部皇帝瓦伦斯亲征，结果全军覆没，皇帝战死。",
+                "impact": "这是罗马军事史上最严重的惨败之一，标志着蛮族对罗马军队绝对心理优势的丧失。它迫使罗马开始大规模招募日耳曼人作为“同盟者”入伍，导致了西罗马军事体系的内部瓦解。",
+                "category": "军事",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Battle_of_Adrianople"
+            },
+            {
+                "event_name": "汪达尔人洗劫罗马 (Sack of Rome 455)",
+                "start_year": 455,
+                "end_year": 455,
+                "key_figures": "盖萨里克",
+                "description": "汪达尔国王盖萨里克率领舰队从北非跨海而来，占领了罗马城并进行了长达14天的系统性洗劫，掠走了包括大量艺术品和皇室成员在内的财富。",
+                "impact": "这次洗劫比410年西哥特人的洗劫彻底得多，摧毁了西罗马最后的一点政治威望。“汪达尔主义”（Vandalism）一词也因此产生，用于描述对文明财富的肆意破坏。",
+                "category": "军事/文化",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Sack_of_Rome_(455)"
+            }
+        ]
+    },
+    "Byzantine Empire": {
+        "period_name_cn": "拜占庭帝国",
+        "region": "European",
+        "year": "330 AD - 1453 AD",
+        "events": [
+            {
+                "event_name": "尼卡起义 (Nika Riots)",
+                "start_year": 532,
+                "end_year": 532,
+                "key_figures": "查士丁尼一世, 狄奥多拉",
+                "description": "君士坦丁堡赛车场内的蓝党与绿党联合发起暴动，几乎摧毁了整个城市并试图推翻查士丁尼。在狄奥多拉皇后的坚持下，查士丁尼没有逃跑，而是派兵镇压。",
+                "impact": "这次起义的平定巩固了查士丁尼的专制权力，使他能够腾出手来进行后续的法律汇编（查士丁尼法典）和收复西方的战争，同时也促成了宏伟的圣索菲亚大教堂的重建。",
+                "category": "政治/社会",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Nika_Riots"
+            }
+        ]
+    },
+    "Carolingian Dynasty": {
+        "period_name_cn": "加洛林王朝",
+        "region": "European",
+        "year": "751 AD - 987 AD",
+        "events": [
+            {
+                "event_name": "加洛林文艺复兴的开启",
+                "start_year": 780,
+                "end_year": 800,
+                "key_figures": "查理曼, 阿尔琴",
+                "description": "查理曼邀请全欧洲的学者（如阿尔琴）来到亚琛，开办学校，整理古典文献，并推广了“加洛林小写体”书写系统。",
+                "impact": "这是欧洲中世纪第一次真正的文化复兴。它保存了大量古希腊罗马的拉丁语文献，统一了欧洲的书写标准，为欧洲教育体系和现代拉丁字母的演化打下了基础。",
+                "category": "文化/教育",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Carolingian_Renaissance"
+            },
+            {
+                "event_name": "《凡尔登条约》签署 (Treaty of Verdun)",
+                "start_year": 843,
+                "end_year": 843,
+                "key_figures": "洛泰尔一世, 秃头查理, 日耳曼人路易",
+                "description": "查理曼的三个孙子在凡尔登达成协议，将庞大的加洛林帝国一分为三：西法兰克、中法兰克和东法兰克。",
+                "impact": "这一划分直接奠定了现代法国（西法兰克）和德国（东法兰克）的国家雏形。条约标志着查理曼式大一统帝国的终结，欧洲进入了领土主权碎片化的新时代。",
+                "category": "外交/政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Treaty_of_Verdun"
+            }
+        ]
+    },
+    "Holy Roman Empire (Early)": {
+        "period_name_cn": "神圣罗马帝国（早期）",
+        "region": "European",
+        "year": "962 AD - 1250 AD",
+        "events": [
+            {
+                "event_name": "奥托一世加冕为帝",
+                "start_year": 962,
+                "end_year": 962,
+                "key_figures": "奥托大帝",
+                "description": "德意志国王奥托一世在罗马圣彼得大教堂由教皇约翰十二世加冕为皇帝。他通过在列希菲德战役中击败马扎尔人确立了声望，并利用教会力量削弱地方大公的权力，建立了“奥托制度”。",
+                "impact": "标志着神圣罗马帝国的正式诞生。这一事件将德意志王权与罗马教会深度绑定，确立了德意志君主在西欧的霸主地位，但也开启了此后千年德意志君主因沉溺于意大利事务而忽视本国领土集权的漫长历史。",
+                "category": "政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Otto_I,_Holy_Roman_Emperor"
+            },
+            {
+                "event_name": "卡诺莎之行 (Humiliation of Canossa)",
+                "start_year": 1077,
+                "end_year": 1077,
+                "key_figures": "亨利四世, 格列高利七世",
+                "description": "在关于主教叙任权的争斗中，教皇格列高利七世开除了皇帝亨利四世的教籍。为了政治生存，亨利四世被迫在严冬中赤足披毡，在意大利卡诺莎城堡外跪求三天，请求教皇的赦免。",
+                "impact": "这是中世纪教权凌驾于王权的巅峰象征。它从根本上动摇了“君权神授”中关于君主直接代表上帝的观念，使教会在长达两个世纪的时间里成为了欧洲最高政治裁决者，并深刻影响了西方世俗与宗教权力的边界界定。",
+                "category": "宗教/政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Road_to_Canossa"
+            }
+        ]
+    },
+    "High Middle Ages (Religion & Education)": {
+        "period_name_cn": "中世纪盛期（宗教与教育）",
+        "region": "European",
+        "year": "1000 AD - 1300 AD",
+        "events": [
+            {
+                "event_name": "东西教会大分裂 (Great Schism)",
+                "start_year": 1054,
+                "end_year": 1054,
+                "key_figures": "利奥九世, 赛鲁拉留斯",
+                "description": "由于对“和子说”等教义的争论以及罗马教皇首席权的冲突，罗马教廷的使节与君士坦丁堡普世牧首互相开除对方的教籍。",
+                "impact": "基督教正式分裂为罗马天主教和东方正教。这一裂痕不仅是神学上的，更在文化和地缘政治上将欧洲划分为东西两个阵营，至今仍深刻影响着东欧与西欧的文化认同与政治博弈。",
+                "category": "宗教/文化",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/East%E2%80%93West_Schism"
+            },
+            {
+                "event_name": "博洛尼亚大学建立",
+                "start_year": 1088,
+                "end_year": 1088,
+                "key_figures": "伊内里乌斯",
+                "description": "作为西方世界最古老的大学，它最初由学生自发组织，重点讲授重新发现的罗马法（查士丁尼法典）。它脱离了修道院教育的框架，建立了独特的学术自治传统。",
+                "impact": "开启了欧洲高等教育的先河，推动了理性和逻辑思维的复兴。法律教育的普及为西欧官僚体系的现代化和民族国家法律体系的构建提供了人才储备。",
+                "category": "教育/文化",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/University_of_Bologna"
+            }
+        ]
+    },
+    "High Middle Ages (Military & Expansion)": {
+        "period_name_cn": "中世纪盛期（军事与扩张）",
+        "region": "European",
+        "year": "1066 AD - 1291 AD",
+        "events": [
+            {
+                "event_name": "黑斯廷斯战役",
+                "start_year": 1066,
+                "end_year": 1066,
+                "key_figures": "征服者威廉, 哈罗德二世",
+                "description": "诺曼底公爵威廉率军跨海击败了盎格鲁-撒克逊国王哈罗德。随后威廉在西敏寺加冕，开启了诺曼王朝对英格兰的统治。",
+                "impact": "这是英国历史的根本转折点。它引入了精密的法式封建制度，重塑了英语语言，并使英国的政治重心从北欧圈转向了欧陆核心，奠定了后来数百年英法纠葛的基础。",
+                "category": "军事/政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Battle_of_Hastings"
+            },
+            {
+                "event_name": "克莱蒙会议与第一次十字军号召",
+                "start_year": 1095,
+                "end_year": 1095,
+                "key_figures": "乌尔班二世",
+                "description": "在法国克莱蒙，教皇乌尔班二世发表煽动性演说，号召基督徒前往东方拯救被穆斯林威胁的拜占庭帝国并夺回圣地耶路撒冷，承诺参加者可获罪孽赦免。",
+                "impact": "引发了持续两百年的十字军运动。这一运动虽未达成持久的军事占领，但极大地促进了东西方贸易，将阿拉伯的科学、医学和希腊古籍重新引入欧洲，加速了中世纪欧洲的文化觉醒。",
+                "category": "军事/宗教",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Council_of_Clermont"
+            }
+        ]
+    },
+    "The Formation of Law and Parliament": {
+        "period_name_cn": "法律与议会的形成",
+        "region": "European",
+        "year": "1150 AD - 1350 AD",
+        "events": [
+            {
+                "event_name": "《大宪章》签署",
+                "start_year": 1215,
+                "end_year": 1215,
+                "key_figures": "约翰王, 斯蒂芬·朗顿",
+                "description": "由于对外战争失败和苛政，英国贵族武装反抗并迫使国王签署了这一文件。其核心内容包括限制国王征税权、保障自由人的法律程序（正当法律程序）。",
+                "impact": "它是现代宪政民主的基石。它首次在法理上确立了“王在法下”的原则，不仅保护了贵族利益，其逻辑最终演变为普遍的公民权利保护，直接影响了美国宪法和全球法治进程。",
+                "category": "法律",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Magna_Carta"
+            },
+            {
+                "event_name": "英国“模范议会”召开",
+                "start_year": 1295,
+                "end_year": 1295,
+                "key_figures": "爱德华一世",
+                "description": "为了筹措战争经费，爱德华一世召集会议，除了大主教和贵族外，还首次正式包括了来自每个郡的两名骑士和每个自治市的两名市民代表。",
+                "impact": "这标志着英国议会制度的成熟。它确立了“凡涉及众人之事，应经众人同意”的代议制原则，使社会各阶层能够通过财政博弈参与国家政治，奠定了现代民主政体的雏形。",
+                "category": "政治",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Model_Parliament"
+            }
+        ]
+    },
+    "Late Middle Ages (Political Turmoil)": {
+        "period_name_cn": "中世纪晚期（政治动荡）",
+        "region": "European",
+        "year": "1300 AD - 1500 AD",
+        "events": [
+            {
+                "event_name": "阿维尼翁教廷时期",
+                "start_year": 1309,
+                "end_year": 1377,
+                "key_figures": "克莱门特五世, 腓力四世",
+                "description": "在法国国王的操控下，教廷从罗马迁往法国阿维尼翁。在此期间，连续七任教皇均为法国人且深受法王控制。",
+                "impact": "这一时期被称为“教会的巴比伦之囚”，极大地削弱了教皇的普世权威。它诱发了后来的“天主教会大分裂”，并让各民族国家君主意识到，宗教力量可以被服务于国家的世俗目的。",
+                "category": "宗教/政治",
+                "importance_level": 8,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Avignon_Papacy"
+            },
+            {
+                "event_name": "《1356年金玺诏书》颁布",
+                "start_year": 1356,
+                "end_year": 1356,
+                "key_figures": "查理四世",
+                "description": "神圣罗马帝国皇帝颁布法典，明确规定皇帝由七位选帝侯选举产生，并确立了选侯领地的独立性，排除了教皇的干预权。",
+                "impact": "它是帝国的基本法，奠定了德意志联邦式的政治结构。它虽维持了内部秩序，但也固化了德意志的政治分裂，使其在近代民族国家集权竞争中落后于英法。",
+                "category": "法律/政治",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Golden_Bull_of_1356"
+            },
+            {
+                "event_name": "阿金库尔战役",
+                "start_year": 1415,
+                "end_year": 1415,
+                "key_figures": "亨利五世",
+                "description": "百年战争期间，英王亨利五世以少胜多，利用长弓兵大胜法国重装骑士。此战几乎摧毁了法国贵族阶层的精英力量。",
+                "impact": "它不仅是军事战术上的重大革新（远程武器压制重甲骑兵），还极大激发了英法两国的民族主义情绪。它标志着中世纪传统骑士阶层的式微和步兵时代的回归。",
+                "category": "军事",
+                "importance_level": 8,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Battle_of_Agincourt"
+            },
+            {
+                "event_name": "康斯坦茨公会议结束大分裂",
+                "start_year": 1414,
+                "end_year": 1418,
+                "key_figures": "西吉斯蒙德",
+                "description": "为了终结当时“三名教皇并立”的混乱局面，全欧的神职人员和世俗君主代表集结。会议废黜了竞争对手，重新选出统一的教皇。",
+                "impact": "虽恢复了教会统一，但会议提出的“公会议至上主义”挑战了教皇独裁，并处死了早期改革者胡斯。它预示了教会内部改革的失败，为后来的宗教改革埋下了火种。",
+                "category": "宗教/政治",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Council_of_Constance"
+            }
+        ]
+    },
+    "Early Modern (State Formation)": {
+        "period_name_cn": "近世（国家构建）",
+        "region": "European",
+        "year": "1450 AD - 1600 AD",
+        "events": [
+            {
+                "event_name": "西班牙王国的联合",
+                "start_year": 1469,
+                "end_year": 1479,
+                "key_figures": "伊莎贝拉一世, 斐迪南二世",
+                "description": "卡斯蒂利亚与阿拉贡两大王国的联姻，结束了西班牙长期的割据状态。双王随后完成了光复运动，驱逐了最后的摩尔势力。",
+                "impact": "标志着现代西班牙国家的诞生。这种强有力的统一使西班牙有资源在1492年开启全球航海扩张，并在16世纪成为欧洲首个全球霸主。",
+                "category": "政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Catholic_Monarchs_of_Spain"
+            },
+            {
+                "event_name": "《托德西利亚斯条约》签署",
+                "start_year": 1494,
+                "end_year": 1494,
+                "key_figures": "亚历山大六世",
+                "description": "在教皇的调停下，西班牙和葡萄牙在地图上划出一条垂直分界线（教皇子午线），瓜分了当时尚未被完全发现的世界。",
+                "impact": "它是第一个全球性的瓜分协议，决定了拉丁美洲绝大部分属于西班牙语圈而巴西属于葡萄牙语圈的现状，反映了早期欧洲强权对全球资源的垄断野心。",
+                "category": "外交/地理",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Treaty_of_Tordesillas"
+            },
+            {
+                "event_name": "帕维亚战役 (Battle of Pavia)",
+                "start_year": 1525,
+                "end_year": 1525,
+                "key_figures": "查理五世, 弗朗索瓦一世",
+                "description": "哈布斯堡家族与法国瓦卢瓦家族在意大利争霸的决定性战斗。法王弗朗索瓦一世被俘，标志着火绳枪在战争中取得了对重装骑兵的压倒性胜利。",
+                "impact": "此战确立了哈布斯堡家族在意大利和全欧的霸权地位，同时也被视为“军事革命”的一个标志。随后法王为了对抗哈布斯堡，竟然与奥斯曼帝国结盟，打破了欧洲传统的宗教阵线。",
+                "category": "军事/外交",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Battle_of_Pavia"
+            },
+            {
+                "event_name": "《至尊法案》颁布",
+                "start_year": 1534,
+                "end_year": 1534,
+                "key_figures": "亨利八世",
+                "description": "为了摆脱罗马教廷对其婚姻和政治的控制，英王亨利八世通过此法案，宣布国王是英格兰教会在地上的唯一最高首领。",
+                "impact": "这不仅是宗教改革，更是英国主权国家的独立宣言。它彻底断绝了英国与罗马的政治瓜葛，开启了英格兰圣公会时代，并极大地通过没收教会土地增强了都铎王朝的经济实力。",
+                "category": "政治/宗教",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Acts_of_Supremacy"
+            },
+            {
+                "event_name": "特伦托会议 (Council of Trent)",
+                "start_year": 1545,
+                "end_year": 1563,
+                "key_figures": "保罗三世",
+                "description": "针对新教冲击，天主教会召集了长达18年的会议。它重申了传统教义，整顿了教会腐败，并设立了耶稣会。",
+                "impact": "这是“反宗教改革”的核心转折点。它重振了天主教的士气和组织力，成功阻止了新教在意大利、西班牙和南德的蔓延，塑造了后世天主教欧洲的文化特征。",
+                "category": "宗教",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Council_of_Trent"
+            },
+            {
+                "event_name": "《奥格斯堡和约》签署",
+                "start_year": 1555,
+                "end_year": 1555,
+                "key_figures": "查理五世",
+                "description": "神圣罗马帝国境内的宗教冲突在此时达成暂时的妥协，确立了“教随君定”（Cuius regio, eius religio）的原则，允许领主在天主教与路德宗之间进行选择。",
+                "impact": "这是欧洲历史上第一次在法律上承认新教的合法地位。它虽然未能带来真正的信仰自由，但终结了查理五世重建统一天主教会帝国的梦想，加速了欧洲宗教多元化格局的形成。",
+                "category": "宗教/法律",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Peace_of_Augsburg"
+            },
+            {
+                "event_name": "勒班陀海战",
+                "start_year": 1571,
+                "end_year": 1571,
+                "key_figures": "唐·胡安",
+                "description": "由西班牙、威尼斯和教皇国组成的“神圣同盟”舰队，在希腊近海彻底击败了奥斯曼土耳其的海军主力。",
+                "impact": "此役终结了奥斯曼帝国在地中海“不可战胜”的神话。虽然奥斯曼随后重建了舰队，但它在战略上转入防御，确保了西地中海维持在基督教强权的控制之下。",
+                "category": "军事",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Battle_of_Lepanto"
+            },
+            {
+                "event_name": "圣巴托罗缪大屠杀",
+                "start_year": 1572,
+                "end_year": 1572,
+                "key_figures": "凯瑟琳·德·美第奇, 查理九世",
+                "description": "在法国宗教战争期间，天主教派针对新教胡格诺派进行了大规模的定点清除和暴徒式屠杀，导致全法数万名新教徒丧生。",
+                "impact": "这一事件震惊了全欧洲，使法国宗教矛盾陷入了不可调和的死局，促使政治温和派（Politiques）崛起，并最终推动了后来《南特敕令》中宗教宽容政策的诞生。",
+                "category": "冲突/宗教",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/St._Bartholomew%27s_Day_massacre"
+            }
+        ]
+    },
+    "Early Modern (Scientific & Diplomatic Origins)": {
+        "period_name_cn": "近世（科学与外交起源）",
+        "region": "European",
+        "year": "1580 AD - 1650 AD",
+        "events": [
+            {
+                "event_name": "格里高利历颁行",
+                "start_year": 1582,
+                "end_year": 1582,
+                "key_figures": "格里高利十三世",
+                "description": "教皇颁布了修正后的太阳历系统，以纠正由于旧儒略历误差导致的复活节日期漂移。",
+                "impact": "它体现了文艺复兴时期天文学研究的成果。尽管起初受到新教国家抵制，但因其科学性，最终成为了全球通用的标准历法，是全球时间统一化进程的开端。",
+                "category": "科学/文化",
+                "importance_level": 8,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Gregorian_calendar"
+            },
+            {
+                "event_name": "格老秀斯《战争与和平法》出版",
+                "start_year": 1625,
+                "end_year": 1625,
+                "key_figures": "雨果·格老秀斯",
+                "description": "在三十年战争的惨烈背景下，这位荷兰学者提出了关于国家主权、海权和公正战争的系统化理论。",
+                "impact": "它标志着现代国际法（Jus gentium）的诞生。格老秀斯的理论脱离了单纯的神学框架，为后来的西发里亚体系提供了法理支撑，界定了现代民族国家的相互权利与义务。",
+                "category": "法律/外交",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/De_jure_belli_ac_pacis"
+            }
+        ]
+    },
+    "Age of Absolutism and Constitutionalism": {
+        "period_name_cn": "绝对主义与宪政时代",
+        "region": "European",
+        "year": "1648 AD - 1789 AD",
+        "events": [
+            {
+                "event_name": "查理一世被处决",
+                "start_year": 1649,
+                "end_year": 1649,
+                "key_figures": "查理一世, 奥利弗·克伦威尔",
+                "description": "英国内战中，国会军击败王军。残余国会通过特别法庭，以“暴君、叛国贼及人民公敌”罪名将国王查理一世送上断头台。这是欧洲历史上首次通过法律程序处决现任君主。",
+                "impact": "彻底动摇了“君权神授”的法理基础。它不仅确立了“议会主权”的雏形，也为后来欧洲各国的共和运动提供了激进的先例，迫使未来的君主必须在契约框架内行使权力。",
+                "category": "政治/法律",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Execution_of_Charles_I"
+            },
+            {
+                "event_name": "路易十四亲政与凡尔赛宫扩建",
+                "start_year": 1661,
+                "end_year": 1682,
+                "key_figures": "路易十四",
+                "description": "在权臣马扎然去世后，路易十四宣布不再设首相，直接掌权。他大规模扩建凡尔赛宫，强制高级贵族迁入居住，通过繁缛的宫廷礼仪将贵族转化为服从王权的侍臣。",
+                "impact": "标志着“绝对君主制”（Absolutism）在欧洲达到顶峰。凡尔赛宫模式成为全欧王室效仿的对象，确立了法国在长达一个多世纪里的文化与政治霸权，同时也完成了法国从封建割据向中央集权国家的转型。",
+                "category": "政治/文化",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Louis_XIV"
+            },
+            {
+                "event_name": "光荣革命与《权利法案》",
+                "start_year": 1688,
+                "end_year": 1689,
+                "key_figures": "威廉三世, 玛丽二世",
+                "description": "英国议会因不满詹姆斯二世的亲天主教政策，邀请荷兰执政威廉入主。威廉签署《权利法案》，明确限制王权，保护议会言论自由和财政拨款权。",
+                "impact": "标志着世界第一个稳定的君主立宪政体确立。它解决了长期困扰英国的王权与议会之争，为英国后来的工业革命和全球扩张提供了稳定的制度环境，是资产阶级代议制的历史原点。",
+                "category": "政治/法律",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Glorious_Revolution"
+            },
+            {
+                "event_name": "波尔塔瓦战役",
+                "start_year": 1709,
+                "end_year": 1709,
+                "key_figures": "彼得大帝, 查理十二世",
+                "description": "在大北方战争中，俄国沙皇彼得一世彻底击败了当时北欧的霸主瑞典王国，瑞典国王查理十二世被迫流亡奥斯曼帝国。",
+                "impact": "此役彻底改变了东欧和北欧的地缘格局。瑞典退出了大国行列，而俄罗斯帝国正式作为欧洲列强之一崛起，获得了波罗的海出海口，开启了全方位的“西化”进程。",
+                "category": "军事/外交",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Battle_of_Poltava"
+            },
+            {
+                "event_name": "《乌得勒支和约》签署",
+                "start_year": 1713,
+                "end_year": 1713,
+                "key_figures": "路易十四, 安妮女王",
+                "description": "作为西班牙王位继承战争的终结，该和约规定波旁家族可继承西班牙王位但法西两国永不合并，同时英国获得了直布罗陀及纽芬兰等战略要地。",
+                "impact": "确立了18世纪国际关系的核心准则——“势力均衡”（Balance of Power）。英国通过此约正式确立了全球海上霸权，而法国在欧陆的绝对扩张受到了遏制。",
+                "category": "外交",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Treaty_of_Utrecht"
+            },
+            {
+                "event_name": "《外交革命》 (Diplomatic Revolution)",
+                "start_year": 1756,
+                "end_year": 1756,
+                "key_figures": "玛丽亚·特蕾莎, 考尼茨",
+                "description": "在七年战争爆发前，欧洲传统的结盟体系发生翻天覆地的逆转：长期敌对的哈布斯堡王朝（奥地利）与波旁王朝（法国）结盟，而英国转而支持新兴的普鲁士。",
+                "impact": "这标志着地缘政治利益彻底超越了宗教与家族传统，成为国家行为的唯一驱动力。它引发了覆盖全球的“七年战争”，并确立了普鲁士作为德意志核心强国的地位。",
+                "category": "外交",
+                "importance_level": 8,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Diplomatic_Revolution"
+            },
+            {
+                "event_name": "瓜分波兰 (Partitions of Poland)",
+                "start_year": 1772,
+                "end_year": 1795,
+                "key_figures": "凯瑟琳大帝, 腓特烈大帝, 约瑟夫二世",
+                "description": "俄、普、奥三个绝对主义强国分三次对日渐衰落的波兰-立陶宛联邦进行了领土瓜分，直到1795年该国在欧洲版图上彻底消失。",
+                "impact": "这一历史悲剧体现了18世纪强权政治的残酷性。它导致波兰民族开始了长达123年的复国斗争，同时也极大改变了中东欧的力量对比，使俄罗斯势力深度渗入欧洲腹地。",
+                "category": "军事/外交",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Partitions_of_Poland"
+            }
+        ]
+    },
+    "Era of the French Revolution and Napoleon": {
+        "period_name_cn": "法国大革命与拿破仑时代",
+        "region": "European",
+        "year": "1789 AD - 1815 AD",
+        "events": [
+            {
+                "event_name": "网球场宣誓",
+                "start_year": 1789,
+                "end_year": 1789,
+                "key_figures": "米拉波, 西哀士",
+                "description": "法国三级会议期间，第三等级代表被国王锁在会场外。代表们在附近的室内网球场集结并宣誓：在为法国制定出宪法前绝不解散。",
+                "impact": "这是法国大革命爆发的法律信号。它象征着主权从“国王”向“国民”的转移，标志着第三等级正式走上政治舞台，直接引发了随后攻占巴士底狱的行动。",
+                "category": "政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Tennis_Court_Oath"
+            },
+            {
+                "event_name": "《人权宣言》颁布",
+                "start_year": 1789,
+                "end_year": 1789,
+                "key_figures": "拉法耶特",
+                "description": "受启蒙思想和美国《独立宣言》影响，法国制宪议会颁布此文件，宣称“人们生来且始终是自由平等的”，提出了主权在民和法律面前人人平等。",
+                "impact": "它彻底否定了封建等级制度，成为现代民主政治和普世价值的基石。其影响远超法国国界，成为此后全球所有反压迫斗争的精神旗帜。",
+                "category": "法律/政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Declaration_of_the_Rights_of_Man_and_of_the_Citizen"
+            },
+            {
+                "event_name": "路易十六被处决",
+                "start_year": 1793,
+                "end_year": 1793,
+                "key_figures": "路易十六, 罗伯斯庇尔",
+                "description": "在共和派的推动下，法国国民公会以叛国罪判处路易十六死刑，并在协和广场执行断头台处决。",
+                "impact": "此举不仅终结了法国千年的王权统治，也使法国革命与全欧洲君主国进入了彻底的不死不休状态，引发了波澜壮阔的欧洲反法同盟战争。",
+                "category": "政治",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Execution_of_Louis_XVI"
+            },
+            {
+                "event_name": "《拿破仑法典》颁布",
+                "start_year": 1804,
+                "end_year": 1804,
+                "key_figures": "拿破仑·波拿巴",
+                "description": "拿破仑下令编纂的一部系统化民法典。它确立了私有财产不可侵犯、契约自由、宗教宽容以及法律面前人人平等。它废除了所有封建特权和土地上的不平等待遇。",
+                "impact": "这是现代民法的蓝本。它随着拿破仑的征服传播到全欧洲，摧毁了各地的封建法律残余，对后来的德国、意大利以及拉美各国的法律体系产生了深远影响。",
+                "category": "法律",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Napoleonic_Code"
+            },
+            {
+                "event_name": "神圣罗马帝国的解体",
+                "start_year": 1806,
+                "end_year": 1806,
+                "key_figures": "弗朗茨二世, 拿破仑",
+                "description": "在奥斯特里茨战役惨败于拿破仑后，弗朗茨二世被迫放弃“神圣罗马皇帝”头衔，仅保留奥地利皇帝称号。这一拥有千年历史的松散帝国正式终结。",
+                "impact": "标志着中世纪政治遗产的彻底消亡。拿破仑随后建立了“莱茵联邦”，这加速了德意志地区的领土合并与整合，为后来普鲁士领导的德国统一扫清了法理障碍。",
+                "category": "政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Dissolution_of_the_Holy_Roman_Empire"
+            },
+            {
+                "event_name": "莱比锡战役 (民族之战)",
+                "start_year": 1813,
+                "end_year": 1813,
+                "key_figures": "拿破仑, 亚历山大一世",
+                "description": "这是拿破仑战争中规模最大的一场战役。俄、普、奥、瑞典等国组成的联军彻底击败了拿破仑的法军主力。",
+                "impact": "法军在德意志境内的霸权彻底崩溃。此战标志着欧洲各民族国家（尤其是德意志和俄国）的民族意识大觉醒，直接导致了拿破仑的首次退位。",
+                "category": "军事",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Battle_of_Leipzig"
+            }
+        ]
+    },
+    "Restoration and Pre-Modern Transitions": {
+        "period_name_cn": "复辟与近现代转折",
+        "region": "European",
+        "year": "1815 AD - 1860 AD",
+        "events": [
+            {
+                "event_name": "维也纳会议与梅特涅体系确立",
+                "start_year": 1814,
+                "end_year": 1815,
+                "key_figures": "梅特涅, 塔列朗",
+                "description": "拿破仑战败后，欧洲各大国在维也纳聚会，旨在重建欧洲秩序。通过恢复旧王朝、划分领土补偿和建立“大国协调”机制，试图压制自由主义和民族主义。",
+                "impact": "建立了著名的“梅特涅体系”，维持了欧洲长达近百年的相对和平（直到一战前）。虽然它具有反动保守的一面，但它在外交上开创了通过会议而非战争解决领土争端的新时代。",
+                "category": "外交/政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Congress_of_Vienna"
+            },
+            {
+                "event_name": "彼得卢屠杀 (Peterloo Massacre)",
+                "start_year": 1819,
+                "end_year": 1819,
+                "key_figures": "未知（曼彻斯特地方官员）",
+                "description": "在曼彻斯特，约6万名民众集会要求议会改革及废除不公的《谷物法》。政府出动骑兵冲入人群，造成多人死亡、数百人受伤。",
+                "impact": "这一惨案引发了英国社会的强烈愤慨。它迫使英国执政者意识到，暴力镇压无法解决工业革命带来的阶级矛盾，直接推动了1832年的英国议会改革进程。",
+                "category": "社会/冲突",
+                "importance_level": 7,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Peterloo_Massacre"
+            },
+            {
+                "event_name": "希腊独立战争爆发",
+                "start_year": 1821,
+                "end_year": 1832,
+                "key_figures": "亚历山大·伊普西兰蒂斯, 拜伦",
+                "description": "在奥斯曼帝国统治四个世纪后，希腊人发起反抗，要求建立民族国家。在英、法、俄的干预下，希腊最终获得独立。",
+                "impact": "这是欧洲民族主义在19世纪的首个重大胜利。它打破了维也纳体系关于“维持奥斯曼帝国现状”的准则，也拉开了东南欧民族主义运动的序幕，引发了后来的“近东问题”。",
+                "category": "军事/政治",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Greek_War_of_Independence"
+            },
+            {
+                "event_name": "1832年英国议会改革",
+                "start_year": 1832,
+                "end_year": 1832,
+                "key_figures": "格雷伯爵",
+                "description": "该法案废除了许多“腐败选区”，并重新分配席位给工业化新兴城市（如伯明翰、曼彻斯特），同时扩大了中产阶级的投票权。",
+                "impact": "这是英国迈向民主政治的第一个里程碑。它证明了通过内部改良而非暴力革命来解决社会结构巨变的可能性，确保了英国在整个维多利亚时代的社会稳定。",
+                "category": "政治",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Reform_Act_1832"
+            },
+            {
+                "event_name": "德意志关税同盟成立 (Zollverein)",
+                "start_year": 1834,
+                "end_year": 1834,
+                "key_figures": "腓特烈·李斯特",
+                "description": "在普鲁士主导下，多个德意志邦国通过取消内部关税、统一外部关税，形成了一个共同的自由贸易区，将奥地利排除在外。",
+                "impact": "这是“经济先于政治”统一的典范。它加速了德意志内部的工业化进程，增强了普鲁士在德意志境内的经济号召力，为后来俾斯麦的政治统一奠定了物质基础。",
+                "category": "经济/政治",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Zollverein"
+            },
+            {
+                "event_name": "1848年革命 (民族之春)",
+                "start_year": 1848,
+                "end_year": 1849,
+                "key_figures": "加里波第, 匈牙利科苏特",
+                "description": "一场由法国引发、迅速蔓延至德意志、奥地利、意大利等全欧范围的革命运动。起义者要求废除残留封建制、建立代议制及民族独立。",
+                "impact": "虽然大部分起义在短期内被武力镇压，但它彻底粉碎了维也纳体系下的反动封建秩序。自此，自由主义和民族主义成为不可逆转的洪流，为后来意德两国的最终统一做好了心理和组织铺垫。",
+                "category": "政治/社会",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Revolutions_of_1848"
+            },
+            {
+                "event_name": "克里米亚战争",
+                "start_year": 1853,
+                "end_year": 1856,
+                "key_figures": "尼古拉一世, 拿破仑三世",
+                "description": "英、法、奥斯曼帝国联合对抗俄罗斯的扩张，战争在克里米亚半岛进行。这是第一场使用铁路、电报和现代医疗护理（南丁格尔）的“现代战争”。",
+                "impact": "此战终结了拿破仑战争后长期的大国和谐格局。俄国战败并陷入深刻的内部危机，直接引发了后来的农奴制改革；而英法重新主导了近东事务，奥匈帝国则在外交上被孤立。",
+                "category": "军事/外交",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Crimean_War"
+            }
+        ]
+    },
+    "Early Industrial Era (Social Political Impacts)": {
+        "period_name_cn": "工业时代早期（社会政治影响）",
+        "region": "European",
+        "year": "1840 AD - 1870 AD",
+        "events": [
+            {
+                "event_name": "《共产党宣言》发表",
+                "start_year": 1848,
+                "end_year": 1848,
+                "key_figures": "马克思, 恩格斯",
+                "description": "在1848年欧洲大革命的前夕，由两位德国思想家受共产主义者同盟委托起草。该宣言系统阐述了阶级斗争理论，呼吁“全世界无产者，联合起来！”",
+                "impact": "标志着科学社会主义理论的诞生。它为此后一个多世纪的国际工人运动和全球社会主义革命提供了核心纲领，深刻地改变了人类社会的意识形态和治理结构。",
+                "category": "思想/政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/The_Communist_Manifesto"
+            },
+            {
+                "event_name": "大展览会 (The Great Exhibition)",
+                "start_year": 1851,
+                "end_year": 1851,
+                "key_figures": "阿尔伯特亲王",
+                "description": "在伦敦海德公园的水晶宫举行，这是世界上第一届真正意义上的世博会。展示了工业革命以来最先进的机械、技术与工艺。",
+                "impact": "标志着大英帝国作为“世界工厂”和全球科学技术领袖的绝对优势。它定义了现代进步的观念，推动了全球自由贸易的共识，并引发了各国争相进行技术竞赛的热潮。",
+                "category": "科技/经济",
+                "importance_level": 8,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/The_Great_Exhibition"
+            },
+            {
+                "event_name": "俄国农奴制改革 (1861法令)",
+                "start_year": 1861,
+                "end_year": 1861,
+                "key_figures": "亚历山大二世",
+                "description": "沙皇亚历山大二世颁布敕令，废除了俄国实行已久的农奴制度。规定农奴在获得自由时可得到一块土地，但需支付巨额赎金。",
+                "impact": "这是俄国向近代转型的关键时刻。它为俄国工业化提供了急需的自由劳动力，但也因分配土地的不公和沉重的赎金负担，留下了深刻的社会矛盾，成为20世纪俄国革命的远期诱因。",
+                "category": "法律/社会",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Emancipation_reform_of_1861"
+            },
+            {
+                "event_name": "普法战争与法兰西第三共和国成立",
+                "start_year": 1870,
+                "end_year": 1871,
+                "key_figures": "俾斯麦, 拿破仑三世",
+                "description": "由于埃姆斯电报引发的争端，法国对普鲁士宣战。法军在色当惨败，拿破仑三世被俘，随后法兰西第二帝国崩溃，巴黎建立临时政府。",
+                "impact": "此役不仅直接导致了德意志帝国的统一，也标志着法兰西第三共和国这一持久共和体制的诞生。它使欧洲地缘平衡重心向德国倾斜，并埋下了长达几十年的法德仇恨种火。",
+                "category": "军事/政治",
+                "importance_level": 10,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Franco-Prussian_War"
+            },
+            {
+                "event_name": "柏林会议 (1884)",
+                "start_year": 1884,
+                "end_year": 1885,
+                "key_figures": "俾斯麦",
+                "description": "欧洲列强在柏林开会，商讨如何有序瓜分非洲。会议确立了“有效占领”原则，即任何国家必须实际占领并有效管理土地，其声明才会被认可。",
+                "impact": "开启了疯狂的“瓜分非洲”浪潮。它不仅人为划定了大量现代非洲国家的边界（完全无视民族分布），也反映了19世纪末期欧洲帝国主义竞争的白热化和全球控制权的扩张。",
+                "category": "外交/政治",
+                "importance_level": 9,
+                "region": "European",
+                "source": "https://en.wikipedia.org/wiki/Berlin_Conference"
+            }
+        ]
+    },
+    "Late 19th Century and Imperialism": {
+    "period_name_cn": "19世纪末与帝国主义时代",
+    "region": "European",
+    "year": "1871 AD - 1914 AD",
+    "events": [
+      {
+        "event_name": "德雷福斯事件 (Dreyfus Affair)",
+        "start_year": 1894,
+        "end_year": 1906,
+        "key_figures": "阿尔弗雷德·德雷福斯, 埃米尔·左拉",
+        "description": "一名法国犹太裔军官被诬告为德国间谍。这一冤案引发了法国社会关于反犹主义、军队权威与公民人权的持久大裂痕，左拉发表著名的《我控诉》。",
+        "impact": "这是现代政治史上人权捍卫的里程碑。它最终导致了法国1905年政教分离法的通过，确立了世俗主义（Laïcité）在法国共和制中的核心地位，并深刻影响了后来的国际人权观念。",
+        "category": "政治/法律",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Dreyfus_affair"
+      },
+      {
+        "event_name": "法绍达事件 (Fashoda Incident)",
+        "start_year": 1898,
+        "end_year": 1898,
+        "key_figures": "马尔尚, 基奇纳",
+        "description": "英法两军在苏丹法绍达狭路相逢，双方都试图连接各自在非洲的领土带（英国的纵贯南北计划与法国的横跨东西计划），战争一触即发。",
+        "impact": "这是英法最后一次重大的殖民冲突。法国的撤退为1904年“英法协约”（Entente Cordiale）铺平了道路，彻底终结了两个世纪的宿怨，使两国联手对抗崛起的德国。",
+        "category": "外交/军事",
+        "importance_level": 8,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Fashoda_Incident"
+      },
+      {
+        "event_name": "第一次摩洛哥危机 (Tangier Crisis)",
+        "start_year": 1905,
+        "end_year": 1906,
+        "key_figures": "威廉二世",
+        "description": "德国皇帝威廉二世访问摩洛哥并支持其独立，挑战法国在当地的势力范围。德国意在试探英法协约的牢固程度。",
+        "impact": "危机不仅没能离间英法，反而加强了英法英俄之间的秘密军事协作，导致欧洲形成了德奥对阵英法俄的鲜明两大阵营，预演了第一次世界大战的对峙格局。",
+        "category": "外交",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/First_Moroccan_Crisis"
+      }
+    ]
+  },
+  "World Wars and Interwar Period": {
+    "period_name_cn": "世界大战与战间期",
+    "region": "European",
+    "year": "1914 AD - 1945 AD",
+    "events": [
+      {
+        "event_name": "爱尔兰复活节起义",
+        "start_year": 1916,
+        "end_year": 1916,
+        "key_figures": "帕特里克·皮尔斯, 詹姆斯·康诺利",
+        "description": "在一战期间，爱尔兰共和主义者在都柏林发动武装起义，宣布脱离英国独立。起义虽被镇压，但领导人被处决引发了公众舆论的剧烈转向。",
+        "impact": "它是爱尔兰独立运动的转折点，开启了此后波及全球的非殖民化浪潮。起义最终导致了爱尔兰自由邦的建立，深刻改变了不列颠群岛的政治版图。",
+        "category": "政治/冲突",
+        "importance_level": 8,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Easter_Rising"
+      },
+      {
+        "event_name": "贝尔福宣言 (Balfour Declaration)",
+        "start_year": 1917,
+        "end_year": 1917,
+        "key_figures": "亚瑟·贝尔福",
+        "description": "英国政府致信犹太复国主义领袖，表示支持在巴勒斯坦地区为犹太人建立一个“民族之家”。",
+        "impact": "这一由欧洲强权发出的声明，不仅是犹太复国主义的重大外交胜利，也为之后长达一个世纪的中东冲突埋下了法律与地缘上的伏笔，反映了欧洲帝国对中东秩序的重塑。",
+        "category": "外交/宗教",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Balfour_Declaration"
+      },
+      {
+        "event_name": "进军罗马 (March on Rome)",
+        "start_year": 1922,
+        "end_year": 1922,
+        "key_figures": "贝尼托·墨索里尼",
+        "description": "数万名法西斯“黑衫军”向罗马进军，向意大利国王施压。国王由于担心内战，最终任命墨索里尼为首相。",
+        "impact": "标志着世界上第一个法西斯政权的建立。它为后来希特勒的崛起提供了“成功模板”，证明了暴力激进主义可以通过利用民主体制的脆弱性来夺取政权。",
+        "category": "政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/March_on_Rome"
+      },
+      {
+        "event_name": "洛迦诺公约 (Locarno Treaties)",
+        "start_year": 1925,
+        "end_year": 1925,
+        "key_figures": "斯特莱斯曼, 白里安",
+        "description": "德国、法国、英国、意大利等国在瑞士签署。德国正式承认其西线边界（凡尔赛条约划定），并以此重返国际联盟。",
+        "impact": "短暂开启了欧洲战后的“洛迦诺时代”，缓解了法德仇恨。然而因未涉及德国东线边界，也为后来德国向波兰、捷克的扩张留下了安全真空。",
+        "category": "外交/法律",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Locarno_Treaties"
+      },
+      {
+        "event_name": "拉特兰条约 (Lateran Treaty)",
+        "start_year": 1929,
+        "end_year": 1929,
+        "key_figures": "墨索里尼, 庇护十一世",
+        "description": "意大利政府与教廷达成协议，正式承认梵蒂冈为一个拥有独立主权的国家，结束了自1870年以来长达半个世纪的“罗马问题”。",
+        "impact": "它确立了教廷作为国际法主体的地位，解决了现代世俗国家与天主教会之间的长期法理冲突，使梵蒂冈成为全球宗教与外交舞台上的独特力量。",
+        "category": "法律/宗教",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Lateran_Treaty"
+      },
+      {
+        "event_name": "格尔尼卡大轰炸",
+        "start_year": 1937,
+        "end_year": 1937,
+        "key_figures": "毕加索（作品）, 秃鹰军团",
+        "description": "西班牙内战期间，受佛朗哥之托，德国空军对和平城镇格尔尼卡进行了惨无人道的地毯式轰炸，实验了现代空袭战术。",
+        "impact": "它成为现代战争残酷性的象征。毕加索创作的同名画作使其成为全球反战运动的图腾，并揭示了法西斯主义与民主力量之间不可调和的意识形态冲突。",
+        "category": "军事/艺术",
+        "importance_level": 8,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Bombing_of_Guernica"
+      },
+      {
+        "event_name": "万湖会议 (Wannsee Conference)",
+        "start_year": 1942,
+        "end_year": 1942,
+        "key_figures": "海德里希, 艾希曼",
+        "description": "纳粹德国高层在柏林郊区万湖开会，旨在讨论并协调对欧洲犹太人进行系统性灭绝的“最终解决方案”（Final Solution）。",
+        "impact": "这是人类文明史上最黑暗的一页。会议标志着大屠杀从杂乱的迫害演变为一种国家层面的、高度行政化的种族灭绝工厂，促使战后国际法中关于“反人类罪”的定义成形。",
+        "category": "政治/社会",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Wannsee_Conference"
+      }
+    ]
+  },
+  "Post-War Reconstruction and Integration": {
+    "period_name_cn": "战后重建与欧洲一体化",
+    "region": "European",
+    "year": "1945 AD - 1991 AD",
+    "events": [
+      {
+        "event_name": "纽伦堡审判",
+        "start_year": 1945,
+        "end_year": 1946,
+        "key_figures": "罗伯特·杰克逊",
+        "description": "二战结束后，盟军设立国际军事法庭，对纳粹德国主要战争罪犯进行法律审判，控罪包括策划战争罪、战争罪和反人类罪。",
+        "impact": "开创了追究国家领导人个人刑事责任的国际法先例。它确立了“服从命令不能免责”的原则，直接推动了后来《世界人权宣言》的制定和国际刑事法院的建立。",
+        "category": "法律",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Nuremberg_trials"
+      },
+      {
+        "event_name": "舒曼宣言 (Schuman Declaration)",
+        "start_year": 1950,
+        "end_year": 1950,
+        "key_figures": "罗伯特·舒曼, 让·莫内",
+        "description": "法国外长舒曼提议将法德两国的煤钢生产置于一个共同的高级机构管理之下，以此让法德战争在物质上“变得不仅不可想象，而且在事实上不可能”。",
+        "impact": "这是欧洲一体化的正式发端。它导致了欧洲煤钢共同体（ECSC）的诞生，成功通过经济手段化解了数个世纪的领土纷争，奠定了今日欧盟的基础。",
+        "category": "政治/经济",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Schuman_Declaration"
+      },
+      {
+        "event_name": "匈牙利1956年革命",
+        "start_year": 1956,
+        "end_year": 1956,
+        "key_figures": "纳吉·伊姆雷",
+        "description": "匈牙利爆发反对苏联控制和斯大林主义模式的全民起义。纳吉政府宣布退出华约并请求中立，随后遭到苏联红军的大规模军事镇压。",
+        "impact": "这是东欧阵营内部对苏联霸权的第一次大规模挑战。它暴露了冷战期间苏联势力范围内部的深层不稳定，并导致西欧共产主义运动的大规模瓦解和分裂。",
+        "category": "冲突/政治",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Hungarian_Revolution_of_1956"
+      },
+      {
+        "event_name": "《罗马条约》签署",
+        "start_year": 1957,
+        "end_year": 1957,
+        "key_figures": "阿登纳, 斯帕克",
+        "description": "欧洲六国（法、德、意、荷、比、卢）签署，建立了欧洲经济共同体（EEC）和欧洲原子能共同体。",
+        "impact": "确立了共同市场和自由贸易的基本原则。它不仅是一个经济协议，更是一个具有超国家性质的政治架构，使欧洲向着“欧洲合众国”的理想迈出了实质性的法律步伐。",
+        "category": "法律/经济",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Treaty_of_Rome"
+      },
+      {
+        "event_name": "埃维昂协议 (Évian Accords)",
+        "start_year": 1962,
+        "end_year": 1962,
+        "key_figures": "戴高乐",
+        "description": "法国政府与阿尔及利亚民族解放阵线签署协议，正式结束了惨烈的阿尔及利亚战争，承认阿尔及利亚独立。",
+        "impact": "标志着法国殖民帝国的彻底终结。它引发了法国国内的政局剧变（第五共和国的巩固）以及近百万定居者的撤离，是二战后欧洲非殖民化进程中最具冲突性的注脚。",
+        "category": "外交/政治",
+        "importance_level": 8,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/%C3%89vian_Accords"
+      },
+      {
+        "event_name": "布拉格之春",
+        "start_year": 1968,
+        "end_year": 1968,
+        "key_figures": "杜布切克",
+        "description": "捷克斯洛伐克发起“带有人性面孔的社会主义”改革，试图放宽政治限制并增加民主成分，但最终被华约联军坦克镇压。",
+        "impact": "产生了著名的“勃列日涅夫主义”（有限主权论）。这次事件彻底粉碎了苏联模式内部自我改良的幻觉，为二十年后的东欧剧变埋下了更深层的反抗种子。",
+        "category": "政治/冲突",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Prague_Spring"
+      },
+      {
+        "event_name": "赫尔辛基协议 (Helsinki Accords)",
+        "start_year": 1975,
+        "end_year": 1975,
+        "key_figures": "勃列日涅夫, 福特",
+        "description": "东西方阵营签署的一份非约束性外交宣言。苏联在法理上获得了对二战后领土现状的承认，但作为交换，必须承诺尊重人权和基本自由。",
+        "impact": "这是冷战缓和（Détente）的巅峰。虽然苏联起初认为人权条款只是空话，但协议中的“第三篮子”（人权）条款成为了东欧异议分子合法斗争的有力武器，加速了东欧阵营的内部腐蚀。",
+        "category": "外交/人权",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Helsinki_Accords"
+      },
+      {
+        "event_name": "团结工会 (Solidarność) 的建立",
+        "start_year": 1980,
+        "end_year": 1980,
+        "key_figures": "瓦文萨, 若望保禄二世",
+        "description": "在波兰格但斯克造船厂，电工瓦文萨领导建立了东欧第一个非政府控制的自由工会。该运动得到了罗马教廷的支持。",
+        "impact": "它不仅是工人运动，更是民族反抗运动。团结工会的存在打破了共产党对社会的全面垄断，成为推倒东欧柏林墙的第一张多米诺骨牌。",
+        "category": "社会/政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Solidarity_(Polish_trade_union)"
+      },
+      {
+        "event_name": "《申根协定》签署",
+        "start_year": 1985,
+        "end_year": 1985,
+        "key_figures": "科尔, 密特朗",
+        "description": "法、德、荷、比、卢五国在卢森堡申根签署。协议同意逐步废除内部边界检查，实现人员的自由流动。",
+        "impact": "它是欧洲一体化中最具可感知的成果之一。它不仅极大地促进了人员和贸易往来，也深刻地重塑了欧洲人的共同身份认同，使“无国界欧洲”从理想变为现实。",
+        "category": "法律/社会",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Schengen_Agreement"
+      }
+    ]
+  },
+  "Contemporary Europe": {
+    "period_name_cn": "当代欧洲（后冷战时代）",
+    "region": "European",
+    "year": "1991 AD - Present",
+    "events": [
+      {
+        "event_name": "《马斯特里赫特条约》签署",
+        "start_year": 1992,
+        "end_year": 1992,
+        "key_figures": "科尔, 密特朗",
+        "description": "该条约标志着欧洲联盟（European Union）正式成立。它确立了欧元、欧盟公民身份以及共同的外交与安全政策。",
+        "impact": "这是欧洲从纯经济合作转向全面政治联盟的飞跃。它建立了一个拥有统一货币、统一公民权的巨型超国家实体，使欧洲在后冷战时代的全球格局中拥有了统一的声音。",
+        "category": "政治/法律",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Maastricht_Treaty"
+      },
+      {
+        "event_name": "贝尔法斯特协议 (Good Friday Agreement)",
+        "start_year": 1998,
+        "end_year": 1998,
+        "key_figures": "托尼·布莱尔, 伯蒂·埃亨",
+        "description": "终结了北爱尔兰长达30年的暴力冲突（The Troubles）。协议确立了分享权力的政治架构，并允许通过民主程序决定北爱尔兰的最终归属。",
+        "impact": "这是现代冲突调解的典范。它不仅带来了西欧最后一个长期战区的和平，也展示了通过欧盟框架下的跨境合作解决历史领土争议的可能性。",
+        "category": "政治/冲突",
+        "importance_level": 8,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Good_Friday_Agreement"
+      },
+      {
+        "event_name": "欧元正式进入流通",
+        "start_year": 2002,
+        "end_year": 2002,
+        "key_figures": "维姆·德伊森贝赫",
+        "description": "12个欧盟成员国正式撤回本国传统货币（如马克、法郎），启用欧元纸币与硬币作为唯一法定货币。",
+        "impact": "这是自罗马帝国以来欧洲最大规模的货币统一。它增强了欧洲内部市场的稳定性和效率，使欧元成为了世界第二大储备货币，同时也引发了后续关于财政主权与经济一体化深度的辩论。",
+        "category": "经济",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/History_of_the_euro"
+      },
+      {
+        "event_name": "《里斯本条约》生效",
+        "start_year": 2007,
+        "end_year": 2009,
+        "key_figures": "欧盟各国首脑",
+        "description": "在《欧洲宪法》失败后签署的替代法案。它大幅改革了欧盟的表决机制，增设了常任理事会主席（欧盟总统）和外交事务高级代表（欧盟外长）。",
+        "impact": "它完成了欧盟在法律框架上的彻底重构，极大地提升了欧盟在国际外交中的“单一法人实体”地位，使其行政架构能够适应扩大到27国后的复杂决策需求。",
+        "category": "法律/政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Treaty_of_Lisbon"
+      },
+      {
+        "event_name": "克里米亚危机与吞并",
+        "start_year": 2014,
+        "end_year": 2014,
+        "key_figures": "普京",
+        "description": "随着乌克兰广场革命爆发，俄罗斯出兵并宣布吞并克里米亚半岛。这是二战后首次有欧洲大国通过武力手段改变另一主权国家的边界。",
+        "impact": "彻底终结了1991年后俄罗斯与西方建立“战略伙伴关系”的幻象。欧洲安全格局重回冷战式的对峙状态，引发了持久的经济制裁和地缘竞争。",
+        "category": "冲突/外交",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Annexation_of_Crimea_by_the_Russian_Federation"
+      },
+      {
+        "event_name": "英国脱欧全民公投 (Brexit Referendum)",
+        "start_year": 2016,
+        "end_year": 2016,
+        "key_figures": "大卫·卡梅伦, 鲍里斯·约翰逊",
+        "description": "英国选民以微弱多数决定退出欧洲联盟，理由涉及主权、移民控制及对欧盟官僚机构的不满。",
+        "impact": "这是欧洲一体化进程中自二战以来最重大的挫折。它引发了欧盟内部的深刻反思，并在事实上和心理上改变了欧洲的整合逻辑，标志着民粹主义与反全球化思潮在西方核心圈的回归。",
+        "category": "政治/社会",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/2016_United_Kingdom_European_Union_membership_referendum"
+      }
+    ]
+  },
+  "The Great War and Its Aftermath": {
+    "period_name_cn": "大战及其余波",
+    "region": "European",
+    "year": "1914 AD - 1923 AD",
+    "events": [
+      {
+        "event_name": "施里芬计划的执行",
+        "start_year": 1914,
+        "end_year": 1914,
+        "key_figures": "小毛奇",
+        "description": "德国根据既定战略，试图通过入侵中立国比利时快速击败法国，以避免双线作战。这一行动直接导致英国因维护比利时中立而参战。",
+        "impact": "标志着19世纪传统外交均势的彻底破裂。它将这场局部冲突转化为一场席卷全欧的灾难，并确立了20世纪初期以机械化和大规模动员为特征的“总体战”模式。",
+        "category": "军事/外交",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Schlieffen_Plan"
+      },
+      {
+        "event_name": "伦敦条约 (1915)",
+        "start_year": 1915,
+        "end_year": 1915,
+        "key_figures": "萨兰德拉",
+        "description": "协约国与意大利签署的秘密条约，承诺意大利若对同盟国作战，战后将获得南蒂罗尔、特伦蒂诺等领土。",
+        "impact": "这导致意大利背弃了与德奥的同盟转投协约国。它不仅改变了地缘格局，也因战后协约国未能完全履行诺言，为意大利后来法西斯主义的兴起埋下了民族主义复仇的火种。",
+        "category": "外交",
+        "importance_level": 8,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Treaty_of_London_(1915)"
+      },
+      {
+        "event_name": "凡尔登战役 (Battle of Verdun)",
+        "start_year": 1916,
+        "end_year": 1916,
+        "key_figures": "贝当, 法金汉",
+        "description": "一战中破坏性最大、持续时间最长的消耗战。德军意图通过攻占战略要地凡尔登来“放干法国人的血”。",
+        "impact": "凡尔登成为法兰西民族意志的象征。此战不仅耗尽了德军的战略主动权，也使战后欧洲对大规模人命损失产生了深刻的心理创伤，直接影响了后来的绥靖政策。",
+        "category": "军事",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Battle_of_Verdun"
+      },
+      {
+        "event_name": "布列斯特-立陶夫斯克条约",
+        "start_year": 1918,
+        "end_year": 1918,
+        "key_figures": "托洛茨基, 兴登堡",
+        "description": "苏俄为了退出一战，被迫与同盟国签署的极苛刻的和约，割让了波兰、波罗的海三国及乌克兰的大片领土。",
+        "impact": "标志着俄罗斯暂时退出了欧洲权力中心。虽然德国战败后该条约作废，但它重塑了东欧的政治版图，并让西方国家对苏俄政权产生了深刻的猜忌。",
+        "category": "外交/政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Treaty_of_Brest-Litovsk"
+      },
+      {
+        "event_name": "魏玛共和国宣告成立",
+        "start_year": 1918,
+        "end_year": 1918,
+        "key_figures": "腓特烈·艾伯特",
+        "description": "随着德国在战争中崩溃及十一月革命爆发，社会民主党人宣布成立共和国，德意志帝国覆灭。",
+        "impact": "这是德意志历史上第一个尝试全民主政体的政权。它在凡尔赛条约的阴影下诞生，虽然在文化上高度繁荣，但其固有的制度漏洞和经济动荡为后来的极权主义上台铺平了道路。",
+        "category": "政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Weimar_Republic"
+      },
+      {
+        "event_name": "圣日耳曼条约",
+        "start_year": 1919,
+        "end_year": 1919,
+        "key_figures": "克莱蒙梭",
+        "description": "协约国与奥地利签署的和约，正式宣告奥匈帝国解体，禁止奥地利与德国合并。",
+        "impact": "它终结了拥有几百年历史的哈布斯堡王朝统治，催生了捷克斯洛伐克等一系列民族国家。这导致奥地利从一个多民族大帝国缩减为一个弱小的内陆国家，极大地改变了中欧的权力结构。",
+        "category": "法律/外交",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Treaty_of_Saint-Germain-en-Laye_(1919)"
+      },
+      {
+        "event_name": "特里亚农条约",
+        "start_year": 1920,
+        "end_year": 1920,
+        "key_figures": "霍尔蒂",
+        "description": "协约国与匈牙利签署的和约，使匈牙利失去了战前三分之二的领土和人口。",
+        "impact": "这一条约被匈牙利人视为巨大的民族创伤（特里亚农痛结）。它造成的领土纠纷和少数民族问题，使匈牙利在二战中为了收复领土而选择追随纳粹德国。",
+        "category": "法律/外交",
+        "importance_level": 8,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Treaty_of_Trianon"
+      }
+    ]
+  },
+  "The Fragile Peace and Rise of Extremism": {
+    "period_name_cn": "脆弱的和平与极端主义崛起",
+    "region": "European",
+    "year": "1923 AD - 1938 AD",
+    "events": [
+      {
+        "event_name": "鲁尔占领事件 (Occupation of the Ruhr)",
+        "start_year": 1923,
+        "end_year": 1925,
+        "key_figures": "雷蒙·普恩加莱",
+        "description": "由于德国拖欠赔款，法国和比利时出动军队占领了德国的工业心脏鲁尔区。德国政府呼吁“被动抵抗”，并滥发纸币支持罢工工人。",
+        "impact": "直接导致了德国史无前例的恶性通货膨胀，彻底摧毁了德国中产阶级的财富和对共和国的信任，也使法国在国际外交中陷入孤立。",
+        "category": "军事/经济",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Occupation_of_the_Ruhr"
+      },
+      {
+        "event_name": "啤酒馆政变 (Beer Hall Putsch)",
+        "start_year": 1923,
+        "end_year": 1923,
+        "key_figures": "阿道夫·希特勒, 鲁登道夫",
+        "description": "希特勒率领纳粹党徒在慕尼黑试图效仿墨索里尼夺取政权。政变失败，希特勒被捕入狱。",
+        "impact": "虽然政变本身是闹剧，但希特勒在法庭上的辩护使其声名鹊起。他在狱中撰写了《我的奋斗》，并决定将纳粹党的斗争策略从“暴力革命”转向“利用民主法律夺权”。",
+        "category": "政治/冲突",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Beer_Hall_Putsch"
+      },
+      {
+        "event_name": "道威斯计划 (Dawes Plan)",
+        "start_year": 1924,
+        "end_year": 1924,
+        "key_figures": "查尔斯·道威斯",
+        "description": "在美、英主导下提出的新计划，旨在减轻德国赔款负担，并向德国提供贷款以稳定其经济。",
+        "impact": "它开启了欧洲经济复苏的“黄金二十年代”。它将德国赔款、法国债务和美国贷款联系在一起，形成了全球经济的脆弱循环，也为后来大萧条波及全球埋下了隐患。",
+        "category": "经济/外交",
+        "importance_level": 8,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Dawes_Plan"
+      },
+      {
+        "event_name": "非战公约 (Kellogg-Briand Pact)",
+        "start_year": 1928,
+        "end_year": 1928,
+        "key_figures": "凯洛格, 白里安",
+        "description": "由美、法发起，全球数十个国家签署，宣布废弃以战争作为国家政策的手段，并规定领土争端必须通过和平方式解决。",
+        "impact": "虽然在实际约束力上非常薄弱，但它首次从法理上将“侵略战争”定为非法，成为二战后纽伦堡审判的重要法律依据。",
+        "category": "外交/法律",
+        "importance_level": 8,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Kellogg%E2%80%93Briand_Pact"
+      },
+      {
+        "event_name": "1933年授权法案 (Enabling Act)",
+        "start_year": 1933,
+        "end_year": 1933,
+        "key_figures": "希特勒",
+        "description": "在国会纵火案后，纳粹党通过恐吓与政治手段促使德国国会通过该法，允许内阁在没有国会批准的情况下制定法律。",
+        "impact": "它从法律上终结了魏玛宪政，标志着德国正式转变为合法的极权主义独裁国家。这是民主体制通过内部民主程序“自我毁灭”的典型案例。",
+        "category": "法律/政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Enabling_Act_of_1933"
+      },
+      {
+        "event_name": "斯特雷萨阵线 (Stresa Front)",
+        "start_year": 1935,
+        "end_year": 1935,
+        "key_figures": "墨索里尼, 麦克唐纳",
+        "description": "英、法、意三国在斯特雷萨会议上达成协议，共同声明反对德国单方面破坏凡尔赛条约的行为。",
+        "impact": "这是西方强权试图遏制纳粹德国的最后一次集体外交努力。然而由于随后英国与德国私下签署海军协定，以及意大利入侵埃塞俄比亚，该阵线迅速瓦解，导致法西斯轴心国的形成。",
+        "category": "外交",
+        "importance_level": 8,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Stresa_Front"
+      },
+      {
+        "event_name": "慕尼黑协定 (Munich Agreement)",
+        "start_year": 1938,
+        "end_year": 1938,
+        "key_figures": "张伯伦, 希特勒, 达拉第",
+        "description": "在未邀请捷克斯洛伐克的情况下，英、法、意同意德国吞并捷克的苏台德地区，张伯伦回国后宣称带回了“一代人的和平”。",
+        "impact": "它是“绥靖政策”达到顶峰的标志。此举不仅背叛了盟友，也极大地增强了德国的战略资源和士气，向希特勒证明了西方民主国家的软弱，加速了二战的全面爆发。",
+        "category": "外交/政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Munich_Agreement"
+      }
+    ]
+  },
+  "The Second World War Era": {
+    "period_name_cn": "第二次世界大战时期",
+    "region": "European",
+    "year": "1939 AD - 1945 AD",
+    "events": [
+      {
+        "event_name": "苏德互不侵犯条约 (Molotov-Ribbentrop Pact)",
+        "start_year": 1939,
+        "end_year": 1939,
+        "key_figures": "莫洛托夫, 里宾特洛甫",
+        "description": "纳粹德国与苏联签署协议，互不攻击。秘密议定书规定了两国对波兰及波罗的海地区的势力划分。",
+        "impact": "这一极其犬儒的联盟震惊了世界。它解除了德国发起战争的后顾之忧，直接导致了二战的爆发以及波兰的再次灭亡，并开启了东西方意识形态长期对抗的新剧本。",
+        "category": "外交",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Molotov%E2%80%93Ribbentrop_Pact"
+      },
+      {
+        "event_name": "不列颠空战 (Battle of Britain)",
+        "start_year": 1940,
+        "end_year": 1940,
+        "key_figures": "丘吉尔, 戈林",
+        "description": "纳粹德国空军对英国进行的大规模战略轰炸，旨在为横跨海峡的“海狮计划”夺取制空权。",
+        "impact": "这是德国在二战中的首次重大挫败。英国的坚守打破了德国“闪电战”不可战胜的神话，迫使希特勒转而进攻苏联，并为后来美国全面参战提供了关键的欧洲跳板。",
+        "category": "军事",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Battle_of_Britain"
+      },
+      {
+        "event_name": "巴巴罗萨行动 (Operation Barbarossa)",
+        "start_year": 1941,
+        "end_year": 1941,
+        "key_figures": "希特勒, 朱可夫",
+        "description": "纳粹德国撕毁苏德条约，动员人类历史上规模最大的入侵力量，在漫长的战线上进攻苏联。",
+        "impact": "这决定了二战的最终结局。它开启了残酷的东线战场，将苏联拖入盟军阵营，并最终导致了德国军事力量的枯竭。这是纳粹德国走向覆灭的战略性错误。",
+        "category": "军事",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Operation_Barbarossa"
+      },
+      {
+        "event_name": "德黑兰会议",
+        "start_year": 1943,
+        "end_year": 1943,
+        "key_figures": "丘吉尔, 罗斯福, 斯大林",
+        "description": "“三巨头”首次举行面谈，讨论开辟欧洲“第二战场”（诺曼底登陆）以及战后德国的处理方案。",
+        "impact": "会议确立了盟军大反攻的战略一致性。它不仅是军事协作的巅峰，也标志着美国与苏联作为未来世界主导力量的正式登场，丘吉尔则感到了英国权势的衰落。",
+        "category": "外交/政治",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Tehran_Conference"
+      },
+      {
+        "event_name": "雅尔塔会议",
+        "start_year": 1945,
+        "end_year": 1945,
+        "key_figures": "罗斯福, 丘吉尔, 斯大林",
+        "description": "在克里米亚，三巨头讨论了战后欧洲的重组、德国的分割占领以及建立联合国的细节。",
+        "impact": "它实际上划定了后战时代欧洲的势力范围，被称为“雅尔塔体系”。虽然保障了战后数十年的基本和平，但也因其对东欧命运的处置，被批评为冷战分裂的法理源头。",
+        "category": "外交/政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Yalta_Conference"
+      },
+      {
+        "event_name": "波茨坦会议",
+        "start_year": 1945,
+        "end_year": 1945,
+        "key_figures": "杜鲁门, 斯大林, 艾德礼",
+        "description": "德国投降后，盟国首脑在柏林郊区开会，制定了“五D计划”（去纳粹化、非军事化、民主化、去中心化、非工业化）。",
+        "impact": "它具体化了对德管理的各项细节。会议期间杜鲁门向斯大林透露了原子弹的存在，反映出盟友关系的裂痕。会议确立的新国界（奥德-尼斯线）重塑了德波地缘关系。",
+        "category": "外交/政治",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Potsdam_Conference"
+      }
+    ]
+  },
+  "The Bipolar World and the Cold War": {
+    "period_name_cn": "两极世界与冷战",
+    "region": "European",
+    "year": "1946 AD - 1991 AD",
+    "events": [
+      {
+        "event_name": "“铁幕”演说 (Iron Curtain Speech)",
+        "start_year": 1946,
+        "end_year": 1946,
+        "key_figures": "温斯顿·丘吉尔",
+        "description": "在美国密苏里州富尔顿，丘吉尔发表著名演说，称“从波罗的海的什切青到亚得里亚海的的里雅斯特，一幅横贯欧洲大陆的铁幕已经降下”。",
+        "impact": "这被视为冷战开始的舆论信号。它界定了二战后欧洲东西对峙的政治地理形态，并促使美国加快转向遏制苏联的“杜鲁门主义”政策。",
+        "category": "外交/思想",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Iron_Curtain"
+      },
+      {
+        "event_name": "马歇尔计划颁布",
+        "start_year": 1948,
+        "end_year": 1948,
+        "key_figures": "乔治·马歇尔",
+        "description": "美国提出大规模援助西欧重建的计划，提供了约130亿美元的资金，要求受援国进行跨国经济合作。",
+        "impact": "这不仅挽救了西欧濒临崩溃的经济，还成功阻止了共产主义在法、意等国的扩张。它是西欧一体化最重要的外部驱动力，也将欧洲彻底卷入了美国的全球战略体系。",
+        "category": "经济/政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Marshall_Plan"
+      },
+      {
+        "event_name": "柏林封锁与空运 (Berlin Blockade)",
+        "start_year": 1948,
+        "end_year": 1949,
+        "key_figures": "斯大林, 卢修斯·克莱",
+        "description": "由于西方强权引入新马克，苏联切断了通往西柏林的所有陆路和水路。盟军发起了人类历史上规模最大的持续空运来维持城市供应。",
+        "impact": "冷战中的第一次重大危机。它不仅加速了德意志联邦共和国（西德）的建立，也促成了北大西洋公约组织的诞生，标志着东西方彻底放弃了联合管理德国的尝试。",
+        "category": "军事/冲突",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Berlin_Blockade"
+      },
+      {
+        "event_name": "北约组织 (NATO) 成立",
+        "start_year": 1949,
+        "end_year": 1949,
+        "key_figures": "杜鲁门, 贝文",
+        "description": "美、英、法等12国签署《北大西洋公约》，核心条款是“集体防御”，即对一国的进攻被视为对全体成员的进攻。",
+        "impact": "这是美国首次在和平时期与欧洲建立永久性的军事同盟。它锁定了美国在欧洲的军事存在，也迫使苏联在几年后建立了华沙条约组织，完成了欧洲军事上的两极化。",
+        "category": "外交/军事",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/NATO"
+      },
+      {
+        "event_name": "华沙条约组织成立",
+        "start_year": 1555,
+        "end_year": 1955,
+        "key_figures": "赫鲁晓夫",
+        "description": "在西德加入北约后，苏联与东欧七国在华沙签署防御性公约，作为对北约的回应。",
+        "impact": "它正式固化了冷战的阵营分割。不仅是军事对抗的工具，它也是苏联用来控制东欧成员国内政、维持意识形态纯洁性的政治枷锁。",
+        "category": "军事/外交",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Warsaw_Pact"
+      },
+      {
+        "event_name": "苏伊士运河危机 (Suez Crisis)",
+        "start_year": 1956,
+        "end_year": 1956,
+        "key_figures": "纳赛尔, 艾登",
+        "description": "埃及宣布运河国有化，英、法、以联合发动战争。由于美苏共同反对，英法被迫撤军。",
+        "impact": "这被公认为是大英帝国和法兰西殖民帝国作为全球大国地位终结的标志。它揭示了欧洲国家在没有美国支持下已无力进行独立的大规模海外军事行动。",
+        "category": "外交/军事",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Suez_Crisis"
+      },
+      {
+        "event_name": "柏林墙始建",
+        "start_year": 1961,
+        "end_year": 1961,
+        "key_figures": "赫鲁晓夫, 乌布利希",
+        "description": "东德为了阻止技术人才持续经西柏林流向西方，在西柏林四周构筑了严密的边境封锁系统。",
+        "impact": "它成为冷战最臭名昭著的视觉象征。虽然暂时缓解了东德的人口危机，但也彻底在心理上和物理上割裂了欧洲，成为集权主义压迫平民自由的最直接注脚。",
+        "category": "冲突/政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Berlin_Wall"
+      },
+      {
+        "event_name": "勃兰特“华沙之跪”与新东方政策",
+        "start_year": 1970,
+        "end_year": 1970,
+        "key_figures": "维利·勃兰特",
+        "description": "西德总理在华沙犹太人区起义纪念碑前惊人地下跪，以此向纳粹受害者致歉，并签署条约承认战后边界。",
+        "impact": "这一伟大的道德举措极大地缓解了东欧对德国的恐惧。它开启了“缓和”时代，为后来的《赫尔辛基协议》和德国最终统一铺平了心理基础。",
+        "category": "外交/社会",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Kniefall_von_Warschau"
+      },
+      {
+        "event_name": "切尔诺贝利核事故",
+        "start_year": 1986,
+        "end_year": 1986,
+        "key_figures": "戈尔巴乔夫",
+        "description": "苏联乌克兰境内的核电站发生灾难性爆炸。苏联起初掩盖真相，后因跨国放射性尘埃被发现而被迫公开。",
+        "impact": "这是苏联体制腐败与无能的惨痛象征。它直接推动了戈尔巴乔夫实施“公开性”（Glasnost）政策，并深刻影响了全欧洲的核能政策与生态主义运动。",
+        "category": "科技/社会",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Chernobyl_disaster"
+      },
+      {
+        "event_name": "德国重新统一 (German Reunification)",
+        "start_year": 1990,
+        "end_year": 1990,
+        "key_figures": "赫尔穆特·科尔, 戈尔巴乔夫",
+        "description": "在柏林墙倒塌一年后，通过“2+4条约”，两德正式合并，原东德地区整体并入联邦德国。",
+        "impact": "这标志着“雅尔塔体制”在欧洲的彻底终结。它使德国重新成为欧洲的核心强权，但也为后来东、西欧在经济与心理上的持久鸿沟埋下了伏笔。",
+        "category": "政治/外交",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/German_reunification"
+      }
+    ]
+  }
+}

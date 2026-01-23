@@ -1162,6 +1162,19 @@
         function createEvents() {
             events = new THREE.Group();
 
+            // Analyze event density by year segments
+            const yearSegments = {};
+            const segmentSize = 100; // 100-year segments
+
+            eventsData.forEach(event => {
+                const segment = Math.floor(event.start_year / segmentSize) * segmentSize;
+                const regionKey = event.region === 'European' ? 'europe' : 'china';
+                if (!yearSegments[segment]) {
+                    yearSegments[segment] = { europe: 0, china: 0 };
+                }
+                yearSegments[segment][regionKey]++;
+            });
+
             eventsData.forEach((event, index) => {
                 const sphereGeometry = new THREE.SphereGeometry(
                     Math.max(0.5, event.importance_level / 2),
@@ -1198,20 +1211,55 @@
                 const distortion = Math.sin(yearPosition * 0.005) * 2;
                 const radius = Math.max(10, baseRadius + distortion);
 
-                // Random angle on the appropriate half of the pipe
-                // European: left side (90° to 270°), China: right side (-90° to 90°)
-                let angle;
-                if (event.region === 'European') {
-                    // Left half of the pipe (90° to 270°)
-                    angle = Math.PI / 2 + Math.random() * Math.PI;
+                // Check event density in this region and year segment
+                const segment = Math.floor(event.start_year / segmentSize) * segmentSize;
+                const regionKey = event.region === 'European' ? 'europe' : 'china';
+                const density = yearSegments[segment] ? yearSegments[segment][regionKey] : 0;
+
+                let finalRadius, angle;
+
+                if (density > 5) {
+                    // High density: distribute in multiple layers
+                    const layer = Math.floor(Math.random() * 3); // 0: wall, 1: middle, 2: center
+                    const layerRadius = radius * (1 - layer * 0.3); // 100%, 70%, 40% of wall radius
+
+                    if (event.region === 'European') {
+                        // Left half of the pipe (90° to 270°)
+                        angle = Math.PI / 2 + Math.random() * Math.PI;
+                    } else {
+                        // Right half of the pipe (-90° to 90°)
+                        angle = -Math.PI / 2 + Math.random() * Math.PI;
+                    }
+
+                    finalRadius = Math.max(2, layerRadius); // Don't go too close to center
+                } else if (density > 2) {
+                    // Medium density: distribute in two layers
+                    const useInner = Math.random() > 0.5;
+                    finalRadius = useInner ? radius * 0.7 : radius;
+
+                    if (event.region === 'European') {
+                        // Left half of the pipe (90° to 270°)
+                        angle = Math.PI / 2 + Math.random() * Math.PI;
+                    } else {
+                        // Right half of the pipe (-90° to 90°)
+                        angle = -Math.PI / 2 + Math.random() * Math.PI;
+                    }
                 } else {
-                    // Right half of the pipe (-90° to 90°)
-                    angle = -Math.PI / 2 + Math.random() * Math.PI;
+                    // Low density: all events on wall
+                    finalRadius = radius;
+
+                    if (event.region === 'European') {
+                        // Left half of the pipe (90° to 270°)
+                        angle = Math.PI / 2 + Math.random() * Math.PI;
+                    } else {
+                        // Right half of the pipe (-90° to 90°)
+                        angle = -Math.PI / 2 + Math.random() * Math.PI;
+                    }
                 }
 
                 // Convert polar to cartesian coordinates
-                const x = Math.cos(angle) * radius;
-                const y = Math.sin(angle) * radius;
+                const x = Math.cos(angle) * finalRadius;
+                const y = Math.sin(angle) * finalRadius;
 
                 sphere.position.set(x, y, yearPosition);
 
