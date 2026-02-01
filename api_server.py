@@ -33,10 +33,15 @@ db_manager = EnhancedDatabaseManager()
 # Get the directory where this script is located
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 FRONTEND_FILE = os.path.join(SCRIPT_DIR, "timeline_visualization.html")
+TIMELINE_FILE = os.path.join(SCRIPT_DIR, "timeline.html")
+STATIC_DIR = os.path.join(SCRIPT_DIR, "static")
+
+# Mount static files
+app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 @app.get("/")
 async def root():
-    """Serve the frontend timeline visualization."""
+    """Serve the main timeline visualization."""
     if os.path.exists(FRONTEND_FILE):
         with open(FRONTEND_FILE, "r", encoding="utf-8") as f:
             content = f.read()
@@ -46,6 +51,7 @@ async def root():
             "message": "Historical Timeline API",
             "version": "1.0.0",
             "endpoints": [
+                "/timeline",
                 "/api/events",
                 "/api/timeline/paginated",
                 "/api/events/around/{year}",
@@ -55,6 +61,14 @@ async def root():
             ],
             "note": "Frontend file not found. Please ensure timeline_visualization.html is in the same directory as api_server.py"
         }
+
+@app.get("/timeline")
+async def serve_timeline():
+    """Serve new dual timeline visualization."""
+    if os.path.exists(TIMELINE_FILE):
+        return FileResponse(TIMELINE_FILE, media_type="text/html")
+    else:
+        raise HTTPException(status_code=404, detail="Timeline file not found")
 
 @app.get("/api/events")
 async def get_all_events():

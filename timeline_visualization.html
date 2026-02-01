@@ -414,6 +414,39 @@
             stroke-width: 2;
         }
 
+        /* Timeline view button */
+        #timeline-view-btn {
+            position: absolute;
+            bottom: 220px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: background 0.2s, border-color 0.2s;
+            padding: 0;
+            z-index: 10;
+        }
+
+        #timeline-view-btn:hover {
+            background: rgba(0, 0, 0, 0.95);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .git-branch-icon {
+            width: 20px;
+            height: 20px;
+            stroke: #fff;
+            fill: none;
+            stroke-width: 2;
+        }
+
         /* Hide help button on desktop */
         @media (min-width: 769px) {
             #help-button {
@@ -425,6 +458,17 @@
 <body>
     <div id="container">
         <canvas id="threejs-canvas"></canvas>
+
+        <!-- Timeline view button (tree icon) -->
+        <button id="timeline-view-btn" title="Switch to Timeline View">
+            <svg class="git-branch-icon" viewBox="0 0 24 24">
+                <circle cx="6" cy="6" r="3"></circle>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="12" r="3"></circle>
+                <path d="M6 9v3c0 1.5 1.5 3 3 3h3"></path>
+                <path d="M15 12h-3c-1.5 0-3-1.5-3-3V6"></path>
+            </svg>
+        </button>
 
         <!-- Toggle labels button -->
         <button id="toggle-labels" title="Toggle event labels">
@@ -839,7 +883,7 @@
             // Update on resize
             window.addEventListener('resize', updateResponsiveUI);
 
-             // Toggle labels button
+            // Toggle labels button
             const toggleBtn = document.getElementById('toggle-labels');
             toggleBtn.addEventListener('click', () => {
                 showLabels = !showLabels;
@@ -847,6 +891,12 @@
                     '<svg class="eye-icon" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>' :
                     '<svg class="eye-icon" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><line x1="8" y1="8" x2="16" y2="16"></line></svg>';
                 toggleBtn.title = showLabels ? 'Hide event labels' : 'Show event labels';
+            });
+
+            // Timeline view button - navigate to timeline page
+            const timelineViewBtn = document.getElementById('timeline-view-btn');
+            timelineViewBtn.addEventListener('click', () => {
+                window.location.href = '/timeline';
             });
 
             helpButton.addEventListener('click', () => {
