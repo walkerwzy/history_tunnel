@@ -3,37 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timeline</title>
-    <link rel="stylesheet" href="/static/timeline.css?v=16">
+    <meta name="description" content="浏览公元前3000年至今的欧洲和中国历史大事年表。交互式时间轴展示政治、军事、文化、经济等重要历史事件，支持按时期、地区和类别筛选。">
+    <title>历史大事年表 | 欧洲与中国历史时间轴</title>
+    <link rel="stylesheet" href="/static/timeline.css?v=25">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 </head>
 <body>
     <div class="main-container">
-        <div class="timeline-column left-column">
-            <div class="timeline-content left-aligned" id="leftTimeline"></div>
-        </div>
-
-        <div class="center-info">
-            <div class="year-display" id="yearDisplay">-3000</div>
-            <div class="current-events">
-                <div class="current-event left" id="leftEvent">
-                    <div class="event-label">EU</div>
-                    <div class="event-text">--</div>
-                </div>
-                <div class="current-event right" id="rightEvent">
-                    <div class="event-label">CN</div>
-                    <div class="event-text">--</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="timeline-column right-column">
-            <div class="timeline-content right-aligned" id="rightTimeline"></div>
-        </div>
+        <div class="timeline-track" id="timelineTrack"></div>
     </div>
 
-    <script src="/static/timeline.js?v=14"></script>
+    <script src="/static/timeline.js?v=25"></script>
 </body>
 </html>

@@ -1,14 +1,10 @@
 class TimelineApp {
     constructor() {
-        this.leftTimeline = document.getElementById('leftTimeline');
-        this.rightTimeline = document.getElementById('rightTimeline');
-        this.yearDisplay = document.getElementById('yearDisplay');
-        this.leftEvent = document.getElementById('leftEvent');
-        this.rightEvent = document.getElementById('rightEvent');
-        
+        this.timelineTrack = document.getElementById('timelineTrack');
         this.allEvents = [];
         this.minYear = -3000;
         this.maxYear = 2026;
+        this.currentActiveIndex = -1;
         
         this.init();
     }
@@ -16,7 +12,7 @@ class TimelineApp {
     async init() {
         await this.loadEvents();
         if (this.allEvents.length > 0) {
-            this.renderTimelines();
+            this.renderTimeline();
             this.setupScrollListener();
             setTimeout(() => {
                 this.setInitialScrollPosition();
@@ -74,54 +70,86 @@ class TimelineApp {
         }
     }
 
-    renderTimelines() {
-        const leftEvents = this.allEvents.filter(e => e.region === 'European');
-        const rightEvents = this.allEvents.filter(e => e.region === 'Chinese');
+    renderTimeline() {
+        this.timelineTrack.innerHTML = '';
         
-        this.renderEvents(leftEvents, this.leftTimeline, 'European');
-        this.renderEvents(rightEvents, this.rightTimeline, 'Chinese');
-    }
-
-    renderEvents(events, container, region) {
-        container.innerHTML = '';
-        
-        events.forEach(event => {
-            const eventEl = document.createElement('div');
-            eventEl.className = 'event-item';
-            eventEl.dataset.year = event.year;
-            eventEl.dataset.region = region;
-            eventEl.dataset.name = event.name;
-            eventEl.dataset.desc = event.description;
-            eventEl.dataset.impact = event.impact || '';
-            eventEl.dataset.keyFigures = event.key_figures || '';
-            eventEl.dataset.category = event.category || '';
+        this.allEvents.forEach((event, index) => {
+            const isEuropean = event.region === 'European';
+            const side = isEuropean ? 'left' : 'right';
+            const categoryColor = this.getCategoryColor(event.category);
+            const regionColor = isEuropean ? '#4ecdc4' : '#ff6b6b';
+            
+            const item = document.createElement('div');
+            item.className = `timeline-item ${side}`;
+            item.dataset.index = index;
+            item.dataset.year = event.year;
             
             const yearDisplay = event.year < 0 
                 ? `BC ${Math.abs(event.year)}` 
                 : `AD ${event.year}`;
             
-            eventEl.innerHTML = `
-                <div class="event-year">${yearDisplay}</div>
-                <div class="event-name">${event.name}</div>
-                <div class="event-description">${event.description}</div>
+            item.innerHTML = `
+                <div class="event-node">
+                    <div class="event-year">${yearDisplay}</div>
+                    <div class="event-name">${event.name}</div>
+                    <div class="event-description">${event.description}</div>
+                </div>
+                <div class="event-marker" style="background: ${categoryColor}"></div>
+                <div class="event-bubble">
+                    <div class="bubble-content">
+                        <div class="bubble-header">
+                            <span class="bubble-region" style="color: ${regionColor}; border-color: ${regionColor}">${isEuropean ? 'EU' : 'CN'}</span>
+                            <span class="bubble-year">${yearDisplay}</span>
+                            <span class="bubble-category" style="color: ${categoryColor}; border-color: ${categoryColor}">${event.category}</span>
+                        </div>
+                        <div class="bubble-name">${event.name}</div>
+                        <div class="bubble-desc">${event.description}</div>
+                        ${event.impact ? `<div class="bubble-impact">影响: ${event.impact}</div>` : ''}
+                        ${event.key_figures ? `<div class="bubble-figures">人物: ${event.key_figures}</div>` : ''}
+                    </div>
+                </div>
             `;
-            container.appendChild(eventEl);
+            
+            this.timelineTrack.appendChild(item);
+        });
+        
+        requestAnimationFrame(() => {
+            this.adjustItemHeights();
+        });
+    }
+
+    adjustItemHeights() {
+        const items = document.querySelectorAll('.timeline-item');
+        items.forEach(item => {
+            const eventNode = item.querySelector('.event-node');
+            if (eventNode) {
+                const nodeHeight = eventNode.scrollHeight;
+                const minHeight = Math.max(60, nodeHeight + 20);
+                item.style.minHeight = `${minHeight}px`;
+            }
         });
     }
 
     setInitialScrollPosition() {
-        const firstEvent = document.querySelector('.event-item');
-        if (firstEvent) {
-            const firstEventRect = firstEvent.getBoundingClientRect();
-            const targetScroll = firstEventRect.top + window.scrollY - window.innerHeight / 2;
+        const firstItem = document.querySelector('.timeline-item');
+        if (firstItem) {
+            const rect = firstItem.getBoundingClientRect();
+            const targetScroll = rect.top + window.scrollY - window.innerHeight / 2;
             window.scrollTo(0, Math.max(0, targetScroll));
         }
         this.updateDisplay();
     }
 
     setupScrollListener() {
+        let ticking = false;
         window.addEventListener('scroll', () => {
-            this.updateDisplay();
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    this.updateDisplay();
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
     }
 
@@ -129,78 +157,33 @@ class TimelineApp {
         const scrollY = window.scrollY;
         const viewportCenter = scrollY + window.innerHeight / 2;
         
-        const leftEvent = this.findClosestEvent('European', viewportCenter);
-        const rightEvent = this.findClosestEvent('Chinese', viewportCenter);
-
-        let currentYear = 0;
-
-        if (leftEvent || rightEvent) {
-            const leftYear = leftEvent ? parseInt(leftEvent.dataset.year) : null;
-            const rightYear = rightEvent ? parseInt(rightEvent.dataset.year) : null;
-
-            if (leftYear !== null && rightYear !== null) {
-                currentYear = Math.round((leftYear + rightYear) / 2);
-            } else if (leftYear !== null) {
-                currentYear = leftYear;
-            } else {
-                currentYear = rightYear;
-            }
-        } else {
-            currentYear = this.minYear;
-        }
-
-        const formattedYear = currentYear > 0 ? `AD ${currentYear}` : `BC ${Math.abs(currentYear)}`;
-        this.yearDisplay.textContent = formattedYear;
-
-        this.updateEventDisplay(leftEvent, this.leftEvent, 'European');
-        this.updateEventDisplay(rightEvent, this.rightEvent, 'Chinese');
-
-        document.querySelectorAll('.event-item').forEach(el => el.classList.remove('active'));
-        if (leftEvent) leftEvent.classList.add('active');
-        if (rightEvent) rightEvent.classList.add('active');
-    }
-
-    findClosestEvent(region, position) {
-        const events = document.querySelectorAll(`.event-item[data-region="${region}"]`);
-        let closest = null;
+        const allItems = document.querySelectorAll('.timeline-item');
+        let closestItem = null;
         let minDistance = Infinity;
-
-        events.forEach(event => {
-            const rect = event.getBoundingClientRect();
-            const eventCenterDocument = window.scrollY + rect.top + rect.height / 2;
-            const distance = Math.abs(eventCenterDocument - position);
-
+        
+        allItems.forEach(item => {
+            const rect = item.getBoundingClientRect();
+            const itemCenter = window.scrollY + rect.top + rect.height / 2;
+            const distance = Math.abs(itemCenter - viewportCenter);
+            
             if (distance < minDistance) {
                 minDistance = distance;
-                closest = event;
+                closestItem = item;
             }
         });
-
-        return closest;
-    }
-
-    updateEventDisplay(eventEl, displayEl, region) {
-        if (eventEl) {
-            const year = eventEl.dataset.year;
-            const name = eventEl.dataset.name;
-            const desc = eventEl.dataset.desc;
-            const impact = eventEl.dataset.impact;
-            const keyFigures = eventEl.dataset.keyFigures;
-            const category = eventEl.dataset.category;
-
-            const formattedYear = year > 0 ? `AD ${year}` : `BC ${Math.abs(year)}`;
-            const categoryColor = this.getCategoryColor(category);
-
-            displayEl.innerHTML = `
-                <div class="event-year">${formattedYear}</div>
-                <div class="event-category" style="color: ${categoryColor}">${category}</div>
-                <div class="event-name">${name}</div>
-                <div class="event-desc">${desc}</div>
-                ${impact ? `<div class="event-impact">影响: ${impact}</div>` : ''}
-                ${keyFigures ? `<div class="event-figures">人物: ${keyFigures}</div>` : ''}
-            `;
-        } else {
-            displayEl.innerHTML = '<span class="no-event">--</span>';
+        
+        if (closestItem) {
+            const index = closestItem.dataset.index;
+            
+            if (this.currentActiveIndex !== index) {
+                document.querySelectorAll('.timeline-item').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                closestItem.classList.add('active');
+                
+                this.currentActiveIndex = index;
+            }
         }
     }
 
@@ -215,11 +198,8 @@ class TimelineApp {
     }
 
     showError(message) {
-        if (this.leftTimeline) {
-            this.leftTimeline.innerHTML = `<div class="error">${message}</div>`;
-        }
-        if (this.rightTimeline) {
-            this.rightTimeline.innerHTML = `<div class="error">${message}</div>`;
+        if (this.timelineTrack) {
+            this.timelineTrack.innerHTML = `<div class="error">${message}</div>`;
         }
     }
 }
