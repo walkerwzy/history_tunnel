@@ -558,6 +558,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <!-- CSS2DRenderer for text labels -->
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/renderers/CSS2DRenderer.js"></script>
+    <script src="/static/periods.js"></script>
 
     <script>
         // Global variables
@@ -567,9 +568,9 @@
         let currentYear = 0;
         let targetCameraZ = 0;
         let currentCameraZ = 0;
-         let lastHashYear = null; // Track last year we updated in hash
-         let isInitializing = true; // Prevent hash updates during init
-         let showLabels = true; // Toggle for event label visibility
+        let lastHashYear = null; // Track last year we updated in hash
+        let isInitializing = true; // Prevent hash updates during init
+        let showLabels = true; // Toggle for event label visibility
         let eventsData = [];
         let periodsData = { europe: [], china: [] };
         let isLoading = true;
@@ -587,12 +588,14 @@
             tunnelRadius: 50,
             tunnelLength: 10000,
             eventsPerPage: 100,
-            yearRange: { min: -2000, max: 2526 }, // Extended to allow scrolling to -2000 BC
+            yearRange: { min: -2000, max: 2526 },
             cameraSpeed: 2,
             bloomStrength: 1.5,
-            hashUpdateStep: 20, // Update URL hash only when year changes by this amount
-            visibleDistance: 500 // Distance from camera to displayed year
+            hashUpdateStep: 20,
+            visibleDistance: 500
         };
+        
+
 
 
 
@@ -660,7 +663,9 @@
 
                 console.log('Setting up event listeners...');
                 setupEventListeners();
-
+                
+                
+                
                 console.log('Loading data...');
                 await loadInitialData();
                 console.log(`Loaded ${eventsData.length} events`);
@@ -1097,131 +1102,124 @@
         // Create the wormhole tunnel with visual effects
         function createTunnel() {
             tunnel = new THREE.Group();
-
-            // Create latitude rings (纬线) - evenly spaced along the tunnel
+            
             const numRings = 150;
             const ringSpacing = CONFIG.tunnelLength / numRings;
-
+            const tubularSegments = 128;
+            const radialSegments = 8;
+            
             for (let i = 0; i < numRings; i++) {
                 const z = -i * ringSpacing;
-
-                // Minimal tunnel contraction: almost no narrowing (几乎不收缩)
-                const progress = i / numRings; // 0 (near) to 1 (far)
-                const contraction = 1 - progress * 0.02; // 1.0 → 0.98 (almost no narrowing)
-
+                
+                const progress = i / numRings;
+                const contraction = 1 - progress * 0.02;
+                
                 const baseRadius = CONFIG.tunnelRadius * contraction;
                 const distortion = Math.sin(z * 0.005) * 2;
                 const radius = Math.max(10, baseRadius + distortion);
-
-                // Create ring as thick tube
+                
                 const curve = new THREE.EllipseCurve(
-                    0, 0,            // ax, aY
-                    radius, radius,   // xRadius, yRadius
-                    0, 2 * Math.PI,  // aStartAngle, aEndAngle
-                    false,             // aClockwise
-                    0                  // aRotation
+                    0, 0,
+                    radius, radius,
+                    0, 2 * Math.PI,
+                    false,
+                    0
                 );
-
-                const points = curve.getPoints(128);
+                
+                const points = curve.getPoints(tubularSegments);
                 const geometry = new THREE.TubeGeometry(
                     new THREE.CatmullRomCurve3(points.map(p => new THREE.Vector3(p.x, p.y, z))),
-                    128,             // tubularSegments
-                    0.08,             // radius (tube thickness - slightly thicker)
-                    8,                // radialSegments
-                    false              // closed
+                    tubularSegments,
+                    0.08,
+                    radialSegments,
+                    false
                 );
-
+                
                 const material = new THREE.MeshBasicMaterial({
                     color: 0xffffff,
                     transparent: true,
-                    opacity: 0.7  // Higher opacity for better visibility
+                    opacity: 0.7
                 });
-
+                
                 const ring = new THREE.Mesh(geometry, material);
-
+                
                 ring.userData = { originalZ: z, index: i };
                 tunnel.add(ring);
             }
-
+            
             scene.add(tunnel);
-
-            // Create longitude lines (经线) - curved lines passing through rings
+            
             createLongitudeLines();
         }
 
 
 
-        // Create longitude lines (经线) - wormhole funnel/vortex effect
         function createLongitudeLines() {
             const meridianGroup = new THREE.Group();
-
-            const numMeridians = 36; // Number of longitude lines
-            const segmentsPerLine = 100; // Points per line for smoothness
-
+            
+            const numMeridians = 36;
+            const segmentsPerLine = 100;
+            
             for (let i = 0; i < numMeridians; i++) {
                 const baseAngle = (i / numMeridians) * Math.PI * 2;
                 const points = [];
-
-                // Create curved line following latitude rings (no perspective)
+                
                 for (let j = 0; j <= segmentsPerLine; j++) {
                     const z = -j * (CONFIG.tunnelLength / segmentsPerLine);
-
-                // Use same radius calculation as latitude rings (follow pipe shape)
-                const progress = j / segmentsPerLine;
-                const contraction = 1 - progress * 0.02; // 1.0 → 0.98 (same as rings)
-
-                const baseRadius = CONFIG.tunnelRadius * contraction;
-                const distortion = Math.sin(z * 0.005) * 2;
-                const radius = Math.max(10, baseRadius + distortion);
-
-                // Space-time curvature twist only (no perspective contraction)
-                const spiralTwist = progress * Math.PI * 3; // 0 to 1.5 rotations
-                const twistAngle = baseAngle + spiralTwist;
-
-                points.push(new THREE.Vector3(
-                    Math.cos(twistAngle) * radius,
-                    Math.sin(twistAngle) * radius,
-                    z
-                ));
-            }
-
-            // Create thick tube for longitude line
-            const curve = new THREE.CatmullRomCurve3(points);
-            const geometry = new THREE.TubeGeometry(
-                curve,
-                segmentsPerLine,  // tubularSegments
-                0.08,             // radius (tube thickness - slightly thicker)
-                8,                // radialSegments
-                false              // closed
-            );
-
+                    
+                    const progress = j / segmentsPerLine;
+                    const contraction = 1 - progress * 0.02;
+                    
+                    const baseRadius = CONFIG.tunnelRadius * contraction;
+                    const distortion = Math.sin(z * 0.005) * 2;
+                    const radius = Math.max(10, baseRadius + distortion);
+                    
+                    const spiralTwist = progress * Math.PI * 3;
+                    const twistAngle = baseAngle + spiralTwist;
+                    
+                    points.push(new THREE.Vector3(
+                        Math.cos(twistAngle) * radius,
+                        Math.sin(twistAngle) * radius,
+                        z
+                    ));
+                }
+            
+                const curve = new THREE.CatmullRomCurve3(points);
+                const geometry = new THREE.TubeGeometry(
+                    curve,
+                    segmentsPerLine,
+                    0.08,
+                    6,
+                    false
+                );
+            
                 const material = new THREE.MeshBasicMaterial({
                     color: 0xffffff,
                     transparent: true,
-                    opacity: 0.7  // Higher opacity same as rings
+                    opacity: 0.7
                 });
-
+            
                 const line = new THREE.Mesh(geometry, material);
                 line.userData = { index: i };
                 meridianGroup.add(line);
             }
-
+            
             scene.add(meridianGroup);
             tunnel.meridians = meridianGroup;
-
+            
             console.log(`Created ${numMeridians} longitude lines with wormhole funnel effect`);
         }
 
 
 
-        // Create event dots
         function createEvents() {
             events = new THREE.Group();
-
-            // Analyze event density by year segments
+            
             const yearSegments = {};
-            const segmentSize = 100; // 100-year segments
-
+            const segmentSize = 100;
+            const sphereSegments = 32;
+            const sphereWidth = 16;
+            
             eventsData.forEach(event => {
                 const segment = Math.floor(event.start_year / segmentSize) * segmentSize;
                 const regionKey = event.region === 'European' ? 'europe' : 'china';
@@ -1230,11 +1228,11 @@
                 }
                 yearSegments[segment][regionKey]++;
             });
-
+            
             eventsData.forEach((event, index) => {
                 const sphereGeometry = new THREE.SphereGeometry(
                     Math.max(0.5, event.importance_level / 2),
-                    32, 16
+                    sphereSegments, sphereWidth
                 );
 
                 // Color based on category
@@ -1489,17 +1487,13 @@
 
         // Update period displays
         function updatePeriods() {
-            // Europe period - use flattened detail periods
-            const europePeriod = periodsData.europeDetailFlat.find(p =>
-                currentYear >= p.start && currentYear <= p.end
-            );
+            // Europe period - use shared periods data
+            const europePeriod = HistoricalPeriods.getEuropePeriod(currentYear);
             document.getElementById('europe-period').textContent =
                 europePeriod ? europePeriod.name : 'Unknown Period';
 
             // China period
-            const chinaPeriod = periodsData.china.find(p =>
-                currentYear >= p.start && currentYear <= p.end
-            );
+            const chinaPeriod = HistoricalPeriods.getChinaPeriod(currentYear);
             document.getElementById('china-period').textContent =
                 chinaPeriod ? chinaPeriod.name : 'Unknown Period';
         }

@@ -5,16 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="浏览公元前3000年至今的欧洲和中国历史大事年表。交互式时间轴展示政治、军事、文化、经济等重要历史事件，支持按时期、地区和类别筛选。">
     <title>历史大事年表 | 欧洲与中国历史时间轴</title>
-    <link rel="stylesheet" href="/static/timeline.css?v=25">
+    <link rel="stylesheet" href="/static/timeline.css?v=30">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 </head>
 <body>
+    <!-- Search Box -->
+    <div id="search-container">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+        </svg>
+        <input type="text" id="search-input" placeholder="搜索历史事件...">
+    </div>
+
+    <!-- Search Results -->
+    <div id="search-results"></div>
+
+    <div class="detail-panel europe-panel" id="europePanel">
+        <div class="period-section">
+            <div class="region-label europe">欧洲</div>
+            <div class="period-name" id="europePeriodName">--</div>
+            <div class="period-range" id="europePeriodRange">--</div>
+        </div>
+        <div class="separator" id="europeSeparator"></div>
+        <div class="event-section" id="europeEventSection">
+            <div class="no-event-hint" id="europeNoEvent">滚动浏览欧洲历史事件</div>
+            <div class="event-content" id="europeEventContent" style="display: none;">
+                <div class="event-header">
+                    <span class="event-year" id="europeEventYear"></span>
+                    <span class="event-category" id="europeEventCategory"></span>
+                </div>
+                <div class="event-title" id="europeEventTitle"></div>
+                <div class="event-desc" id="europeEventDesc"></div>
+                <div class="event-impact" id="europeEventImpact"></div>
+                <div class="event-figures" id="europeEventFigures"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="detail-panel china-panel" id="chinaPanel">
+        <div class="period-section">
+            <div class="region-label china">中国</div>
+            <div class="period-name" id="chinaPeriodName">--</div>
+            <div class="period-range" id="chinaPeriodRange">--</div>
+        </div>
+        <div class="separator" id="chinaSeparator"></div>
+        <div class="event-section" id="chinaEventSection">
+            <div class="no-event-hint" id="chinaNoEvent">滚动浏览中国历史事件</div>
+            <div class="event-content" id="chinaEventContent" style="display: none;">
+                <div class="event-header">
+                    <span class="event-year" id="chinaEventYear"></span>
+                    <span class="event-category" id="chinaEventCategory"></span>
+                </div>
+                <div class="event-title" id="chinaEventTitle"></div>
+                <div class="event-desc" id="chinaEventDesc"></div>
+                <div class="event-impact" id="chinaEventImpact"></div>
+                <div class="event-figures" id="chinaEventFigures"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="main-container">
         <div class="timeline-track" id="timelineTrack"></div>
     </div>
 
-    <script src="/static/timeline.js?v=25"></script>
+    <script src="/static/periods.js"></script>
+    <script src="/static/timeline.js?v=27"></script>
 </body>
 </html>
