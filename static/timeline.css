@@ -125,98 +125,6 @@ body {
     color: #777;
 }
 
-.event-bubble {
-    position: absolute;
-    top: 0;
-    width: 20%;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
-    z-index: 100;
-}
-
-.timeline-item.left .event-bubble {
-    left: 0;
-    padding-left: 10px;
-}
-
-.timeline-item.right .event-bubble {
-    right: 0;
-    padding-right: 10px;
-}
-
-.timeline-item.active .event-bubble {
-    opacity: 1;
-    visibility: visible;
-}
-
-.bubble-content {
-    background: rgba(20, 20, 30, 0.98);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 8px;
-    padding: 10px;
-    backdrop-filter: blur(10px);
-}
-
-.bubble-header {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 5px;
-    flex-wrap: wrap;
-}
-
-.bubble-region {
-    font-size: 9px;
-    font-weight: bold;
-    padding: 1px 4px;
-    border: 1px solid;
-    border-radius: 2px;
-}
-
-.bubble-year {
-    font-size: 10px;
-    color: #fff;
-    font-family: monospace;
-}
-
-.bubble-category {
-    font-size: 8px;
-    font-weight: bold;
-    padding: 1px 4px;
-    border: 1px solid;
-    border-radius: 2px;
-}
-
-.bubble-name {
-    font-size: 12px;
-    color: #fff;
-    font-weight: bold;
-    margin-bottom: 4px;
-    line-height: 1.3;
-}
-
-.bubble-desc {
-    font-size: 10px;
-    color: #999;
-    line-height: 1.4;
-    margin-bottom: 4px;
-}
-
-.bubble-impact {
-    font-size: 9px;
-    color: #ffa500;
-    font-style: italic;
-    line-height: 1.3;
-    margin-bottom: 2px;
-}
-
-.bubble-figures {
-    font-size: 9px;
-    color: #4a9eff;
-    line-height: 1.3;
-}
-
 .error {
     color: #ff6b6b;
     text-align: center;
@@ -236,10 +144,12 @@ body {
 
 .europe-panel {
     left: 40px;
+    display: block;
 }
 
 .china-panel {
     right: 40px;
+    display: block;
 }
 
 .region-label {
@@ -266,12 +176,11 @@ body {
     padding: 15px;
 }
 
-.period-label {
-    font-size: 10px;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
+.period-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 3px;
 }
 
 .period-name {
@@ -319,30 +228,6 @@ body {
     flex-wrap: wrap;
 }
 
-.event-region {
-    font-size: 9px;
-    font-weight: bold;
-    padding: 1px 4px;
-    border: 1px solid;
-    border-radius: 2px;
-}
-
-.event-region.european {
-    color: #4ecdc4;
-    border-color: #4ecdc4;
-}
-
-.event-region.chinese {
-    color: #ff6b6b;
-    border-color: #ff6b6b;
-}
-
-.event-year {
-    font-size: 10px;
-    color: #fff;
-    font-family: monospace;
-}
-
 .event-category {
     font-size: 8px;
     font-weight: bold;
@@ -377,201 +262,12 @@ body {
     line-height: 1.4;
 }
 
-@media (max-width: 768px) {
-    .detail-panel {
-        position: fixed;
-        top: auto;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        border-radius: 8px 8px 0 0;
-        max-height: 50vh;
-        overflow-y: auto;
-        z-index: 1000;
-    }
-    
-    .period-section, .event-section {
-        padding: 12px;
-    }
-    
-    /* Improve mobile timeline layout */
-    .main-container {
-        padding: 60vh 0;
-    }
-    
-    .timeline-track::before {
-        width: 1px;
-        background: #111;
-    }
-    
-    .timeline-item {
-        margin: 8px 0;
-        min-height: 50px;
-    }
-    
-    .event-marker {
-        width: 8px;
-        height: 8px;
-        top: 4px;
-    }
-    
-    .timeline-item.active .event-marker {
-        transform: translateX(-50%) scale(1.3);
-        box-shadow: 0 0 12px currentColor;
-    }
-    
-    .event-node {
-        width: 40%;
-        padding: 2px 0;
-    }
-    
-    .timeline-item.left .event-node {
-        margin-right: 10px;
-    }
-    
-    .timeline-item.right .event-node {
-        margin-left: 10px;
-    }
-    
-    .event-year {
-        font-size: 9px;
-        margin-bottom: 1px;
-    }
-    
-    .event-name {
-        font-size: 11px;
-        margin-bottom: 1px;
-    }
-    
-    .event-description {
-        font-size: 9px;
-        line-height: 1.2;
-    }
-    
-    .event-bubble {
-        width: 32%;
-    }
-    
-    .bubble-content {
-        padding: 6px;
-        font-size: 10px;
-    }
-    
-    .bubble-header {
-        gap: 4px;
-        margin-bottom: 3px;
-    }
-    
-    .bubble-region {
-        font-size: 8px;
-        padding: 1px 3px;
-    }
-    
-    .bubble-year {
-        font-size: 9px;
-    }
-    
-    .bubble-category {
-        font-size: 7px;
-        padding: 1px 3px;
-    }
-    
-    .bubble-name {
-        font-size: 11px;
-        margin-bottom: 3px;
-    }
-    
-    .bubble-desc {
-        font-size: 9px;
-        margin-bottom: 3px;
-    }
-    
-    .bubble-impact {
-        font-size: 8px;
-        margin-bottom: 2px;
-    }
-    
-    .bubble-figures {
-        font-size: 8px;
-    }
-    
-    /* Improve mobile detail panels */
-    .detail-panel {
-        background: rgba(15, 15, 25, 0.98);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .region-label {
-        font-size: 9px;
-        margin-bottom: 4px;
-    }
-    
-    .period-name {
-        font-size: 13px;
-        margin-bottom: 2px;
-    }
-    
-    .period-range {
-        font-size: 10px;
-    }
-    
-    .separator {
-        margin: 0 12px;
-    }
-    
-    .event-section {
-        min-height: 100px;
-    }
-    
-    .no-event-hint {
-        font-size: 11px;
-        padding: 30px 0;
-    }
-    
-    .event-content {
-        gap: 6px;
-    }
-    
-    .event-header {
-        gap: 4px;
-    }
-    
-    .event-region {
-        font-size: 8px;
-        padding: 1px 3px;
-    }
-    
-    .event-year {
-        font-size: 9px;
-    }
-    
-    .event-category {
-        font-size: 7px;
-        padding: 1px 3px;
-    }
-    
-    .event-title {
-        font-size: 12px;
-        line-height: 1.3;
-    }
-    
-    .event-desc {
-        font-size: 10px;
-        line-height: 1.4;
-    }
-    
-    .event-impact {
-        font-size: 9px;
-    }
-    
 .event-figures {
     font-size: 9px;
     color: #4a9eff;
     line-height: 1.3;
 }
 
-/* Legend */
 #legend {
     position: fixed;
     bottom: 20px;
@@ -596,47 +292,7 @@ body {
     border-radius: 50%;
     margin-right: 8px;
 }
-    
-    /* Improve mobile touch interactions */
-    .timeline-item {
-        cursor: pointer;
-        touch-action: manipulation;
-    }
-    
-    .event-marker {
-        cursor: pointer;
-        touch-action: manipulation;
-    }
-    
-    /* Improve mobile scrolling */
-    .timeline-track {
-        scroll-behavior: smooth;
-    }
-    
-    /* Hide scrollbars on mobile for cleaner look */
-    ::-webkit-scrollbar {
-        display: none;
-    }
-    
-    /* Ensure proper touch targets */
-    .timeline-item, .event-marker {
-        min-height: 44px; /* Minimum touch target size */
-    }
-}
 
-::-webkit-scrollbar {
-    width: 3px;
-}
-
-::-webkit-scrollbar-track {
-    background: #000;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #333;
-}
-
-/* Search styles */
 #search-container {
     position: fixed;
     top: 20px;
@@ -715,6 +371,18 @@ body {
     color: #888;
 }
 
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+}
+
 @media (max-width: 768px) {
     .main-container {
         padding: 50vh 0;
@@ -732,11 +400,175 @@ body {
         margin-left: 12px;
     }
     
-    .event-bubble {
-        width: 28%;
+    .detail-panel {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 10px;
+        right: 10px;
+        width: auto;
+        border-radius: 8px 8px 0 0;
+        max-height: 40vh;
+        overflow-y: auto;
     }
     
-    .bubble-content {
-        padding: 8px;
+
+    
+    .period-section, .event-section {
+        padding: 12px;
     }
+    
+    .region-label {
+        display: inline;
+        margin-right: 6px;
+        margin-bottom: 0;
+    }
+    
+    .period-header {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 4px;
+    }
+    
+    #legend {
+        display: none;
+    }
+    
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    
+    #top-right-icons {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .icon-btn {
+        width: 36px;
+        height: 36px;
+    }
+    
+    #help-btn {
+        display: none;
+    }
+}
+
+#top-right-icons {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1002;
+}
+
+.icon-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(20, 20, 30, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: background 0.2s, border-color 0.2s;
+    padding: 0;
+}
+
+.icon-btn:hover {
+    background: rgba(40, 40, 50, 0.95);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.icon-btn svg {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1003;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: rgba(20, 20, 30, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 24px;
+    min-width: 280px;
+    max-width: 90%;
+    position: relative;
+}
+
+.modal-content h3 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+.shortcuts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.shortcut-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+kbd {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-family: monospace;
+    font-size: 14px;
+    color: #4a9eff;
+    min-width: 50px;
+    text-align: center;
+}
+
+.shortcut-item span {
+    color: #ccc;
+    font-size: 14px;
 }

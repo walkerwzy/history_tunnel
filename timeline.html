@@ -5,12 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="浏览公元前3000年至今的欧洲和中国历史大事年表。交互式时间轴展示政治、军事、文化、经济等重要历史事件，支持按时期、地区和类别筛选。">
     <title>历史大事年表 | 欧洲与中国历史时间轴</title>
-    <link rel="stylesheet" href="/static/timeline.css?v=30">
+    <link rel="stylesheet" href="/static/timeline.css?v=44">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 </head>
 <body>
+    <!-- Top Right Icons -->
+    <div id="top-right-icons">
+        <button id="help-btn" class="icon-btn" title="键盘快捷键">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 9a4 4 0 0 1 8 0c0 2-3 3-3 4v4"></path>
+                <circle cx="13" cy="22" r="1.5" fill="currentColor" stroke="none"></circle>
+            </svg>
+        </button>
+        <button id="switch-btn" class="icon-btn" title="切换到时空虫洞">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 2v4"></path>
+                <path d="M12 18v4"></path>
+                <path d="M4.93 4.93l2.83 2.83"></path>
+                <path d="M16.24 16.24l2.83 2.83"></path>
+                <path d="M2 12h4"></path>
+                <path d="M18 12h4"></path>
+                <path d="M4.93 19.07l2.83-2.83"></path>
+                <path d="M16.24 7.76l2.83-2.83"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Keyboard Shortcuts Modal -->
+    <div id="shortcuts-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h3>键盘快捷键</h3>
+            <div class="shortcuts-list">
+                <div class="shortcut-item">
+                    <kbd>j</kbd>
+                    <span>下一条事件</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>k</kbd>
+                    <span>上一条事件</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>gg</kbd>
+                    <span>第一条事件</span>
+                </div>
+                <div class="shortcut-item">
+                    <kbd>G</kbd>
+                    <span>最后一条事件</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Search Box -->
     <div id="search-container">
         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -25,8 +74,10 @@
 
     <div class="detail-panel europe-panel" id="europePanel">
         <div class="period-section">
-            <div class="region-label europe">欧洲</div>
-            <div class="period-name" id="europePeriodName">--</div>
+            <div class="period-header">
+                <span class="period-name" id="europePeriodName">--</span>
+                <span class="region-label europe">欧洲</span>
+            </div>
             <div class="period-range" id="europePeriodRange">--</div>
         </div>
         <div class="separator" id="europeSeparator"></div>
@@ -47,8 +98,10 @@
 
     <div class="detail-panel china-panel" id="chinaPanel">
         <div class="period-section">
-            <div class="region-label china">中国</div>
-            <div class="period-name" id="chinaPeriodName">--</div>
+            <div class="period-header">
+                <span class="period-name" id="chinaPeriodName">--</span>
+                <span class="region-label china">中国</span>
+            </div>
             <div class="period-range" id="chinaPeriodRange">--</div>
         </div>
         <div class="separator" id="chinaSeparator"></div>
@@ -96,6 +149,6 @@
     </div>
 
     <script src="/static/periods.js"></script>
-    <script src="/static/timeline.js?v=27"></script>
+    <script src="/static/timeline.js?v=32"></script>
 </body>
 </html>

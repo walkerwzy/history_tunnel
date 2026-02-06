@@ -249,6 +249,90 @@ class TimelineApp {
                 });
             }
         });
+        
+        // Vim-style keyboard navigation
+        this.setupKeyboardNavigation();
+        
+        // Setup top-right icons
+        this.setupTopRightIcons();
+    }
+
+    setupTopRightIcons() {
+        const helpBtn = document.getElementById('help-btn');
+        const switchBtn = document.getElementById('switch-btn');
+        const shortcutsModal = document.getElementById('shortcuts-modal');
+        const closeBtn = shortcutsModal.querySelector('.close-btn');
+        
+        // Show shortcuts modal
+        helpBtn.addEventListener('click', () => {
+            shortcutsModal.classList.add('active');
+        });
+        
+        // Close modal
+        closeBtn.addEventListener('click', () => {
+            shortcutsModal.classList.remove('active');
+        });
+        
+        // Close modal when clicking outside
+        shortcutsModal.addEventListener('click', (e) => {
+            if (e.target === shortcutsModal) {
+                shortcutsModal.classList.remove('active');
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && shortcutsModal.classList.contains('active')) {
+                shortcutsModal.classList.remove('active');
+            }
+        });
+        
+        // Switch to wormhole view
+        switchBtn.addEventListener('click', () => {
+            window.location.href = '/';
+        });
+    }
+
+    setupKeyboardNavigation() {
+        this.lastKey = null;
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+                return;
+            }
+            
+            const items = document.querySelectorAll('.timeline-item');
+            if (items.length === 0) return;
+            
+            let targetIndex = this.currentActiveIndex;
+            const key = e.key.toLowerCase();
+            
+            if (key === 'j') {
+                e.preventDefault();
+                targetIndex = Math.min(this.currentActiveIndex + 1, items.length - 1);
+            } else if (key === 'k') {
+                e.preventDefault();
+                targetIndex = Math.max(this.currentActiveIndex - 1, 0);
+            } else if (key === 'g' && e.shiftKey) {
+                e.preventDefault();
+                targetIndex = items.length - 1;
+            } else if (key === 'g') {
+                if (this.lastKey === 'g') {
+                    e.preventDefault();
+                    targetIndex = 0;
+                }
+            }
+            
+            this.lastKey = key;
+            
+            if (targetIndex !== this.currentActiveIndex && targetIndex >= 0) {
+                const targetItem = items[targetIndex];
+                if (targetItem) {
+                    targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    targetItem.click();
+                }
+            }
+        });
     }
 
     updateDisplay() {
@@ -293,18 +377,44 @@ class TimelineApp {
                 
                 const year = parseInt(closestItem.dataset.year);
                 const region = closestItem.dataset.region;
-                
-                this.updatePanelsByYear(year);
-                
                 const event = this.allEvents[index];
+                
                 if (event) {
-                    if (region === 'European') {
-                        this.updateEventDisplay('europe', event);
-                        this.updateEventDisplay('china', null);
+                    // Update period displays for both regions
+                    const europePeriod = HistoricalPeriods.getEuropePeriod(year);
+                    const chinaPeriod = HistoricalPeriods.getChinaPeriod(year);
+                    this.updatePeriodDisplay('europe', europePeriod);
+                    this.updatePeriodDisplay('china', chinaPeriod);
+                    
+                    // Check if mobile and hide non-current region panel
+                    const isMobile = window.innerWidth <= 768;
+                    if (isMobile) {
+                        // On mobile, only show current event's region panel
+                        const europePanel = document.getElementById('europePanel');
+                        const chinaPanel = document.getElementById('chinaPanel');
+                        
+                        if (region === 'European') {
+                            europePanel.style.display = 'block';
+                            chinaPanel.style.display = 'none';
+                            this.updateEventDisplay('europe', event);
+                        } else {
+                            europePanel.style.display = 'none';
+                            chinaPanel.style.display = 'block';
+                            this.updateEventDisplay('china', event);
+                        }
                     } else {
-                        this.updateEventDisplay('china', event);
-                        this.updateEventDisplay('europe', null);
+                        // On desktop, show both panels
+                        if (region === 'European') {
+                            this.updateEventDisplay('europe', event);
+                            this.updateEventDisplay('china', null);
+                        } else {
+                            this.updateEventDisplay('china', event);
+                            this.updateEventDisplay('europe', null);
+                        }
                     }
+                    
+                    // Debug: Log panel updates
+                    console.log('Panel update - Region:', region, 'Event:', event.name, 'Year:', event.year, 'Is Mobile:', window.innerWidth <= 768);
                 }
             }
         }
