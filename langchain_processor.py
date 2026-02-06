@@ -47,7 +47,7 @@ class EventSchema(BaseModel):
     key_figures: str = Field(description="事件中的关键人物列表（逗号分隔的字符串，中文）")
     description: str = Field(description="事件的简要概述（1-2句话，中文）")
     impact: str = Field(description="事件的历史影响和意义（中文）")
-    category: str = Field(description="事件类别（中文）：政治、技术、军事、经济、文化、宗教、科学")
+    category: str = Field(description="事件类别（中文）：政治、技术、军事、经济、文化、宗教、科学。注意：所有宗教相关事件统一使用'宗教'，不要使用细分如'宗教/思想'、'宗教/政治'等")
     importance_level: int = Field(description="重要性等级（1-10，10为最重要）")
 
 

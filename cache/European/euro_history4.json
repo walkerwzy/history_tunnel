@@ -1,0 +1,210 @@
+{
+  "Foundations of Abrahamic Faiths": {
+    "period_name_cn": "亚伯拉罕诸教的基石（上古与圣经时代）",
+    "region": "Middle East / Europe",
+    "year": "1300 BC - 100 AD",
+    "events": [
+      {
+        "event_name": "摩西出埃及与十诫确立",
+        "start_year": -1300,
+        "end_year": -1250,
+        "key_figures": "摩西",
+        "description": "根据《旧约·出埃及记》，摩西带领希伯来人逃离埃及，并在西奈山接受上帝赐予的法律。",
+        "impact": "确立了犹太教的一神论核心及律法传统。这是西方道德哲学与法律体系的最早源头之一，也是《圣经》文化的起点。",
+        "category": "宗教/法律",
+        "importance_level": 10,
+        "region": "Middle East",
+        "source": "https://en.wikipedia.org/wiki/The_Exodus"
+      },
+      {
+        "event_name": "巴比伦之囚与《旧约》编纂",
+        "start_year": -586,
+        "end_year": -538,
+        "key_figures": "尼布甲尼撒二世",
+        "description": "新巴比伦王国攻陷耶路撒冷，将犹太精英掳往巴比伦。在放逐期间，犹太人开始系统整理民族文献。",
+        "impact": "促成了犹太教从民族信仰向严密的一神教转变，绝大部分《旧约圣经》内容在此期间成形，确保了犹太民族在失去领土后的文化连续性。",
+        "category": "宗教/文化",
+        "importance_level": 9,
+        "region": "Middle East",
+        "source": "https://en.wikipedia.org/wiki/Babylonian_captivity"
+      },
+      {
+        "event_name": "耶稣受难与复活",
+        "start_year": 30,
+        "end_year": 33,
+        "key_figures": "耶稣, 彼得, 犹大",
+        "description": "耶稣在耶路撒冷被钉十字架，其弟子宣称其三日后复活。这一事件是《新约圣经》的核心。",
+        "impact": "标志着基督教从犹太教的一个教派转变为独立的宗教。复活的教义成为基督教救赎论的基石，彻底改变了此后两千年的西方文明逻辑。",
+        "category": "宗教/文化",
+        "importance_level": 10,
+        "region": "Middle East",
+        "source": "https://en.wikipedia.org/wiki/Crucifixion_of_Jesus"
+      },
+      {
+        "event_name": "圣保罗的宣教旅程",
+        "start_year": 46,
+        "end_year": 67,
+        "key_figures": "保罗",
+        "description": "使徒保罗通过三次大规模旅行，在地中海沿岸建立教会，并撰写了大量书信（保罗书信）。",
+        "impact": "保罗将基督教从“犹太人的信仰”转化为“普世的宗教”，使其能够跨越民族藩篱进入罗马帝国和欧洲核心地带。",
+        "category": "宗教/外交",
+        "importance_level": 10,
+        "region": "European / Middle East",
+        "source": "https://en.wikipedia.org/wiki/Paul_the_Apostle"
+      }
+    ]
+  },
+  "The Rise of Universal Church": {
+    "period_name_cn": "普世教会的崛起与体制化",
+    "region": "European",
+    "year": "313 AD - 800 AD",
+    "events": [
+      {
+        "event_name": "尼西亚公会议",
+        "start_year": 325,
+        "end_year": 325,
+        "key_figures": "君士坦丁大帝",
+        "description": "由皇帝召集的第一次全球性主教会议，旨在解决亚流派争议，确立了“三位一体”教义。",
+        "impact": "制定了《尼西亚信经》，确立了基督教的正统教义标准。标志着教会与皇权的深度捆绑，以及教会法对社会生活的全面介入。",
+        "category": "宗教/法律",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/First_Council_Nicaea"
+      },
+      {
+        "event_name": "希吉拉 (伊斯兰教历元点)",
+        "start_year": 622,
+        "end_year": 622,
+        "key_figures": "穆罕默德",
+        "description": "穆罕默德率领信徒从麦加迁移至麦地那，并在当地建立了政教合一的社区。",
+        "impact": "伊斯兰教正式作为一种政治和军事力量登上历史舞台。它随后迅速扩张，终结了罗马帝国在中东和北非的宗教统治，形成此后千年十字架与新月的对抗格局。",
+        "category": "宗教/政治",
+        "importance_level": 10,
+        "region": "Middle East",
+        "source": "https://en.wikipedia.org/wiki/Hegira"
+      },
+      {
+        "event_name": "丕平献土",
+        "start_year": 754,
+        "end_year": 756,
+        "key_figures": "矮子丕平, 教皇斯德望二世",
+        "description": "法兰克国王丕平将征服的意大利土地赠送给教皇，换取教皇对其统治合法性的承认。",
+        "impact": "正式建立了“教皇国”。它使罗马教皇不仅是宗教领袖，更成为拥有领土和世俗权力的君主，是天主教介入欧洲政治的法理开端。",
+        "category": "宗教/政治",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Donation_of_Pepin"
+      }
+    ]
+  },
+  "Great Schisms and Crusades": {
+    "period_name_cn": "大分裂与十字军时代",
+    "region": "European",
+    "year": "1054 AD - 1453 AD",
+    "events": [
+      {
+        "event_name": "东西教会大分裂",
+        "start_year": 1054,
+        "end_year": 1054,
+        "key_figures": "教皇利奥九世, 赛鲁拉留斯",
+        "description": "罗马教廷与君士坦丁堡牧首因教义冲突（和子说）和首席权问题互开教籍。",
+        "impact": "基督教正式分裂为罗马天主教（西）与东正教（东）。这不仅是宗教分裂，更是欧洲东西部在文化、法律和政治发展轨迹上的永久背离。",
+        "category": "宗教/外交",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/East%E2%80%93West_Schism"
+      },
+      {
+        "event_name": "克莱蒙特会议 (发动十字军)",
+        "start_year": 1095,
+        "end_year": 1095,
+        "key_figures": "教皇乌尔巴诺二世",
+        "description": "教皇发表煽动性演说，呼吁基督徒从异教徒手中收复圣城耶路撒冷，“天主所愿”成为口号。",
+        "impact": "开启了持续两百年的宗教战争。它加深了基督教与伊斯兰教的仇恨，但同时也促进了东西方贸易与知识交流（如古希腊文献回归欧洲）。",
+        "category": "宗教/军事",
+        "importance_level": 10,
+        "region": "European / Middle East",
+        "source": "https://en.wikipedia.org/wiki/Council_of_Clermont"
+      },
+      {
+        "event_name": "君士坦丁堡陷落 (1453)",
+        "start_year": 1453,
+        "end_year": 1453,
+        "key_figures": "穆罕默德二世, 君士坦丁十一世",
+        "description": "奥斯曼帝国攻陷东正教中心，圣索菲亚大教堂被改为清真寺。",
+        "impact": "东正教中心向莫斯科转移（第三罗马论），伊斯兰教全面切断了欧洲通往东方的陆路贸易，间接催生了大航海时代。",
+        "category": "宗教/军事",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Fall_of_Constantinople"
+      }
+    ]
+  },
+  "Reformation and Denominational Pluralism": {
+    "period_name_cn": "宗教改革与现代宗派格局",
+    "region": "European",
+    "year": "1517 AD - 1965 AD",
+    "events": [
+      {
+        "event_name": "九十五条论纲发表",
+        "start_year": 1517,
+        "end_year": 1517,
+        "key_figures": "马丁·路德",
+        "description": "路德在维滕贝格公开质疑教廷售卖“赎罪券”，强调“因信称义”及《圣经》的绝对权威。",
+        "impact": "开启了宗教改革。导致了新教（Protestantism）的诞生，摧毁了中世纪天主教会的精神垄断，推动了欧洲民族国家意识的觉醒。",
+        "category": "宗教/政治",
+        "importance_level": 10,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Ninety-five_Theses"
+      },
+      {
+        "event_name": "至尊法案 (Act of Supremacy)",
+        "start_year": 1534,
+        "end_year": 1534,
+        "key_figures": "亨利八世",
+        "description": "英国议会通过法案，宣布英王是英国教会（圣公会）在世俗间的唯一最高首领，脱离教廷。",
+        "impact": "确立了宗教的民族化。英国圣公会成为新教的重要分支，将教会财产充公，极大增强了王权，并为后来的大英帝国崛起扫清了意识形态障碍。",
+        "category": "宗教/法律",
+        "importance_level": 9,
+        "region": "European",
+        "source": "https://en.wikipedia.org/wiki/Acts_of_Supremacy"
+      },
+      {
+        "event_name": "特伦托会议 (反宗教改革)",
+        "start_year": 1545,
+        "end_year": 1563,
+        "key_figures": "教皇保罗三世, 耶稣会",
+        "description": "天主教会为应对新教冲击举行的全面改革会议，明确了传统教义并整肃纪律。",
+        "impact": "促成了耶稣会的兴起，引发了天主教在全球范围内的传教热潮。它固化了天主教与新教在教义上的分裂边界。",
+        "category": "宗教/教育",
+        "importance_level": 9,
+        "region": "European / Global",
+        "source": "https://en.wikipedia.org/wiki/Council_of_Trent"
+      },
+      {
+        "event_name": "大屠杀与锡安主义",
+        "start_year": 1941,
+        "end_year": 1948,
+        "key_figures": "本·古里安",
+        "description": "二战期间犹太民族遭遇惨绝人寰的大屠杀，战后在圣经应许之地以色列复国。",
+        "impact": "犹太教从一个流散状态重新回归拥有政治实体的状态。这彻底改变了中东地缘政治，也促使基督教世界对长期的反犹传统进行了深刻的宗教反思。",
+        "category": "宗教/政治",
+        "importance_level": 10,
+        "region": "Global",
+        "source": "https://en.wikipedia.org/wiki/The_Holocaust"
+      },
+      {
+        "event_name": "梵蒂冈第二届大公会议",
+        "start_year": 1962,
+        "end_year": 1965,
+        "key_figures": "教皇若望二十三世",
+        "description": "现代天主教会最重要的革新会议，承认其他宗教（包括犹太教、伊斯兰教）也有“真理的成分”，并改用本族语取代拉丁语进行弥撒。",
+        "impact": "标志着天主教从封闭保守走向现代对话。它从根本上调整了天主教与现代世界、与其他信仰的关系，是20世纪宗教史的里程碑。",
+        "category": "宗教/社会",
+        "importance_level": 10,
+        "region": "Global",
+        "source": "https://en.wikipedia.org/wiki/Second_Vatican_Council"
+      }
+    ]
+  }
+}

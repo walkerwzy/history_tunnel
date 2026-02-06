@@ -1,0 +1,186 @@
+{
+  "Foundations of Taoism": {
+    "period_name_cn": "道教的萌芽与理论奠基",
+    "region": "East Asian",
+    "year": "c. 500 BC - 200 AD",
+    "events": [
+      {
+        "event_name": "老子著《道德经》",
+        "start_year": -500,
+        "end_year": -400,
+        "key_figures": "老子",
+        "description": "老子在函谷关留下五千言，论述“道”作为宇宙本源的哲学体系。",
+        "impact": "虽然当时是哲学著作，但它为后世道教提供了核心宇宙观。其中的“清静无为”和“长生久视”成为道教修行的最高理想。",
+        "category": "宗教",
+        "importance_level": 10,
+        "region": "East Asian",
+        "source": "https://zh.wikipedia.org/wiki/老子"
+      },
+      {
+        "event_name": "张道陵创立五斗米道",
+        "start_year": 142,
+        "end_year": 142,
+        "key_figures": "张道陵",
+        "description": "张道陵在四川大邑县鹤鸣山自称受太上老君“正一盟威之道”，正式创立组织化的道教。",
+        "impact": "标志着道家哲学正式转化为道教宗教。确立了“天师”继承制度，使道教具备了社会动员能力和严密的科仪。",
+        "category": "宗教",
+        "importance_level": 10,
+        "region": "East Asian",
+        "source": "https://zh.wikipedia.org/wiki/五斗米道"
+      }
+    ]
+  },
+  "The Arrival and Early Translation of Buddhism": {
+    "period_name_cn": "佛教东传与早期译经",
+    "region": "East Asian",
+    "year": "67 AD - 420 AD",
+    "events": [
+      {
+        "event_name": "白马驮经与白马寺建立",
+        "start_year": 67,
+        "end_year": 67,
+        "key_figures": "汉明帝, 摄摩腾, 竺法兰",
+        "description": "汉明帝感梦遣使西域，迎来两位天竺高僧，在洛阳建立中国第一座官办寺院。",
+        "impact": "佛教在中国正式获得官方认可的标志。它开启了长达千年的佛经翻译事业，改变了华夏文明的生死观。",
+        "category": "宗教",
+        "importance_level": 10,
+        "region": "East Asian",
+        "source": "https://zh.wikipedia.org/wiki/白马寺"
+      },
+      {
+        "event_name": "鸠摩罗什入长安译经",
+        "start_year": 401,
+        "end_year": 413,
+        "key_figures": "鸠摩罗什",
+        "description": "西域高僧鸠摩罗什被后秦姚兴迎入长安，主持翻译了《妙法莲华经》、《金刚经》等核心经典。",
+        "impact": "中国佛教史上第一次大规模、高水准的译经高峰。他翻译的经文文辞优美，使佛教教义得以在文人阶层大规模传播，奠定了大乘佛教的基础。",
+        "category": "宗教",
+        "importance_level": 10,
+        "region": "East Asian",
+        "source": "https://zh.wikipedia.org/wiki/鸠摩罗什"
+      }
+    ]
+  },
+  "The Golden Age of Religion and Integration": {
+    "period_name_cn": "宗教鼎盛与宗派形成",
+    "region": "East Asian",
+    "year": "420 AD - 907 AD",
+    "events": [
+      {
+        "event_name": "寇谦之改革天师道",
+        "start_year": 424,
+        "end_year": 448,
+        "key_figures": "寇谦之, 北魏太武帝",
+        "description": "寇谦之清整道教，废除“租米钱税”，强调戒律与儒家伦理结合。",
+        "impact": "道教历史上第一次成功的“官方化”改革。它使道教摆脱了民间秘密社团的形象，成为北魏的国教，确立了道教在统治阶层的地位。",
+        "category": "宗教",
+        "importance_level": 9,
+        "region": "East Asian",
+        "source": "https://zh.wikipedia.org/wiki/寇谦之"
+      },
+      {
+        "event_name": "达摩祖师东渡与禅宗始创",
+        "start_year": 520,
+        "end_year": 536,
+        "key_figures": "菩提达摩",
+        "description": "南印度僧人达摩经海路抵达广州，后在嵩山少林寺“面壁九年”，传授“直指人心”的禅法。",
+        "impact": "开启了佛教中国化程度最高的教派——禅宗。它深刻影响了中国人的思维方式、美学和日常生活，是佛教与中国本土精神融合的巅峰。",
+        "category": "宗教",
+        "importance_level": 10,
+        "region": "East Asian",
+        "source": "https://zh.wikipedia.org/wiki/菩提达摩"
+      },
+      {
+        "event_name": "云冈与龙门石窟开凿",
+        "start_year": 460,
+        "end_year": 520,
+        "key_figures": "昙曜",
+        "description": "北魏王朝动用国家力量，在平城（大同）和洛阳大规模凿山造像。",
+        "impact": "这是“政教合一”的视觉纪念碑。通过将皇帝形象与佛陀形象重合，确立了中国式“君权神授”的独特表达，也是人类艺术史的瑰宝。",
+        "category": "艺术/宗教",
+        "importance_level": 9,
+        "region": "East Asian",
+        "source": "https://zh.wikipedia.org/wiki/云冈石窟"
+      },
+      {
+        "event_name": "玄奘西行取经",
+        "start_year": 627,
+        "end_year": 645,
+        "key_figures": "玄奘, 唐太宗",
+        "description": "玄奘孤身穿越荒漠前往印度那烂陀寺，求取《瑜伽师地论》等经典，归国后译经1335卷。",
+        "impact": "达到了古代汉传佛教义理研究的最高峰。他的记录《大唐西域记》是研究中亚及印度历史的唯一权威文献。他建立的“唯识宗”虽然短暂，但其学术贡献不可磨灭。",
+        "category": "宗教",
+        "importance_level": 10,
+        "region": "East Asian / Central Asia",
+        "source": "https://zh.wikipedia.org/wiki/玄奘"
+      },
+      {
+        "event_name": "六祖惠能与《坛经》传世",
+        "start_year": 670,
+        "end_year": 713,
+        "key_figures": "惠能",
+        "description": "广东僧人惠能提出“顿悟”教义，打破了对经卷文字的迷信。其弟子整理的《六祖坛经》是中国僧人唯一被称为“经”的著作。",
+        "impact": "实现了佛教从“外来信仰”向“本土智慧”的彻底转变。禅宗从此成为中国佛教的主流，甚至影响了后来宋明理学的产生。",
+        "category": "宗教",
+        "importance_level": 10,
+        "region": "East Asian",
+        "source": "https://zh.wikipedia.org/wiki/惠能"
+      },
+      {
+        "event_name": "会昌法难 (唐武宗灭佛)",
+        "start_year": 845,
+        "end_year": 846,
+        "key_figures": "唐武宗, 赵归真",
+        "description": "因寺院经济过度扩张影响国家财政，唐武宗下令拆毁寺院4.6万余所，强迫26万僧尼还俗。",
+        "impact": "中国佛教史上最严重的打击。此后佛教失去了其在政治中的核心影响力，宗派开始向山林化、平民化转型，诸如唯识、华严等深奥宗派从此衰落。",
+        "category": "宗教",
+        "importance_level": 9,
+        "region": "East Asian",
+        "source": "https://zh.wikipedia.org/wiki/会昌灭佛"
+      }
+    ]
+  },
+  "The Later Developments and Syncretism": {
+    "period_name_cn": "晚期宗教发展与三教合一",
+    "region": "East Asian",
+    "year": "960 AD - 1900 AD",
+    "events": [
+      {
+        "event_name": "王重阳创立全真教",
+        "start_year": 1167,
+        "end_year": 1167,
+        "key_figures": "王重阳",
+        "description": "金朝时期，王重阳在北方提倡“三教合一”，强调苦行和出家，反对符咒和炼丹。",
+        "impact": "道教内部的一次重大变革，形成了与南方正一派并立的北方全真派，使道教的修行方式从“外丹”彻底转向“内丹”。",
+        "category": "宗教",
+        "importance_level": 9,
+        "region": "East Asian",
+        "source": "https://zh.wikipedia.org/wiki/全真教"
+      },
+      {
+        "event_name": "邱处机西行雪山见成吉思汗",
+        "start_year": 1220,
+        "end_year": 1222,
+        "key_figures": "邱处机, 成吉思汗",
+        "description": "长春真人邱处机应召前往西域见成吉思汗，劝其“止杀爱民”。",
+        "impact": "通过这次宗教外交，全真教获得了免除赋税的特权，并在蒙元时期迅速扩张。此举也客观上保护了中原地区的文化血脉。",
+        "category": "宗教",
+        "importance_level": 9,
+        "region": "East Asian",
+        "source": "https://zh.wikipedia.org/wiki/丘处机"
+      },
+      {
+        "event_name": "明清“三教合一”与民间宗教兴起",
+        "start_year": 1500,
+        "end_year": 1800,
+        "key_figures": "林兆恩",
+        "description": "儒、释、道三家思想在基层社会深度融合，形成了诸如“白莲教”、“罗教”等复杂的民间宗教体系。",
+        "impact": "标志着中国传统宗教进入了“混融期”。宗教不再是精英阶层的神学辩论，而变成了普通民众生活中的伦理规范与神秘仪式。",
+        "category": "宗教",
+        "importance_level": 8,
+        "region": "East Asian",
+        "source": "https://zh.wikipedia.org/wiki/三教合一"
+      }
+    ]
+  }
+}
