@@ -8,6 +8,10 @@ class TimelineApp {
         this.currentYear = 0;
         this.userSelectedEventIndex = null;
         
+        // Load panel visibility: saved preference > device default (desktop=on, mobile=off)
+        const savedState = localStorage.getItem('timeline_detail_panels_visible');
+        this.showDetailPanels = savedState !== null ? savedState === 'true' : window.innerWidth > 768;
+        
         this.init();
     }
 
@@ -291,6 +295,93 @@ class TimelineApp {
         switchBtn.addEventListener('click', () => {
             window.location.href = '/';
         });
+        
+        // Setup eye toggle button
+        this.setupEyeToggle();
+    }
+
+    setupEyeToggle() {
+        const eyeBtn = document.getElementById('eye-toggle-btn');
+        const eyeIconOpen = document.getElementById('eye-icon-open');
+        const eyeIconClosed = document.getElementById('eye-icon-closed');
+        const europePanel = document.getElementById('europePanel');
+        const chinaPanel = document.getElementById('chinaPanel');
+        
+        // Apply initial state
+        this.applyDetailPanelVisibility();
+        
+        // Toggle on click
+        eyeBtn.addEventListener('click', () => {
+            this.showDetailPanels = !this.showDetailPanels;
+            localStorage.setItem('timeline_detail_panels_visible', this.showDetailPanels);
+
+            // Update icons
+            if (this.showDetailPanels) {
+                eyeIconOpen.style.display = 'block';
+                eyeIconClosed.style.display = 'none';
+            } else {
+                eyeIconOpen.style.display = 'none';
+                eyeIconClosed.style.display = 'block';
+            }
+
+            // Apply visibility
+            this.applyDetailPanelVisibility();
+        });
+
+        window.addEventListener('resize', () => this.applyDetailPanelVisibility());
+    }
+
+    applyDetailPanelVisibility() {
+        const europePanel = document.getElementById('europePanel');
+        const chinaPanel = document.getElementById('chinaPanel');
+        const eyeIconOpen = document.getElementById('eye-icon-open');
+        const eyeIconClosed = document.getElementById('eye-icon-closed');
+        
+        // Update icon state
+        if (eyeIconOpen && eyeIconClosed) {
+            if (this.showDetailPanels) {
+                eyeIconOpen.style.display = 'block';
+                eyeIconClosed.style.display = 'none';
+            } else {
+                eyeIconOpen.style.display = 'none';
+                eyeIconClosed.style.display = 'block';
+            }
+        }
+        
+        if (this.showDetailPanels) {
+            // Show panels
+            const isMobile = window.innerWidth <= 768;
+            
+            if (isMobile) {
+                // Mobile: only show current event's region panel
+                if (this.currentActiveIndex >= 0 && this.allEvents[this.currentActiveIndex]) {
+                    const event = this.allEvents[this.currentActiveIndex];
+                    if (event.region === 'European') {
+                        europePanel.style.display = 'block';
+                        chinaPanel.style.display = 'none';
+                    } else {
+                        europePanel.style.display = 'none';
+                        chinaPanel.style.display = 'block';
+                    }
+                } else {
+                    // No active event on mobile: show message in Europe panel, hide China
+                    europePanel.style.display = 'block';
+                    chinaPanel.style.display = 'none';
+                    const contentDiv = europePanel.querySelector('.panel-content');
+                    if (contentDiv) {
+                        contentDiv.innerHTML = '<div style="padding: 20px; text-align: center; color: #888; font-style: italic;">Scroll to explore events</div>';
+                    }
+                }
+            } else {
+                // Desktop: show both panels
+                europePanel.style.display = 'block';
+                chinaPanel.style.display = 'block';
+            }
+        } else {
+            // Hide all panels
+            europePanel.style.display = 'none';
+            chinaPanel.style.display = 'none';
+        }
     }
 
     setupKeyboardNavigation() {
@@ -386,32 +477,15 @@ class TimelineApp {
                     this.updatePeriodDisplay('europe', europePeriod);
                     this.updatePeriodDisplay('china', chinaPeriod);
                     
-                    // Check if mobile and hide non-current region panel
-                    const isMobile = window.innerWidth <= 768;
-                    if (isMobile) {
-                        // On mobile, only show current event's region panel
-                        const europePanel = document.getElementById('europePanel');
-                        const chinaPanel = document.getElementById('chinaPanel');
-                        
-                        if (region === 'European') {
-                            europePanel.style.display = 'block';
-                            chinaPanel.style.display = 'none';
-                            this.updateEventDisplay('europe', event);
-                        } else {
-                            europePanel.style.display = 'none';
-                            chinaPanel.style.display = 'block';
-                            this.updateEventDisplay('china', event);
-                        }
+                    if (region === 'European') {
+                        this.updateEventDisplay('europe', event);
+                        this.updateEventDisplay('china', null);
                     } else {
-                        // On desktop, show both panels
-                        if (region === 'European') {
-                            this.updateEventDisplay('europe', event);
-                            this.updateEventDisplay('china', null);
-                        } else {
-                            this.updateEventDisplay('china', event);
-                            this.updateEventDisplay('europe', null);
-                        }
+                        this.updateEventDisplay('china', event);
+                        this.updateEventDisplay('europe', null);
                     }
+                    
+                    this.applyDetailPanelVisibility();
                     
                     // Debug: Log panel updates
                     console.log('Panel update - Region:', region, 'Event:', event.name, 'Year:', event.year, 'Is Mobile:', window.innerWidth <= 768);
