@@ -34,6 +34,21 @@
             -webkit-box-orient: vertical !important;
             line-height: 1.3 !important;
         }
+        /* Custom select styling */
+        .custom-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: white;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1rem;
+            padding-right: 2.5rem;
+        }
+        .custom-select::-ms-expand {
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen">
@@ -101,7 +116,62 @@
         <!-- Stats & Info -->
         <div id="stats-bar" class="mb-4 flex items-center justify-between text-sm text-slate-600">
             <span id="total-info">加载中...</span>
+            <span id="filter-info" class="hidden text-blue-600"></span>
             <span id="page-info"></span>
+        </div>
+
+        <!-- Search & Filter Bar -->
+        <div class="mb-4 p-4 bg-white rounded-xl shadow-sm border border-slate-200">
+            <div class="flex flex-wrap gap-3 items-end">
+                <!-- Search Input -->
+                <div class="flex-1 min-w-64">
+                    <label class="block text-xs font-medium text-slate-600 mb-1">搜索事件名称</label>
+                    <div class="relative">
+                        <input type="text" id="search-input" placeholder="输入关键词搜索..." 
+                            onkeyup="debounceSearch()"
+                            class="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
+                        <svg class="w-5 h-5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Category Filter -->
+                <div class="w-32">
+                    <label class="block text-xs font-medium text-slate-600 mb-1">分类筛选</label>
+                    <select id="filter-category" onchange="applyFilters()"
+                        class="custom-select w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
+                        <option value="">全部分类</option>
+                        <option value="政治">政治</option>
+                        <option value="军事">军事</option>
+                        <option value="文化">文化</option>
+                        <option value="经济">经济</option>
+                        <option value="宗教">宗教</option>
+                    </select>
+                </div>
+
+                <!-- Year Range -->
+                <div class="flex gap-2 items-end">
+                    <div class="w-24">
+                        <label class="block text-xs font-medium text-slate-600 mb-1">起始年份</label>
+                        <input type="number" id="filter-year-start" placeholder="不限" 
+                            onchange="applyFilters()"
+                            class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
+                    </div>
+                    <span class="text-slate-400 pb-2">-</span>
+                    <div class="w-24">
+                        <label class="block text-xs font-medium text-slate-600 mb-1">结束年份</label>
+                        <input type="number" id="filter-year-end" placeholder="不限" 
+                            onchange="applyFilters()"
+                            class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
+                    </div>
+                </div>
+
+                <!-- Clear Filters -->
+                <button onclick="clearFilters()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-lg text-sm font-medium transition-all">
+                    清除筛选
+                </button>
+            </div>
         </div>
 
         <!-- Events Table -->
@@ -129,7 +199,7 @@
             <div class="px-4 py-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
                 <div class="flex items-center gap-2">
                     <span class="text-sm text-slate-600">每页显示:</span>
-                    <select id="page-size" onchange="changePageSize()" class="text-sm border border-slate-300 rounded-md px-2 py-1">
+                    <select id="page-size" onchange="changePageSize()" class="custom-select text-sm border border-slate-300 rounded-md px-2 py-1 bg-white">
                         <option value="10">10</option>
                         <option value="25">25</option>
                         <option value="50" selected>50</option>
@@ -218,7 +288,7 @@
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-slate-700 mb-1">分类</label>
-                            <select id="category" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <select id="category" class="custom-select w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                 <option value="">请选择</option>
                                 <option value="政治">政治</option>
                                 <option value="军事">军事</option>
@@ -274,6 +344,8 @@
         let pageSize = 50;
         let totalEvents = 0;
         let events = [];
+        let filteredEvents = [];
+        let searchTimeout = null;
 
         // Category colors - consistent across all pages
         const categoryColors = {
@@ -295,6 +367,9 @@
         function setRegion(region) {
             currentRegion = region;
             currentPage = 0;
+            
+            // Clear filters when changing region
+            clearFilters();
 
             // Update button styles
             document.getElementById('btn-chinese').className = region === 'Chinese'
@@ -307,10 +382,11 @@
             loadEvents();
         }
 
-        // Load events
+        // Load events - fetch ALL events for client-side filtering and pagination
         async function loadEvents() {
             try {
-                const response = await fetch(`/admin/api/events?region=${currentRegion}&offset=${currentPage * pageSize}&limit=${pageSize}`);
+                // Fetch all events (no pagination) for client-side processing
+                const response = await fetch(`/admin/api/events?region=${currentRegion}&offset=0&limit=1000`);
                 console.log('Load events response:', response);
 
                 if (!response.ok) throw new Error('Failed to load events');
@@ -318,53 +394,22 @@
                 const data = await response.json();
                 console.log('Events data:', data);
 
+                // Store all events
                 events = data.events || [];
                 totalEvents = data.metadata?.total || 0;
+                filteredEvents = events;
 
-                renderEvents();
-                renderPagination();
-                updateStats();
+                // Reset to first page
+                currentPage = 0;
+
+                renderFilteredEvents();
             } catch (error) {
                 console.error('Error loading events:', error);
                 showToast('加载事件失败', 'error');
             }
         }
 
-        // Render events table
-        function renderEvents() {
-            const tbody = document.getElementById('events-table-body');
-            tbody.innerHTML = '';
-
-            if (events.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="8" class="px-4 py-8 text-center text-slate-500">暂无数据</td></tr>';
-                return;
-            }
-
-            events.forEach(event => {
-                const row = document.createElement('tr');
-                row.className = 'hover:bg-slate-50 transition-colors cursor-pointer';
-                row.onclick = () => editEvent(event.id);
-
-                row.innerHTML = `
-                    <td class="px-4 py-3 text-sm font-medium text-slate-900">${escapeHtml(event.event_name)}</td>
-                    <td class="px-4 py-3 text-sm text-slate-600">${event.start_year}</td>
-                    <td class="px-4 py-3 text-sm text-slate-600">${event.end_year || '-'}</td>
-                    <td class="px-4 py-3 text-sm text-slate-600 max-w-xs truncate">${escapeHtml(event.key_figures || '-')}</td>
-                    <td class="px-4 py-2 max-w-xs"><div class="text-xs text-slate-500 two-line-cell">${escapeHtml(event.description || '-')}</div></td>
-                    <td class="px-4 py-2 max-w-xs"><div class="text-xs text-slate-500 two-line-cell">${escapeHtml(event.impact || '-')}</div></td>
-                    <td class="px-4 py-3 text-center">
-                        <button onclick="deleteEvent(${event.id}, event)" class="p-1 text-red-600 hover:bg-red-50 rounded transition-colors">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                            </svg>
-                        </button>
-                    </td>
-                `;
-                tbody.appendChild(row);
-            });
-        }
-
-        // Render pagination
+        // Render events table (deprecated - use renderFilteredEvents)
         function renderPagination() {
             const totalPages = Math.ceil(totalEvents / pageSize);
             const pagination = document.getElementById('pagination');
@@ -431,16 +476,204 @@
         // Update stats
         function updateStats() {
             const start = currentPage * pageSize + 1;
-            const end = Math.min((currentPage + 1) * pageSize, totalEvents);
-            document.getElementById('total-info').textContent = `共 ${totalEvents} 条事件`;
-            document.getElementById('page-info').textContent = `显示 ${start}-${end} 条`;
+            const end = Math.min((currentPage + 1) * pageSize, filteredEvents.length);
+            const hasFilters = hasActiveFilters();
+            
+            if (hasFilters && filteredEvents.length !== totalEvents) {
+                document.getElementById('total-info').textContent = `共 ${totalEvents} 条事件`;
+                document.getElementById('filter-info').classList.remove('hidden');
+                document.getElementById('filter-info').textContent = `筛选后: ${filteredEvents.length} 条`;
+                document.getElementById('page-info').textContent = `显示 ${start}-${end} 条`;
+            } else {
+                document.getElementById('total-info').textContent = `共 ${totalEvents} 条事件`;
+                document.getElementById('filter-info').classList.add('hidden');
+                document.getElementById('page-info').textContent = `显示 ${start}-${end} 条`;
+            }
+        }
+
+        // Check if any filters are active
+        function hasActiveFilters() {
+            const searchValue = document.getElementById('search-input').value.trim();
+            const categoryValue = document.getElementById('filter-category').value;
+            const yearStart = document.getElementById('filter-year-start').value;
+            const yearEnd = document.getElementById('filter-year-end').value;
+            return searchValue || categoryValue || yearStart || yearEnd;
+        }
+
+        // Debounced search
+        function debounceSearch() {
+            if (searchTimeout) clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                applyFilters();
+            }, 300);
+        }
+
+        // Apply all filters
+        function applyFilters() {
+            const searchValue = document.getElementById('search-input').value.toLowerCase().trim();
+            const categoryValue = document.getElementById('filter-category').value;
+            const yearStart = parseInt(document.getElementById('filter-year-start').value) || null;
+            const yearEnd = parseInt(document.getElementById('filter-year-end').value) || null;
+
+            filteredEvents = events.filter(event => {
+                // Search filter - check multiple fields
+                if (searchValue) {
+                    const searchLower = searchValue.toLowerCase();
+                    const nameMatch = event.event_name && event.event_name.toLowerCase().includes(searchLower);
+                    const figureMatch = event.key_figures && event.key_figures.toLowerCase().includes(searchLower);
+                    const descMatch = event.description && event.description.toLowerCase().includes(searchLower);
+                    const impactMatch = event.impact && event.impact.toLowerCase().includes(searchLower);
+                    if (!nameMatch && !figureMatch && !descMatch && !impactMatch) {
+                        return false;
+                    }
+                }
+                
+                // Category filter
+                if (categoryValue && event.category !== categoryValue) {
+                    return false;
+                }
+                
+                // Year range filter - check if start_year falls within range
+                if (yearStart !== null && event.start_year < yearStart) {
+                    return false;
+                }
+                if (yearEnd !== null && event.start_year > yearEnd) {
+                    return false;
+                }
+                
+                return true;
+            });
+
+            currentPage = 0;
+            renderFilteredEvents();
+        }
+
+        // Render filtered events
+        function renderFilteredEvents() {
+            const tbody = document.getElementById('events-table-body');
+            tbody.innerHTML = '';
+
+            if (filteredEvents.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" class="px-4 py-8 text-center text-slate-500">暂无匹配数据</td></tr>';
+                document.getElementById('pagination').innerHTML = '';
+                document.getElementById('filter-info').classList.remove('hidden');
+                document.getElementById('filter-info').textContent = `筛选后: 0 条`;
+                return;
+            }
+
+            const start = currentPage * pageSize;
+            const end = start + pageSize;
+            const pageEvents = filteredEvents.slice(start, end);
+
+            pageEvents.forEach(event => {
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-slate-50 transition-colors cursor-pointer';
+                row.onclick = () => editEvent(event.id);
+
+                row.innerHTML = `
+                    <td class="px-4 py-3 text-sm font-medium text-slate-900">${escapeHtml(event.event_name)}</td>
+                    <td class="px-4 py-3 text-sm text-slate-600">${event.start_year}</td>
+                    <td class="px-4 py-3 text-sm text-slate-600">${event.end_year || '-'}</td>
+                    <td class="px-4 py-3 text-sm text-slate-600 max-w-xs truncate">${escapeHtml(event.key_figures || '-')}</td>
+                    <td class="px-4 py-2 max-w-xs"><div class="text-xs text-slate-500 two-line-cell">${escapeHtml(event.description || '-')}</div></td>
+                    <td class="px-4 py-2 max-w-xs"><div class="text-xs text-slate-500 two-line-cell">${escapeHtml(event.impact || '-')}</div></td>
+                    <td class="px-4 py-3 text-center">
+                        <button onclick="deleteEvent(${event.id}, event)" class="p-1 text-red-600 hover:bg-red-50 rounded transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                            </svg>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            renderFilteredPagination();
+            updateStats();
+        }
+
+        // Render pagination for filtered results
+        function renderFilteredPagination() {
+            const totalPages = Math.ceil(filteredEvents.length / pageSize);
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            if (totalPages <= 1) return;
+
+            const prevBtn = document.createElement('button');
+            prevBtn.innerHTML = '←';
+            prevBtn.className = `px-3 py-1 rounded-md text-sm font-medium ${currentPage === 0 ? 'text-slate-400 cursor-not-allowed' : 'text-slate-600 hover:bg-slate-200'}`;
+            prevBtn.onclick = () => { if (currentPage > 0) { currentPage--; renderFilteredEvents(); }};
+            pagination.appendChild(prevBtn);
+
+            const maxVisible = 5;
+            let startPage = Math.max(0, currentPage - 2);
+            let endPage = Math.min(totalPages - 1, startPage + maxVisible - 1);
+
+            if (endPage - startPage < maxVisible - 1) {
+                startPage = Math.max(0, endPage - maxVisible + 1);
+            }
+
+            if (startPage > 0) {
+                pagination.appendChild(createFilteredPageButton(0));
+                if (startPage > 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.className = 'px-2 text-slate-400';
+                    pagination.appendChild(ellipsis);
+                }
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                pagination.appendChild(createFilteredPageButton(i));
+            }
+
+            if (endPage < totalPages - 1) {
+                if (endPage < totalPages - 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.className = 'px-2 text-slate-400';
+                    pagination.appendChild(ellipsis);
+                }
+                pagination.appendChild(createFilteredPageButton(totalPages - 1));
+            }
+
+            const nextBtn = document.createElement('button');
+            nextBtn.innerHTML = '→';
+            nextBtn.className = `px-3 py-1 rounded-md text-sm font-medium ${currentPage >= totalPages - 1 ? 'text-slate-400 cursor-not-allowed' : 'text-slate-600 hover:bg-slate-200'}`;
+            nextBtn.onclick = () => { if (currentPage < totalPages - 1) { currentPage++; renderFilteredEvents(); }};
+            pagination.appendChild(nextBtn);
+        }
+
+        function createFilteredPageButton(page) {
+            const btn = document.createElement('button');
+            btn.textContent = page + 1;
+            btn.className = `px-3 py-1 rounded-md text-sm font-medium ${page === currentPage ? 'bg-blue-500 text-white' : 'text-slate-600 hover:bg-slate-200'}`;
+            btn.onclick = () => { currentPage = page; renderFilteredEvents(); };
+            return btn;
+        }
+
+        // Clear all filters
+        function clearFilters() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('filter-category').value = '';
+            document.getElementById('filter-year-start').value = '';
+            document.getElementById('filter-year-end').value = '';
+            
+            filteredEvents = events;
+            currentPage = 0;
+            renderFilteredEvents();
         }
 
         // Change page size
         function changePageSize() {
             pageSize = parseInt(document.getElementById('page-size').value);
             currentPage = 0;
-            loadEvents();
+            if (hasActiveFilters()) {
+                renderFilteredEvents();
+            } else {
+                loadEvents();
+            }
         }
 
         // Modal functions
@@ -543,6 +776,8 @@
                 if (!response.ok) throw new Error('删除失败');
 
                 showToast('事件已删除', 'success');
+                
+                // Reload to refresh data
                 loadEvents();
             } catch (error) {
                 console.error('Error deleting event:', error);

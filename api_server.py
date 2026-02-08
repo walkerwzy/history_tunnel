@@ -76,26 +76,32 @@ app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
 # Security setup
 security = HTTPBasic()
+# Development mode flag - set to True to skip auth
+DEV_MODE = True
 
-def verify_admin_credentials(credentials: HTTPBasicCredentials = Depends(security)):
+async def verify_admin_credentials():
     """
     Verify admin credentials.
-    For development: always return True
+    For development: always return True (no auth required)
     Production: username + yyyyMMdd MD5 hash as password
     """
-    # DEVELOPMENT MODE: Always allow
-    return True
+    # DEVELOPMENT MODE: Skip auth check
+    if DEV_MODE:
+        return True
     
-    # PRODUCTION MODE (uncomment below):
-    # today_str = datetime.now().strftime("%Y%m%d")
-    # expected_password = hashlib.md5(f"{credentials.username}{today_str}".encode()).hexdigest()
-    # if credentials.password != expected_password:
-    #     raise HTTPException(
-    #         status_code=status.HTTP_401_UNAUTHORIZED,
-    #         detail="Invalid credentials",
-    #         headers={"WWW-Authenticate": "Basic"},
-    #     )
-    # return True
+    # PRODUCTION MODE: Use HTTP Basic Auth
+    from fastapi import Depends
+    from fastapi.security import HTTPBasicCredentials
+    credentials: HTTPBasicCredentials = Depends(security)
+    today_str = datetime.now().strftime("%Y%m%d")
+    expected_password = hashlib.md5(f"{credentials.username}{today_str}".encode()).hexdigest()
+    if credentials.password != expected_password:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid credentials",
+            headers={"WWW-Authenticate": "Basic"},
+        )
+    return True
 
 @app.get("/")
 async def root():
@@ -310,18 +316,19 @@ async def login_md5(uname: str):
 # ==================== ADMIN API ENDPOINTS ====================
 
 @app.get("/admin/auth")
-async def admin_auth_check(authorized: bool = Depends(verify_admin_credentials)):
+async def admin_auth_check():
     """Check if admin is authenticated."""
+    await verify_admin_credentials()
     return {"authenticated": True, "mode": "development"}
 
 @app.get("/admin/api/events")
 async def admin_list_events(
     region: Optional[str] = Query(None, description="Region filter"),
     offset: int = Query(0, ge=0),
-    limit: int = Query(50, ge=1, le=200),
-    authorized: bool = Depends(verify_admin_credentials)
+    limit: int = Query(50, ge=1, le=1000)
 ):
     """List events with pagination for admin."""
+    await verify_admin_credentials()
     try:
         events, metadata = db_manager.get_events_paginated(
             region=region, offset=offset, limit=limit
@@ -331,22 +338,18 @@ async def admin_list_events(
         raise HTTPException(status_code=500, detail=f"Database error: {str(e)}")
 
 @app.get("/admin/api/events/{event_id}")
-async def admin_get_event(
-    event_id: int,
-    authorized: bool = Depends(verify_admin_credentials)
-):
+async def admin_get_event(event_id: int):
     """Get a single event by ID."""
+    await verify_admin_credentials()
     event = db_manager.get_event_by_id(event_id)
     if not event:
         raise HTTPException(status_code=404, detail="Event not found")
     return event
 
 @app.post("/admin/api/events", status_code=status.HTTP_201_CREATED)
-async def admin_create_event(
-    event: EventCreate,
-    authorized: bool = Depends(verify_admin_credentials)
-):
+async def admin_create_event(event: EventCreate):
     """Create a new event."""
+    await verify_admin_credentials()
     # Check for duplicates
     if db_manager.check_duplicate_event(event.event_name, event.start_year):
         raise HTTPException(status_code=409, detail="Event with same name and year already exists")
@@ -360,12 +363,9 @@ async def admin_create_event(
         raise HTTPException(status_code=500, detail="Failed to create event")
 
 @app.put("/admin/api/events/{event_id}")
-async def admin_update_event(
-    event_id: int,
-    event: EventUpdate,
-    authorized: bool = Depends(verify_admin_credentials)
-):
+async def admin_update_event(event_id: int, event: EventUpdate):
     """Update an existing event."""
+    await verify_admin_credentials()
     # Check if event exists
     existing = db_manager.get_event_by_id(event_id)
     if not existing:
@@ -386,11 +386,9 @@ async def admin_update_event(
         raise HTTPException(status_code=500, detail="Failed to update event")
 
 @app.delete("/admin/api/events/{event_id}")
-async def admin_delete_event(
-    event_id: int,
-    authorized: bool = Depends(verify_admin_credentials)
-):
+async def admin_delete_event(event_id: int):
     """Delete an event."""
+    await verify_admin_credentials()
     success = db_manager.delete_event(event_id)
     if success:
         return {"message": "Event deleted successfully"}
@@ -398,9 +396,7 @@ async def admin_delete_event(
         raise HTTPException(status_code=404, detail="Event not found")
 
 @app.get("/admin/api/template")
-async def admin_download_template(
-    authorized: bool = Depends(verify_admin_credentials)
-):
+async def admin_download_template():
     """Download TSV template for batch upload."""
     headers = ["event_name", "start_year", "end_year", "key_figures", "description", 
                "impact", "category", "region", "importance_level", "source"]
@@ -416,11 +412,9 @@ async def admin_download_template(
     )
 
 @app.post("/admin/api/events/batch")
-async def admin_batch_upload(
-    file: UploadFile = File(...),
-    authorized: bool = Depends(verify_admin_credentials)
-):
+async def admin_batch_upload(file: UploadFile = File(...)):
     """Batch upload events from TSV file."""
+    await verify_admin_credentials()
     if not file.filename or not file.filename.endswith('.tsv'):
         raise HTTPException(status_code=400, detail="Only TSV files are allowed")
     
