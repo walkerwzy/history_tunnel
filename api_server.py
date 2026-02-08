@@ -289,6 +289,24 @@ async def health_check():
     """Health check endpoint."""
     return {"status": "healthy", "timestamp": "2024-01-01T00:00:00Z"}
 
+@app.get("/login/{uname}")
+async def login_md5(uname: str):
+    """
+    Generate MD5 hash for login.
+    Returns MD5(username + yyyyMMdd format date).
+    """
+    from datetime import datetime
+    today_str = datetime.now().strftime("%Y%m%d")
+    input_str = f"{uname}{today_str}"
+    hash_str = hashlib.md5(input_str.encode()).hexdigest()
+    return hash_str
+    # return {
+    #     "username": uname,
+    #     "date": today_str,
+    #     "input": input_str,
+    #     "md5": hash_str
+    # }
+
 # ==================== ADMIN API ENDPOINTS ====================
 
 @app.get("/admin/auth")
