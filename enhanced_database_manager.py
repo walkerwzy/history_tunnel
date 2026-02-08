@@ -538,3 +538,52 @@ class EnhancedDatabaseManager(DatabaseManager):
                 "importance_distribution": {},
                 "average_importance": 0
             }
+
+    def get_event_by_id(self, event_id: int) -> Optional[Dict]:
+        """Get a single event by ID."""
+        query = text("SELECT * FROM events WHERE id = :id")
+        try:
+            with self.engine.connect() as conn:
+                result = conn.execute(query, {"id": event_id})
+                row = result.fetchone()
+                if row:
+                    return dict(zip(result.keys(), row))
+                return None
+        except Exception as e:
+            print(f"Error getting event by ID: {e}")
+            return None
+
+    def delete_event(self, event_id: int) -> bool:
+        """Delete an event by ID."""
+        query = text("DELETE FROM events WHERE id = :id")
+        try:
+            with self.engine.connect() as conn:
+                result = conn.execute(query, {"id": event_id})
+                conn.commit()
+                return result.rowcount > 0
+        except Exception as e:
+            print(f"Error deleting event: {e}")
+            return False
+
+    def check_duplicate_event(self, event_name: str, start_year: int, exclude_id: Optional[int] = None) -> bool:
+        """Check if an event with same name and year exists."""
+        if exclude_id:
+            query = text("""
+                SELECT COUNT(*) FROM events 
+                WHERE event_name = :event_name AND start_year = :start_year AND id != :exclude_id
+            """)
+            params = {"event_name": event_name, "start_year": start_year, "exclude_id": exclude_id}
+        else:
+            query = text("""
+                SELECT COUNT(*) FROM events 
+                WHERE event_name = :event_name AND start_year = :start_year
+            """)
+            params = {"event_name": event_name, "start_year": start_year}
+        
+        try:
+            with self.engine.connect() as conn:
+                result = conn.execute(query, params)
+                return result.fetchone()[0] > 0
+        except Exception as e:
+            print(f"Error checking duplicate: {e}")
+            return False

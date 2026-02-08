@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .modal-enter { animation: modalIn 0.3s ease-out; }
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .drop-zone.dragover { border-color: #3b82f6; background: rgba(59, 130, 246, 0.1); }
+        .category-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        .two-line-cell {
+            overflow: hidden !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2 !important;
+            -webkit-box-orient: vertical !important;
+            line-height: 1.3 !important;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen">
+    <!-- Header -->
+    <header class="glass sticky top-0 z-40 border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                <!-- Title -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-2xl font-bold text-slate-800">历史事件管理后台</h1>
+                </div>
+
+                <!-- Controls -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <!-- Region Toggle -->
+                    <div class="bg-white rounded-lg p-1 shadow-sm border border-slate-200">
+                        <div class="flex">
+                            <button onclick="setRegion('Chinese')" id="btn-chinese" class="px-4 py-2 rounded-md text-sm font-medium transition-all bg-blue-500 text-white shadow-md">
+                                中国
+                            </button>
+                            <button onclick="setRegion('European')" id="btn-european" class="px-4 py-2 rounded-md text-sm font-medium transition-all text-slate-600 hover:text-slate-900">
+                                欧洲
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Upload Zone -->
+                    <div id="drop-zone" class="drop-zone relative border-2 border-dashed border-slate-300 rounded-lg px-4 py-2 bg-white/50 hover:bg-white/80 transition-all cursor-pointer">
+                        <input type="file" id="file-input" accept=".tsv" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" onchange="handleFileSelect(event)">
+                        <div class="flex items-center gap-2 text-sm text-slate-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                            </svg>
+                            <span>拖拽或点击上传TSV</span>
+                        </div>
+                    </div>
+
+                    <!-- Download Template -->
+                    <button onclick="downloadTemplate()" class="flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition-all">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        下载模板
+                    </button>
+
+                    <!-- Add Event -->
+                    <button onclick="openModal()" class="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white rounded-lg text-sm font-medium transition-all shadow-md hover:shadow-lg">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                        </svg>
+                        添加事件
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <!-- Stats & Info -->
+        <div id="stats-bar" class="mb-4 flex items-center justify-between text-sm text-slate-600">
+            <span id="total-info">加载中...</span>
+            <span id="page-info"></span>
+        </div>
+
+        <!-- Events Table -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full table-fixed">
+                    <thead class="bg-slate-50 border-b border-slate-200">
+                        <tr>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider w-1/4">事件名称</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider w-20">开始年份</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider w-20">结束年份</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider w-32">关键人物</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider w-1/4">事件详情</th>
+                            <th class="px-4 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider w-1/4">事件影响</th>
+                            <th class="px-4 py-3 text-center text-xs font-semibold text-slate-600 uppercase tracking-wider w-16">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="events-table-body" class="divide-y divide-slate-100">
+                        <!-- Events will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="px-4 py-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="text-sm text-slate-600">每页显示:</span>
+                    <select id="page-size" onchange="changePageSize()" class="text-sm border border-slate-300 rounded-md px-2 py-1">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50" selected>50</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+
+                <div class="flex items-center gap-1" id="pagination">
+                    <!-- Pagination buttons will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Upload Results -->
+        <div id="upload-results" class="hidden mt-6 bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+            <h3 class="text-lg font-semibold text-slate-800 mb-3">上传结果</h3>
+            <div class="grid grid-cols-3 gap-4 mb-4">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-3 text-center">
+                    <div class="text-2xl font-bold text-green-600" id="success-count">0</div>
+                    <div class="text-sm text-green-700">成功导入</div>
+                </div>
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-3 text-center">
+                    <div class="text-2xl font-bold text-yellow-600" id="duplicate-count">0</div>
+                    <div class="text-sm text-yellow-700">重复跳过</div>
+                </div>
+                <div class="bg-red-50 border border-red-200 rounded-lg p-3 text-center">
+                    <div class="text-2xl font-bold text-red-600" id="failed-count">0</div>
+                    <div class="text-sm text-red-700">导入失败</div>
+                </div>
+            </div>
+            <div id="failed-rows-container" class="hidden">
+                <h4 class="text-sm font-semibold text-red-700 mb-2">失败详情:</h4>
+                <div id="failed-rows-list" class="text-sm text-red-600 max-h-40 overflow-y-auto bg-red-50 rounded-lg p-3"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Event Modal -->
+    <div id="event-modal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <!-- Backdrop -->
+            <div class="fixed inset-0 bg-slate-900/50 transition-opacity" onclick="closeModal()"></div>
+
+            <!-- Modal Panel -->
+            <div class="modal-enter inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
+                <div class="bg-gradient-to-r from-blue-500 to-indigo-600 px-6 py-4">
+                    <h3 class="text-lg font-semibold text-white" id="modal-title">添加事件</h3>
+                </div>
+
+                <form id="event-form" class="px-6 py-4 space-y-4 max-h-[70vh] overflow-y-auto">
+                    <input type="hidden" id="event-id">
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">事件名称 *</label>
+                            <input type="text" id="event_name" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">分类</label>
+                            <select id="category" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="">请选择分类</option>
+                                <option value="政治">政治</option>
+                                <option value="军事">军事</option>
+                                <option value="文化">文化</option>
+                                <option value="经济">经济</option>
+                                <option value="宗教">宗教</option>
+                                <option value="科技">科技</option>
+                                <option value="社会">社会</option>
+                                <option value="外交">外交</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">开始年份 *</label>
+                            <input type="number" id="start_year" required class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">结束年份</label>
+                            <input type="number" id="end_year" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-1">重要程度 (1-10)</label>
+                            <input type="number" id="importance_level" min="1" max="10" value="5" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">地区</label>
+                        <div class="flex gap-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="region" value="Chinese" checked class="w-4 h-4 text-blue-600">
+                                <span class="ml-2 text-sm text-slate-700">中国</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="region" value="European" class="w-4 h-4 text-blue-600">
+                                <span class="ml-2 text-sm text-slate-700">欧洲</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">关键人物</label>
+                        <input type="text" id="key_figures" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">事件描述</label>
+                        <textarea id="description" rows="3" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">事件影响</label>
+                        <textarea id="impact" rows="3" class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">来源</label>
+                        <input type="url" id="source" placeholder="https://..." class="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </form>
+
+                <div class="px-6 py-4 bg-slate-50 flex justify-end gap-3">
+                    <button type="button" onclick="closeModal()" class="px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-900 transition-colors">
+                        取消
+                    </button>
+                    <button type="button" onclick="saveEvent()" class="px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white text-sm font-medium rounded-lg shadow-md transition-all">
+                        保存
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="hidden fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300 z-50">
+        <span id="toast-message"></span>
+    </div>
+
+    <script>
+        // State
+        let currentRegion = 'Chinese';
+        let currentPage = 0;
+        let pageSize = 50;
+        let totalEvents = 0;
+        let events = [];
+
+        // Category colors - consistent across all pages
+        const categoryColors = {
+            '政治': 'bg-red-100 text-red-700 border-red-200',
+            '军事': 'bg-orange-100 text-orange-700 border-orange-200',
+            '文化': 'bg-purple-100 text-purple-700 border-purple-200',
+            '经济': 'bg-green-100 text-green-700 border-green-200',
+            '宗教': 'bg-indigo-100 text-indigo-700 border-indigo-200',
+            '科技': 'bg-blue-100 text-blue-700 border-blue-200',
+            '社会': 'bg-pink-100 text-pink-700 border-pink-200',
+            '外交': 'bg-cyan-100 text-cyan-700 border-cyan-200',
+            'default': 'bg-slate-100 text-slate-700 border-slate-200'
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadEvents();
+            setupDragAndDrop();
+        });
+
+        // Set region
+        function setRegion(region) {
+            currentRegion = region;
+            currentPage = 0;
+
+            // Update button styles
+            document.getElementById('btn-chinese').className = region === 'Chinese'
+                ? 'px-4 py-2 rounded-md text-sm font-medium transition-all bg-blue-500 text-white shadow-md'
+                : 'px-4 py-2 rounded-md text-sm font-medium transition-all text-slate-600 hover:text-slate-900';
+            document.getElementById('btn-european').className = region === 'European'
+                ? 'px-4 py-2 rounded-md text-sm font-medium transition-all bg-blue-500 text-white shadow-md'
+                : 'px-4 py-2 rounded-md text-sm font-medium transition-all text-slate-600 hover:text-slate-900';
+
+            loadEvents();
+        }
+
+        // Load events
+        async function loadEvents() {
+            try {
+                const response = await fetch(`/admin/api/events?region=${currentRegion}&offset=${currentPage * pageSize}&limit=${pageSize}`);
+                console.log('Load events response:', response);
+
+                if (!response.ok) throw new Error('Failed to load events');
+
+                const data = await response.json();
+                console.log('Events data:', data);
+
+                events = data.events || [];
+                totalEvents = data.metadata?.total || 0;
+
+                renderEvents();
+                renderPagination();
+                updateStats();
+            } catch (error) {
+                console.error('Error loading events:', error);
+                showToast('加载事件失败', 'error');
+            }
+        }
+
+        // Render events table
+        function renderEvents() {
+            const tbody = document.getElementById('events-table-body');
+            tbody.innerHTML = '';
+
+            if (events.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="8" class="px-4 py-8 text-center text-slate-500">暂无数据</td></tr>';
+                return;
+            }
+
+            events.forEach(event => {
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-slate-50 transition-colors cursor-pointer';
+                row.onclick = () => editEvent(event.id);
+
+                row.innerHTML = `
+                    <td class="px-4 py-3 text-sm font-medium text-slate-900">${escapeHtml(event.event_name)}</td>
+                    <td class="px-4 py-3 text-sm text-slate-600">${event.start_year}</td>
+                    <td class="px-4 py-3 text-sm text-slate-600">${event.end_year || '-'}</td>
+                    <td class="px-4 py-3 text-sm text-slate-600 max-w-xs truncate">${escapeHtml(event.key_figures || '-')}</td>
+                    <td class="px-4 py-2 max-w-xs"><div class="text-xs text-slate-500 two-line-cell">${escapeHtml(event.description || '-')}</div></td>
+                    <td class="px-4 py-2 max-w-xs"><div class="text-xs text-slate-500 two-line-cell">${escapeHtml(event.impact || '-')}</div></td>
+                    <td class="px-4 py-3 text-center">
+                        <button onclick="deleteEvent(${event.id}, event)" class="p-1 text-red-600 hover:bg-red-50 rounded transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                            </svg>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Render pagination
+        function renderPagination() {
+            const totalPages = Math.ceil(totalEvents / pageSize);
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            if (totalPages <= 1) return;
+
+            // Previous button
+            const prevBtn = document.createElement('button');
+            prevBtn.innerHTML = '←';
+            prevBtn.className = `px-3 py-1 rounded-md text-sm font-medium ${currentPage === 0 ? 'text-slate-400 cursor-not-allowed' : 'text-slate-600 hover:bg-slate-200'}`;
+            prevBtn.onclick = () => { if (currentPage > 0) { currentPage--; loadEvents(); }};
+            pagination.appendChild(prevBtn);
+
+            // Page numbers
+            const maxVisible = 5;
+            let startPage = Math.max(0, currentPage - 2);
+            let endPage = Math.min(totalPages - 1, startPage + maxVisible - 1);
+
+            if (endPage - startPage < maxVisible - 1) {
+                startPage = Math.max(0, endPage - maxVisible + 1);
+            }
+
+            if (startPage > 0) {
+                pagination.appendChild(createPageButton(0));
+                if (startPage > 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.className = 'px-2 text-slate-400';
+                    pagination.appendChild(ellipsis);
+                }
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                pagination.appendChild(createPageButton(i));
+            }
+
+            if (endPage < totalPages - 1) {
+                if (endPage < totalPages - 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.className = 'px-2 text-slate-400';
+                    pagination.appendChild(ellipsis);
+                }
+                pagination.appendChild(createPageButton(totalPages - 1));
+            }
+
+            // Next button
+            const nextBtn = document.createElement('button');
+            nextBtn.innerHTML = '→';
+            nextBtn.className = `px-3 py-1 rounded-md text-sm font-medium ${currentPage >= totalPages - 1 ? 'text-slate-400 cursor-not-allowed' : 'text-slate-600 hover:bg-slate-200'}`;
+            nextBtn.onclick = () => { if (currentPage < totalPages - 1) { currentPage++; loadEvents(); }};
+            pagination.appendChild(nextBtn);
+        }
+
+        function createPageButton(page) {
+            const btn = document.createElement('button');
+            btn.textContent = page + 1;
+            btn.className = `px-3 py-1 rounded-md text-sm font-medium ${page === currentPage ? 'bg-blue-500 text-white' : 'text-slate-600 hover:bg-slate-200'}`;
+            btn.onclick = () => { currentPage = page; loadEvents(); };
+            return btn;
+        }
+
+        // Update stats
+        function updateStats() {
+            const start = currentPage * pageSize + 1;
+            const end = Math.min((currentPage + 1) * pageSize, totalEvents);
+            document.getElementById('total-info').textContent = `共 ${totalEvents} 条事件`;
+            document.getElementById('page-info').textContent = `显示 ${start}-${end} 条`;
+        }
+
+        // Change page size
+        function changePageSize() {
+            pageSize = parseInt(document.getElementById('page-size').value);
+            currentPage = 0;
+            loadEvents();
+        }
+
+        // Modal functions
+        function openModal(eventId = null) {
+            document.getElementById('event-modal').classList.remove('hidden');
+            document.getElementById('event-form').reset();
+            document.getElementById('event-id').value = '';
+
+            if (eventId) {
+                const event = events.find(e => e.id === eventId);
+                if (event) {
+                    document.getElementById('modal-title').textContent = '编辑事件';
+                    document.getElementById('event-id').value = event.id;
+                    document.getElementById('event_name').value = event.event_name;
+                    document.getElementById('start_year').value = event.start_year;
+                    document.getElementById('end_year').value = event.end_year || '';
+                    document.getElementById('key_figures').value = event.key_figures || '';
+                    document.getElementById('description').value = event.description || '';
+                    document.getElementById('impact').value = event.impact || '';
+                    document.getElementById('category').value = event.category || '';
+                    document.getElementById('importance_level').value = event.importance_level || 5;
+                    document.getElementById('source').value = event.source || '';
+
+                    // Set region radio
+                    const regionRadio = document.querySelector(`input[name="region"][value="${event.region}"]`);
+                    if (regionRadio) regionRadio.checked = true;
+                }
+            } else {
+                document.getElementById('modal-title').textContent = '添加事件';
+                // Set default region
+                const regionRadio = document.querySelector(`input[name="region"][value="${currentRegion}"]`);
+                if (regionRadio) regionRadio.checked = true;
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('event-modal').classList.add('hidden');
+        }
+
+        function editEvent(eventId) {
+            openModal(eventId);
+        }
+
+        // Save event
+        async function saveEvent() {
+            const eventId = document.getElementById('event-id').value;
+            const eventData = {
+                event_name: document.getElementById('event_name').value,
+                start_year: parseInt(document.getElementById('start_year').value),
+                end_year: document.getElementById('end_year').value ? parseInt(document.getElementById('end_year').value) : null,
+                key_figures: document.getElementById('key_figures').value,
+                description: document.getElementById('description').value,
+                impact: document.getElementById('impact').value,
+                category: document.getElementById('category').value,
+                region: document.querySelector('input[name="region"]:checked').value,
+                importance_level: parseInt(document.getElementById('importance_level').value),
+                source: document.getElementById('source').value
+            };
+
+            try {
+                const url = eventId ? `/admin/api/events/${eventId}` : '/admin/api/events';
+                const method = eventId ? 'PUT' : 'POST';
+
+                console.log('Saving event:', method, url, eventData);
+
+                const response = await fetch(url, {
+                    method: method,
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(eventData)
+                });
+
+                console.log('Save response:', response);
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.detail || '保存失败');
+                }
+
+                const result = await response.json();
+                console.log('Save result:', result);
+
+                closeModal();
+                showToast(eventId ? '事件已更新' : '事件已创建', 'success');
+                loadEvents();
+            } catch (error) {
+                console.error('Error saving event:', error);
+                showToast(error.message, 'error');
+            }
+        }
+
+        // Delete event
+        async function deleteEvent(eventId, event) {
+            event.stopPropagation();
+            if (!confirm('确定要删除这个事件吗？')) return;
+
+            try {
+                const response = await fetch(`/admin/api/events/${eventId}`, { method: 'DELETE' });
+                console.log('Delete response:', response);
+
+                if (!response.ok) throw new Error('删除失败');
+
+                showToast('事件已删除', 'success');
+                loadEvents();
+            } catch (error) {
+                console.error('Error deleting event:', error);
+                showToast('删除失败', 'error');
+            }
+        }
+
+        // Download template
+        function downloadTemplate() {
+            window.location.href = '/admin/api/template';
+        }
+
+        // Drag and drop setup
+        function setupDragAndDrop() {
+            const dropZone = document.getElementById('drop-zone');
+
+            dropZone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropZone.classList.add('dragover');
+            });
+
+            dropZone.addEventListener('dragleave', () => {
+                dropZone.classList.remove('dragover');
+            });
+
+            dropZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('dragover');
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    uploadFile(files[0]);
+                }
+            });
+        }
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (file) uploadFile(file);
+        }
+
+        // Upload file
+        async function uploadFile(file) {
+            if (!file.name.endsWith('.tsv')) {
+                showToast('请上传TSV文件', 'error');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            try {
+                showToast('正在上传...', 'info');
+                const response = await fetch('/admin/api/events/batch', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                console.log('Upload response:', response);
+
+                if (!response.ok) throw new Error('上传失败');
+
+                const result = await response.json();
+                console.log('Upload result:', result);
+
+                // Show results
+                document.getElementById('upload-results').classList.remove('hidden');
+                document.getElementById('success-count').textContent = result.success_count;
+                document.getElementById('duplicate-count').textContent = result.duplicate_count;
+                document.getElementById('failed-count').textContent = result.failed_count;
+
+                const failedContainer = document.getElementById('failed-rows-container');
+                const failedList = document.getElementById('failed-rows-list');
+
+                if (result.failed_rows && result.failed_rows.length > 0) {
+                    failedContainer.classList.remove('hidden');
+                    failedList.innerHTML = result.failed_rows.map(r =>
+                        `<div>第 ${r.row} 行: ${r.error}${r.event_name ? ` (${r.event_name})` : ''}</div>`
+                    ).join('');
+                } else {
+                    failedContainer.classList.add('hidden');
+                }
+
+                if (result.duplicate_rows && result.duplicate_rows.length > 0) {
+                    console.log('Duplicate rows:', result.duplicate_rows);
+                }
+
+                showToast(`上传完成: ${result.success_count} 成功, ${result.duplicate_count} 重复, ${result.failed_count} 失败`, 'success');
+
+                if (result.success_count > 0) {
+                    loadEvents();
+                }
+            } catch (error) {
+                console.error('Error uploading file:', error);
+                showToast('上传失败: ' + error.message, 'error');
+            }
+        }
+
+        // Toast notification
+        function showToast(message, type = 'info') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+
+            toast.className = 'fixed bottom-4 right-4 px-6 py-3 rounded-lg shadow-lg transform transition-all duration-300 z-50';
+
+            if (type === 'success') {
+                toast.classList.add('bg-green-500', 'text-white');
+            } else if (type === 'error') {
+                toast.classList.add('bg-red-500', 'text-white');
+            } else {
+                toast.classList.add('bg-blue-500', 'text-white');
+            }
+
+            toastMessage.textContent = message;
+            toast.classList.remove('hidden');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Escape HTML
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
+</body>
+</html>
