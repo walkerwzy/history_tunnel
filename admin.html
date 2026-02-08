@@ -176,10 +176,26 @@
 
         <!-- Events Table -->
         <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <!-- Batch Actions Bar -->
+            <div id="batch-actions-bar" class="hidden px-4 py-2 bg-blue-50 border-b border-blue-200 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <input type="checkbox" id="select-all" onchange="toggleSelectAll()" class="w-4 h-4 text-blue-600 rounded">
+                    <label for="select-all" class="text-sm text-blue-700 cursor-pointer">全选 / 取消全选</label>
+                    <span id="selected-count" class="text-sm text-blue-600">已选择 0 项</span>
+                </div>
+                <button onclick="batchDeleteEvents()" class="px-3 py-1 bg-red-500 hover:bg-red-600 text-white text-sm rounded-lg transition-colors flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                    </svg>
+                    批量删除
+                </button>
+            </div>
+            
             <div class="overflow-x-auto">
                 <table class="w-full table-fixed">
                     <thead class="bg-slate-50 border-b border-slate-200">
                         <tr>
+                            <th class="px-3 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider w-10"></th>
                             <th class="px-4 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider w-1/4">事件名称</th>
                             <th class="px-4 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider w-20">开始年份</th>
                             <th class="px-4 py-3 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider w-20">结束年份</th>
@@ -554,7 +570,7 @@
             tbody.innerHTML = '';
 
             if (filteredEvents.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="8" class="px-4 py-8 text-center text-slate-500">暂无匹配数据</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="9" class="px-4 py-8 text-center text-slate-500">暂无匹配数据</td></tr>';
                 document.getElementById('pagination').innerHTML = '';
                 document.getElementById('filter-info').classList.remove('hidden');
                 document.getElementById('filter-info').textContent = `筛选后: 0 条`;
@@ -568,28 +584,100 @@
             pageEvents.forEach(event => {
                 const row = document.createElement('tr');
                 row.className = 'hover:bg-slate-50 transition-colors cursor-pointer';
-                row.onclick = () => editEvent(event.id);
+                row.onclick = (e) => {
+                    // Don't trigger edit if clicking on checkbox or delete button
+                    if (e.target.closest('.event-checkbox') || e.target.closest('button')) return;
+                    editEvent(event.id);
+                };
 
                 row.innerHTML = `
+                    <td class="px-3 py-3 text-center" onclick="event.stopPropagation()">
+                        <input type="checkbox" class="event-checkbox w-4 h-4 text-blue-600 rounded" data-id="${event.id}">
+                    </td>
                     <td class="px-4 py-3 text-sm font-medium text-slate-900">${escapeHtml(event.event_name)}</td>
                     <td class="px-4 py-3 text-sm text-slate-600">${event.start_year}</td>
                     <td class="px-4 py-3 text-sm text-slate-600">${event.end_year || '-'}</td>
                     <td class="px-4 py-3 text-sm text-slate-600 max-w-xs truncate">${escapeHtml(event.key_figures || '-')}</td>
                     <td class="px-4 py-2 max-w-xs"><div class="text-xs text-slate-500 two-line-cell">${escapeHtml(event.description || '-')}</div></td>
                     <td class="px-4 py-2 max-w-xs"><div class="text-xs text-slate-500 two-line-cell">${escapeHtml(event.impact || '-')}</div></td>
-                    <td class="px-4 py-3 text-center">
+                    <td class="px-4 py-3 text-center" onclick="event.stopPropagation()">
                         <button onclick="deleteEvent(${event.id}, event)" class="p-1 text-red-600 hover:bg-red-50 rounded transition-colors">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 1v3M4 7h16"></path>
                             </svg>
                         </button>
                     </td>
                 `;
+                
+                // Add checkbox change listener
+                const checkbox = row.querySelector('.event-checkbox');
+                checkbox.addEventListener('change', updateBatchActionsBar);
+                
                 tbody.appendChild(row);
             });
 
             renderFilteredPagination();
             updateStats();
+        }
+
+        // Update batch actions bar visibility and count
+        function updateBatchActionsBar() {
+            const checkboxes = document.querySelectorAll('.event-checkbox:checked');
+            const count = checkboxes.length;
+            const batchBar = document.getElementById('batch-actions-bar');
+            const selectedCount = document.getElementById('selected-count');
+            
+            if (count > 0) {
+                batchBar.classList.remove('hidden');
+                selectedCount.textContent = `已选择 ${count} 项`;
+            } else {
+                batchBar.classList.add('hidden');
+            }
+        }
+
+        // Toggle select all checkboxes
+        function toggleSelectAll() {
+            const selectAll = document.getElementById('select-all');
+            const checkboxes = document.querySelectorAll('.event-checkbox');
+            checkboxes.forEach(cb => cb.checked = selectAll.checked);
+            updateBatchActionsBar();
+        }
+
+        // Batch delete selected events
+        async function batchDeleteEvents() {
+            const checkboxes = document.querySelectorAll('.event-checkbox:checked');
+            const ids = Array.from(checkboxes).map(cb => parseInt(cb.dataset.id));
+            
+            if (ids.length === 0) {
+                showToast('请先选择要删除的事件', 'error');
+                return;
+            }
+            
+            if (!confirm(`确定要删除选中的 ${ids.length} 个事件吗？此操作不可恢复。`)) {
+                return;
+            }
+            
+            try {
+                let successCount = 0;
+                let failedCount = 0;
+                
+                for (const id of ids) {
+                    const response = await fetch(`/admin/api/events/${id}`, { method: 'DELETE' });
+                    if (response.ok) {
+                        successCount++;
+                    } else {
+                        failedCount++;
+                    }
+                }
+                
+                showToast(`删除完成: ${successCount} 成功, ${failedCount} 失败`, successCount > 0 ? 'success' : 'error');
+                
+                // Reload events
+                clearFilters();
+            } catch (error) {
+                console.error('Batch delete error:', error);
+                showToast('批量删除失败', 'error');
+            }
         }
 
         // Render pagination for filtered results
