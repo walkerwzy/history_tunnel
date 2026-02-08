@@ -69,7 +69,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 FRONTEND_FILE = os.path.join(SCRIPT_DIR, "timeline_visualization.html")
 TIMELINE_FILE = os.path.join(SCRIPT_DIR, "timeline.html")
 STATIC_DIR = os.path.join(SCRIPT_DIR, "static")
-ADMIN_FILE = os.path.join(STATIC_DIR, "admin.html")
+ADMIN_FILE = os.path.join(SCRIPT_DIR, "admin.html")
 
 # Mount static files
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
