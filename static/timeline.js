@@ -364,13 +364,9 @@ class TimelineApp {
                         chinaPanel.style.display = 'block';
                     }
                 } else {
-                    // No active event on mobile: show message in Europe panel, hide China
+                    // No active event on mobile: show Europe panel with hint
                     europePanel.style.display = 'block';
                     chinaPanel.style.display = 'none';
-                    const contentDiv = europePanel.querySelector('.panel-content');
-                    if (contentDiv) {
-                        contentDiv.innerHTML = '<div style="padding: 20px; text-align: center; color: #888; font-style: italic;">Scroll to explore events</div>';
-                    }
                 }
             } else {
                 // Desktop: show both panels
